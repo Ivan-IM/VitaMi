@@ -11,16 +11,23 @@ struct MultipleSelectionRow: View {
     var title: String
     var isSelected: Bool
     var action: () -> Void
-
+    
     var body: some View {
-        Button(action: self.action) {
-            HStack {
-                Text(self.title)
-                if self.isSelected {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.blue]), startPoint: .leading, endPoint: .trailing).cornerRadius(15)
+            Button(action: self.action) {
+                HStack {
+                    Text(self.title)
+                        .foregroundColor(Color.black)
                     Spacer()
-                    Image(systemName: "checkmark")
+                    if self.isSelected {
+                        Image(systemName: "checkmark")
+                            .foregroundColor(Color.black)
+                    }
                 }
+                .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
             }
         }
     }
 }
+

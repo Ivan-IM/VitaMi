@@ -12,19 +12,22 @@ struct SymptomsView: View {
     @State var symptomsList: [String] = []
     
     var body: some View {
-        List{
-            ForEach(Symtom.getSymptomsList()) { symptom in
-                MultipleSelectionRow(title: symptom.ruName, isSelected: self.symptomsList.contains(symptom.enName)) {
-                    if self.symptomsList.contains(symptom.enName) {
-                        self.symptomsList.removeAll(where: { $0 == symptom.enName })
-                    }
-                    else {
-                        self.symptomsList.append(symptom.enName)
+        GeometryReader { geometry in
+            ScrollView {
+                ForEach(Symtom.getSymptomsList()) { symptom in
+                    MultipleSelectionRow(title: symptom.ruName, isSelected: self.symptomsList.contains(symptom.enName)) {
+                        if self.symptomsList.contains(symptom.enName) {
+                            self.symptomsList.removeAll(where: { $0 == symptom.enName })
+                        }
+                        else {
+                            self.symptomsList.append(symptom.enName)
+                        }
                     }
                 }
             }
+            .frame(width: geometry.size.width)
         }
-        
+        .padding(/*@START_MENU_TOKEN@*/.all, 5.0/*@END_MENU_TOKEN@*/)
     }
 }
 
