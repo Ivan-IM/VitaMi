@@ -14,7 +14,7 @@ struct SymptomsView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     ForEach(Symtom.getSymptomsList()) { symptom in
                         MultipleSelectionRow(title: symptom.ruName, isSelected: self.symptomsList.contains(symptom.enName)) {
                             if self.symptomsList.contains(symptom.enName) {
@@ -24,9 +24,11 @@ struct SymptomsView: View {
                                 self.symptomsList.append(symptom.enName)
                             }
                         }
+                        .padding(/*@START_MENU_TOKEN@*/.all, 3.0/*@END_MENU_TOKEN@*/)
                     }
-                }.frame(width: geometry.size.width)
-                .shadow(color: .yellow, radius: 3, x: 1, y: 1)
+                    .padding(.vertical, 100.0)
+                }.frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .shadow(color: .black, radius: 3, x: 0, y: 0)
                 VStack {
                     Spacer()
                     Button(action: {
@@ -37,15 +39,14 @@ struct SymptomsView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color.black)
                     })
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    .background(Color.clear)
+                    .background(Color.white)
                     .cornerRadius(10)
-                    .shadow(color: .yellow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                    .shadow(color: .black, radius: 5, x: 0, y: 0)
                 }
             }
         }
+        .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
-        .padding(/*@START_MENU_TOKEN@*/.all, 5.0/*@END_MENU_TOKEN@*/)
     }
 }
 

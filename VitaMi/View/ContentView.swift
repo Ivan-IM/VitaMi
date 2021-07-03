@@ -23,7 +23,7 @@ struct ContentView: View {
                 .padding(.all)
                 .background(Color.white)
                 .cornerRadius(10)
-                .shadow(color: .yellow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                .shadow(color: .black, radius: 5, x: 3, y: 3)
         }
     }
 }
