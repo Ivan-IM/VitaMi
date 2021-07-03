@@ -12,6 +12,8 @@
 		CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98C269096FC00842794 /* Assets.xcassets */; };
 		CF2BF990269096FC00842794 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98F269096FC00842794 /* Preview Assets.xcassets */; };
 		CF2BF9982690974A00842794 /* SymtomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9972690974A00842794 /* SymtomList.swift */; };
+		CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF99B2690ADC000842794 /* SymptomsView.swift */; };
+		CF2BF99F2690B37400842794 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF99E2690B37400842794 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CF2BF98F269096FC00842794 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF2BF991269096FC00842794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2BF9972690974A00842794 /* SymtomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymtomList.swift; sourceTree = "<group>"; };
+		CF2BF99B2690ADC000842794 /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
+		CF2BF99E2690B37400842794 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,13 @@
 		CF2BF987269096FB00842794 /* VitaMi */ = {
 			isa = PBXGroup;
 			children = (
+				CF2BF99D2690B30200842794 /* CustomView */,
+				CF2BF99A2690AD5C00842794 /* Model */,
+				CF2BF9992690AD4800842794 /* View */,
 				CF2BF988269096FB00842794 /* VitaMiApp.swift */,
-				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CF2BF98C269096FC00842794 /* Assets.xcassets */,
 				CF2BF991269096FC00842794 /* Info.plist */,
 				CF2BF98E269096FC00842794 /* Preview Content */,
-				CF2BF9972690974A00842794 /* SymtomList.swift */,
 			);
 			path = VitaMi;
 			sourceTree = "<group>";
@@ -70,6 +75,31 @@
 				CF2BF98F269096FC00842794 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF2BF9992690AD4800842794 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BF98A269096FB00842794 /* ContentView.swift */,
+				CF2BF99B2690ADC000842794 /* SymptomsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF2BF99A2690AD5C00842794 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BF9972690974A00842794 /* SymtomList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF2BF99D2690B30200842794 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CF2BF99E2690B37400842794 /* CustomCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */,
 				CF2BF9982690974A00842794 /* SymtomList.swift in Sources */,
+				CF2BF99F2690B37400842794 /* CustomCell.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
 			);

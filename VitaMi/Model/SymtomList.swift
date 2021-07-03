@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Symtom {
+struct Symtom: Identifiable {
     let id = UUID()
     let enName: String
     let ruName: String
