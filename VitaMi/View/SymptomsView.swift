@@ -26,6 +26,7 @@ struct SymptomsView: View {
                         }
                     }
                 }.frame(width: geometry.size.width)
+                .shadow(color: .yellow, radius: 3, x: 1, y: 1)
                 VStack {
                     Spacer()
                     Button(action: {
@@ -39,7 +40,7 @@ struct SymptomsView: View {
                     .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     .background(Color.clear)
                     .cornerRadius(10)
-                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
+                    .shadow(color: .yellow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
                 }
             }
         }

@@ -16,10 +16,14 @@ struct ContentView: View {
                 destination: SymptomsView(),
                 label: {
                     Text("User Testing")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
                 })
                 .padding(.all)
-                .background(Color.green)
+                .background(Color.white)
                 .cornerRadius(10)
+                .shadow(color: .yellow, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/)
         }
     }
 }
