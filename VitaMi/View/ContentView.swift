@@ -10,9 +10,17 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-        
+        NavigationView {
+            
+            NavigationLink(
+                destination: SymptomsView(),
+                label: {
+                    Text("User Testing")
+                })
+                .padding(.all)
+                .background(Color.green)
+                .cornerRadius(10)
+        }
     }
 }
 
