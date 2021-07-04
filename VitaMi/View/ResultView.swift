@@ -11,21 +11,29 @@ struct ResultView: View {
     
     @EnvironmentObject var user: User
     @State var elements: Array<String> = []
+    @State var elementsList: Array<String> = []
         
     var body: some View {
         VStack {
             Button(action: {
                 print(elements)
+                print(elementsList)
             }, label: {
                 /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
             })
             
         }
         .onAppear(){
-            for symptom in Symtom.getSymptomsList() {
+            Symtom.getSymptomsList().forEach { symptom in
                 if self.user.symptomsList.contains(symptom.enName) {
                     elements.append(contentsOf: symptom.elements)
                 }
+            }
+            elements.forEach { element in
+                if elements.filter({$0 == element}).count > 1 {
+                    elementsList.append(element)
+                }
+                else { return }
             }
         }
     }
