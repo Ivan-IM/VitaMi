@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var user = User()
+    
     var body: some View {
         NavigationView {
             NavigationLink(
@@ -25,6 +27,7 @@ struct ContentView: View {
                 .shadow(color: .black, radius: 5, x: 3, y: 3)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(user)
     }
 }
 

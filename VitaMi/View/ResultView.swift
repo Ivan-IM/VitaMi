@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ResultView: View {
+    
+    @EnvironmentObject var user: User
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button(action: {
+                print(self.user.symptomsList)
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
+            
+        }
+        .onAppear(){
+            
+        }
     }
 }
 

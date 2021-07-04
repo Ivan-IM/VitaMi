@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SymptomsView: View {
     
-    @ObservedObject var user = User()
-    
+    @EnvironmentObject var user: User
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
