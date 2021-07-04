@@ -14,7 +14,7 @@ struct CardListBottom: View {
     
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.9)
+            Color.blue.contrast(10).opacity(0.8)
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
             
