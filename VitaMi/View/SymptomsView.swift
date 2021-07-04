@@ -34,7 +34,9 @@ struct SymptomsView: View {
                 VStack {
                     CardListTop()
                     Spacer()
-                    CardListBottom()
+                    CardListBottom {
+                        self.user.symptomsList.removeAll()
+                    }
                     
                 }
                 .padding(.vertical, 5.0)

@@ -10,6 +10,7 @@ import SwiftUI
 struct CardListBottom: View {
     
     @Environment(\.presentationMode) var presentation
+    var action: () -> Void
     
     var body: some View {
         ZStack {
@@ -22,6 +23,11 @@ struct CardListBottom: View {
                     self.presentation.wrappedValue.dismiss()
                 }, label: {
                     Text("Last")
+                })
+                Spacer()
+                Button(action: self.action,
+                       label: {
+                    Text("Clear")
                 })
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
