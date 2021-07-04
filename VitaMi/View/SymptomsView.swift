@@ -9,19 +9,19 @@ import SwiftUI
 
 struct SymptomsView: View {
     
-    @State var symptomsList: [String] = []
+    @ObservedObject var user = User()
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ScrollView(showsIndicators: false) {
                     ForEach(Symtom.getSymptomsList()) { symptom in
-                        MultipleSelectionRow(title: symptom.ruName, isSelected: self.symptomsList.contains(symptom.enName)) {
-                            if self.symptomsList.contains(symptom.enName) {
-                                self.symptomsList.removeAll(where: { $0 == symptom.enName })
+                        MultipleSelectionRow(title: symptom.ruName, isSelected: self.user.symptomsList.contains(symptom.enName)) {
+                            if self.user.symptomsList.contains(symptom.enName) {
+                                self.user.symptomsList.removeAll(where: { $0 == symptom.enName })
                             }
                             else {
-                                self.symptomsList.append(symptom.enName)
+                                self.user.symptomsList.append(symptom.enName)
                             }
                         }
                         .padding(.all, 3.0)

@@ -17,7 +17,7 @@ struct Symtom: Identifiable {
         [
             Symtom(enName: "muscle spasm", ruName: "спазмы мышц", elements: ["K", "Ca", "Mg", "Na", "Vitamin D"]),
             Symtom(enName: "muscle pain", ruName: "боль в мышцах", elements: ["K", "Ca", "Mg", "P", "Vitamin D"]),
-            Symtom(enName: "bone fractures (more often than once a year or when falling from a height of one's own growth)", ruName: "переломы (чаще 1 раза в год или при падении с высоты собственного роста)", elements: ["Ca", "Cu", "Vitamin A", "Vitamin D"]),
+            Symtom(enName: "bone fractures (more often than once a year)", ruName: "переломы (чаще 1 раза в год)", elements: ["Ca", "Cu", "Vitamin A", "Vitamin D"]),
             Symtom(enName: "edemas", ruName: "отеки", elements: ["Fe", "Na", "Vitamin B6", "Vitamin C"]),
             Symtom(enName: "acne", ruName: "угревая сыпь", elements: ["K", "Na", "Zn", "Vitamin F"]),
             Symtom(enName: "dermatitis", ruName: "дерматит", elements: ["Na", "Zn", "Vitanim PP", "Vitanim B5", "Vitamin B6", "Vitamin F"]),
