@@ -14,7 +14,7 @@ struct MultipleSelectionRow: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .leading, endPoint: .trailing).cornerRadius(15)
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .leading, endPoint: .trailing).cornerRadius(10)
             Button(action: self.action) {
                 HStack {
                     Text(self.title)

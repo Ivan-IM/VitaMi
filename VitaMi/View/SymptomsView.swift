@@ -24,25 +24,19 @@ struct SymptomsView: View {
                                 self.symptomsList.append(symptom.enName)
                             }
                         }
-                        .padding(/*@START_MENU_TOKEN@*/.all, 3.0/*@END_MENU_TOKEN@*/)
+                        .padding(.all, 3.0)
                     }
-                    .padding(.vertical, 100.0)
-                }.frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .shadow(color: .black, radius: 3, x: 0, y: 0)
-                VStack {
-                    Spacer()
-                    Button(action: {
-                        print(symptomsList)
-                    }, label: {
-                        Text("Test Me")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                    })
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(color: .black, radius: 5, x: 0, y: 0)
+                    .padding(.top, 105.0)
+                    .padding(.bottom, 55.0)
                 }
+                .padding(.vertical, 8.0)
+                .shadow(color: Color.black.opacity(0.7), radius: 3, x: 0, y: 0)
+                VStack {
+                    CardListTop().opacity(0.95)
+                    Spacer()
+                    CardListBottom().opacity(0.95)
+                }
+                .padding(.vertical, 5.0)
             }
         }
         .padding(.horizontal, 5.0)
