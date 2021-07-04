@@ -1,15 +1,14 @@
 //
-//  CustomCell.swift
+//  CustomCellResultView.swift
 //  VitaMi
 //
-//  Created by Иван Маришин on 03.07.2021.
+//  Created by Иван Маришин on 04.07.2021.
 //
 
 import SwiftUI
 
-struct MultipleSelectionRow: View {
+struct CustomCellResultView: View {
     var title: String
-    var isSelected: Bool
     var action: () -> Void
     
     var body: some View {
@@ -20,10 +19,7 @@ struct MultipleSelectionRow: View {
                     Text(self.title)
                         .foregroundColor(Color.black)
                     Spacer()
-                    if self.isSelected {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(Color.black)
-                    }
+                    Image(systemName: "questionmark.square")
                 }
                 .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
             }

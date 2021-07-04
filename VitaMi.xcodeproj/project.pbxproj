@@ -18,6 +18,8 @@
 		CF2BF9A5269170B100842794 /* SymptomsBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */; };
 		CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserInfo.swift */; };
 		CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47B4E32691A7FD00DCAB9E /* ResultView.swift */; };
+		CF87F582269204FE00ED6710 /* CustomCellResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F581269204FE00ED6710 /* CustomCellResultView.swift */; };
+		CF87F5842692067600ED6710 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* ElementsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsBottomView.swift; sourceTree = "<group>"; };
 		CF2BF9A6269173BF00842794 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CF47B4E32691A7FD00DCAB9E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		CF87F581269204FE00ED6710 /* CustomCellResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellResultView.swift; sourceTree = "<group>"; };
+		CF87F5832692067600ED6710 /* ElementsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			children = (
 				CF2BF9972690974A00842794 /* SymtomList.swift */,
 				CF2BF9A6269173BF00842794 /* UserInfo.swift */,
+				CF87F5832692067600ED6710 /* ElementsList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 				CF2BF99E2690B37400842794 /* CustomCell.swift */,
 				CF2BF9A226916D0A00842794 /* SymptomsTopView.swift */,
 				CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */,
+				CF87F581269204FE00ED6710 /* CustomCellResultView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF87F582269204FE00ED6710 /* CustomCellResultView.swift in Sources */,
+				CF87F5842692067600ED6710 /* ElementsList.swift in Sources */,
 				CF2BF9A5269170B100842794 /* SymptomsBottomView.swift in Sources */,
 				CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */,
 				CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */,
