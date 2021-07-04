@@ -46,17 +46,6 @@ struct SymptomsView: View {
         }
         .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
-        .onAppear(){
-            if let symptomsList = UserDefaults.standard.array(forKey: "SymptomsList") {
-                for i in symptomsList{
-                    self.user.symptomsList.append(i as! String)
-                }
-            }
-            else {
-                print("Data Erorr")
-                return
-            }
-        }
         .onDisappear(){
             UserDefaults.standard.set(self.user.symptomsList, forKey: "SymptomsList")
         }
