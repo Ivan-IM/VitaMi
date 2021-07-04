@@ -54,6 +54,7 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)
         .environmentObject(user)
     }
 }
