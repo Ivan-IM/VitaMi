@@ -22,21 +22,39 @@ struct CardListBottom: View {
                 Button(action: {
                     self.presentation.wrappedValue.dismiss()
                 }, label: {
+                    Image(systemName: "chevron.left.circle")
                     Text("Last")
                 })
+                .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
                 Spacer()
                 Button(action: self.action,
                        label: {
-                    Text("Clear")
-                })
+                        Text("Clear")
+                       })
+                    .frame(width: 60, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(Color.white.opacity(0.8))
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Save")
                 })
+                .frame(width: 60, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Next")
+                    Image(systemName: "chevron.right.circle")
                 })
+                .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
             }
             .padding(.horizontal, 10.0)
         }
