@@ -32,10 +32,10 @@ struct SymptomsView: View {
                 .padding(.vertical, 8.0)
                 .shadow(color: Color.black.opacity(0.7), radius: 3, x: 0, y: 0)
                 VStack {
-                    CardListTop().opacity(0.95)
+                    CardListTop()
                     Spacer()
-                    CardListBottom().opacity(0.95)
-
+                    CardListBottom()
+                    
                 }
                 .padding(.vertical, 5.0)
             }
