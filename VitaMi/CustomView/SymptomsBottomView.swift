@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardListBottom: View {
+struct SymptomsBottomView: View {
     
     @Environment(\.presentationMode) var presentation
     var action: () -> Void

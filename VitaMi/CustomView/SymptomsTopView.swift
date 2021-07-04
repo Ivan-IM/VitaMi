@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardListTop: View {
+struct SymptomsTopView: View {
 
     var body: some View {
         ZStack {

@@ -24,7 +24,8 @@ struct SymptomsView: View {
                                 self.user.symptomsList.append(symptom.enName)
                             }
                         }
-                        .padding(.all, 3.0)
+                        .padding(.horizontal, 3.0)
+                        .padding(.vertical, 1.0)
                     }
                     .padding(.top, 105.0)
                     .padding(.bottom, 55.0)
@@ -32,9 +33,9 @@ struct SymptomsView: View {
                 .padding(.vertical, 8.0)
                 .shadow(color: Color.black.opacity(0.7), radius: 3, x: 0, y: 0)
                 VStack {
-                    CardListTop()
+                    SymptomsTopView()
                     Spacer()
-                    CardListBottom {
+                    SymptomsBottomView {
                         self.user.symptomsList.removeAll()
                         UserDefaults.standard.set(self.user.symptomsList, forKey: "SymptomsList")
                     }
