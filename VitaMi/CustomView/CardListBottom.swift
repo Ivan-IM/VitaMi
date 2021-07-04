@@ -16,7 +16,7 @@ struct CardListBottom: View {
         ZStack {
             Color.blue.contrast(10).opacity(0.8)
                 .cornerRadius(10)
-                .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
+                .shadow(color: Color.black.opacity(0.9), radius: 5, x: 0, y: 0)
             
             HStack {
                 Button(action: {
