@@ -39,7 +39,9 @@ struct CardListBottom: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                NavigationLink(
+                    destination: ResultView(),
+                    label: {
                     Text("Save")
                     Image(systemName: "chevron.right.circle")
                 })

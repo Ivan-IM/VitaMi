@@ -17,6 +17,7 @@
 		CF2BF9A326916D0A00842794 /* CardListTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A226916D0A00842794 /* CardListTop.swift */; };
 		CF2BF9A5269170B100842794 /* CardListBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A4269170B100842794 /* CardListBottom.swift */; };
 		CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserInfo.swift */; };
+		CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47B4E32691A7FD00DCAB9E /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CF2BF9A226916D0A00842794 /* CardListTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListTop.swift; sourceTree = "<group>"; };
 		CF2BF9A4269170B100842794 /* CardListBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListBottom.swift; sourceTree = "<group>"; };
 		CF2BF9A6269173BF00842794 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CF47B4E32691A7FD00DCAB9E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CF2BF99B2690ADC000842794 /* SymptomsView.swift */,
+				CF47B4E32691A7FD00DCAB9E /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				CF2BF9A5269170B100842794 /* CardListBottom.swift in Sources */,
 				CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */,
+				CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */,
 				CF2BF9982690974A00842794 /* SymtomList.swift in Sources */,
 				CF2BF99F2690B37400842794 /* CustomCell.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */,

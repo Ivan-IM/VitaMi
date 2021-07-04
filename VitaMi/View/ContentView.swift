@@ -24,6 +24,7 @@ struct ContentView: View {
                 .cornerRadius(10)
                 .shadow(color: .black, radius: 5, x: 3, y: 3)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
