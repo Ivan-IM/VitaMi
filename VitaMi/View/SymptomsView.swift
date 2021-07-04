@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SymptomsView: View {
     
-    @ObservedObject var user = User.user
+    @ObservedObject var user = User()
     
     var body: some View {
         GeometryReader { geometry in
