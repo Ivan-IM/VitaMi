@@ -35,6 +35,7 @@ struct SymptomsView: View {
                     CardListTop().opacity(0.95)
                     Spacer()
                     CardListBottom().opacity(0.95)
+
                 }
                 .padding(.vertical, 5.0)
             }
