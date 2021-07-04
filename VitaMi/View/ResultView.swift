@@ -10,18 +10,23 @@ import SwiftUI
 struct ResultView: View {
     
     @EnvironmentObject var user: User
+    @State var elements: Array<String> = []
         
     var body: some View {
         VStack {
             Button(action: {
-                print(self.user.symptomsList)
+                print(elements)
             }, label: {
                 /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
             })
             
         }
         .onAppear(){
-            
+            for symptom in Symtom.getSymptomsList() {
+                if self.user.symptomsList.contains(symptom.enName) {
+                    elements.append(contentsOf: symptom.elements)
+                }
+            }
         }
     }
 }
