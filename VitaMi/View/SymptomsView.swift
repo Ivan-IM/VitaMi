@@ -13,6 +13,7 @@ struct SymptomsView: View {
     
     var body: some View {
         ZStack {
+            
             ScrollView(showsIndicators: false) {
                 ForEach(Symtom.getSymptomsList()) { symptom in
                     CustomCellSymptomView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
@@ -41,9 +42,8 @@ struct SymptomsView: View {
                 }
                 
             }
-            .padding(.vertical, 5.0)
+            .padding(.all, 5.0)
         }
-        .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
         .onDisappear(){
             UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")

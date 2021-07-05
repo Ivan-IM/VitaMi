@@ -15,7 +15,7 @@ struct CustomCellSymptomView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .leading, endPoint: .trailing).cornerRadius(20)
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .leading, endPoint: .trailing).cornerRadius(20).opacity(0.8)
                 .shadow(color: Color.black.opacity(0.7), radius: 3, x: 0, y: 0)
             Button(action: self.action) {
                 HStack {

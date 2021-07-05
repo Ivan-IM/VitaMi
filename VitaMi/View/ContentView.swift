@@ -13,33 +13,36 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(
-                    destination: SymptomsView(),
-                    label: {
-                        Text("Symptoms List")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                    })
-                    .padding()
-                    .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(color: .black, radius: 5, x: 3, y: 3)
-                NavigationLink(
-                    destination: ResultView(),
-                    label: {
-                        Text("Result List")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                    })
-                    .padding()
-                    .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(color: .black, radius: 5, x: 3, y: 3)
+            ZStack {
+                
+                VStack {
+                    NavigationLink(
+                        destination: SymptomsView(),
+                        label: {
+                            Text("Symptoms List")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                        })
+                        .padding()
+                        .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(color: .black, radius: 5, x: 3, y: 3)
+                    NavigationLink(
+                        destination: ResultView(),
+                        label: {
+                            Text("Result List")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                        })
+                        .padding()
+                        .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(color: .black, radius: 5, x: 3, y: 3)
+                }
             }
         }
         .onAppear(){
@@ -53,7 +56,6 @@ struct ContentView: View {
                 return
             }
         }
-        .padding(.horizontal, 5.0)
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
         .environmentObject(user)

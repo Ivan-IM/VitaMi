@@ -16,6 +16,7 @@ struct ResultView: View {
     
     var body: some View {
         ZStack {
+            
             ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
                     if user.lowElementsList.contains(element.name) {
@@ -41,9 +42,8 @@ struct ResultView: View {
                     print(user.elementsList)
                 }
             }
-            .padding(.vertical, 5.0)
+            .padding(.all, 5.0)
         }
-        .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
         .onAppear(){
             user.elementsFilterAlgorinm()
