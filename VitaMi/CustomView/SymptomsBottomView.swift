@@ -38,7 +38,7 @@ struct SymptomsBottomView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                       })
+                })
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Clear the list"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Ok"), action: action), secondaryButton: .cancel())
                 }
@@ -52,7 +52,7 @@ struct SymptomsBottomView: View {
                             .foregroundColor(Color.white)
                         Image(systemName: "chevron.right.circle")
                             .foregroundColor(Color.white)
-                })
+                    })
             }
             .padding(.horizontal, 10.0)
         }
