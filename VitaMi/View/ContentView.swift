@@ -45,12 +45,25 @@ struct ContentView: View {
         .onAppear(){
             if let symptomsList = UserDefaults.standard.array(forKey: "SymptomsList") {
                 for i in symptomsList{
-                    self.user.symptomsList.append(i as! String)
+                    user.symptomsList.append(i as! String)
                 }
             }
             else {
                 print("Data Erorr")
                 return
+            }
+            
+            Symtom.getSymptomsList().forEach { symptom in
+                if user.symptomsList.contains(symptom.enName) {
+                    user.elementsList.append(contentsOf: symptom.elements)
+                }
+            }
+            
+            user.elementsList.forEach { element in
+                if user.elementsList.filter({$0 == element}).count > 1 {
+                    user.lowElementsList.append(element)
+                }
+                else { return }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

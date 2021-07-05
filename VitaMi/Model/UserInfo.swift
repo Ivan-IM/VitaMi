@@ -10,6 +10,7 @@ import SwiftUI
 class User: ObservableObject {
     
     @Published var symptomsList: [String] = []
-    
+    @Published var elementsList: [String] = []
+    @Published var lowElementsList: [String] = []
     
 }

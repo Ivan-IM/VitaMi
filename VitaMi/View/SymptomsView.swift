@@ -15,12 +15,12 @@ struct SymptomsView: View {
         ZStack {
             ScrollView(showsIndicators: false) {
                 ForEach(Symtom.getSymptomsList()) { symptom in
-                    MultipleSelectionRow(title: symptom.ruName, isSelected: self.user.symptomsList.contains(symptom.enName)) {
-                        if self.user.symptomsList.contains(symptom.enName) {
-                            self.user.symptomsList.removeAll(where: { $0 == symptom.enName })
+                    MultipleSelectionRow(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
+                        if user.symptomsList.contains(symptom.enName) {
+                            user.symptomsList.removeAll(where: { $0 == symptom.enName })
                         }
                         else {
-                            self.user.symptomsList.append(symptom.enName)
+                            user.symptomsList.append(symptom.enName)
                         }
                     }
                     .padding(.horizontal, 10.0)
@@ -34,8 +34,10 @@ struct SymptomsView: View {
                 SymptomsTopView()
                 Spacer()
                 SymptomsBottomView {
-                    self.user.symptomsList.removeAll()
-                    UserDefaults.standard.set(self.user.symptomsList, forKey: "SymptomsList")
+                    user.symptomsList.removeAll()
+                    user.elementsList.removeAll()
+                    user.lowElementsList.removeAll()
+                    UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
                 }
                 
             }
@@ -44,7 +46,7 @@ struct SymptomsView: View {
         .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
         .onDisappear(){
-            UserDefaults.standard.set(self.user.symptomsList, forKey: "SymptomsList")
+            UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
         }
     }
 }
