@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MultipleSelectionRow: View {
+struct CustomCellSymptomView: View {
     var title: String
     var isSelected: Bool
     var action: () -> Void

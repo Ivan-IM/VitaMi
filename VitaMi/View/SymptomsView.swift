@@ -15,7 +15,7 @@ struct SymptomsView: View {
         ZStack {
             ScrollView(showsIndicators: false) {
                 ForEach(Symtom.getSymptomsList()) { symptom in
-                    MultipleSelectionRow(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
+                    CustomCellSymptomView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
                         if user.symptomsList.contains(symptom.enName) {
                             user.symptomsList.removeAll(where: { $0 == symptom.enName })
                         }
