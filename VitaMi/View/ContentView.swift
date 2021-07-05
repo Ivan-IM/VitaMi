@@ -66,6 +66,7 @@ struct ContentView: View {
                 else { return }
             }
         }
+        .padding(.horizontal, 5.0)
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)
         .environmentObject(user)

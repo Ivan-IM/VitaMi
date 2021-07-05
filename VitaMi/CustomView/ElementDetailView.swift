@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ElementDetailView: View {
+    
     @Environment(\.presentationMode) var presentationMode
+    var info: String
     
     var body: some View{
-        Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-        })
+        VStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
+            Text(info)
+        }
     }
 }

@@ -14,46 +14,47 @@ struct ResultView: View {
     @State private var showingDetail = false
     
     var body: some View {
-            ZStack {
-            ScrollView {
+        ZStack {
+            ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
                     if user.lowElementsList.contains(element.name) {
                         CustomCellResultView(title: element.name) {
                             showingDetail = true
-                        }
+                        }.sheet(isPresented: $showingDetail, content: {
+                            ElementDetailView(info: element.name)
+                        })
+                        .padding(.horizontal, 10.0)
+                        .padding(.vertical, 2.0)
                     }
                 }
-                .sheet(isPresented: $showingDetail, content: {
-                    ElementDetailView()
-                })
-                .padding(.horizontal, 3.0)
-                .padding(.vertical, 1.0)
-                
-                Button(action: {
-                    print(user.elementsList)
-                    self.presentation.wrappedValue.dismiss()
-                }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
-                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
+                .padding(.top, 105.0)
+                .padding(.bottom, 55.0)
             }
             .padding(.vertical, 8.0)
+            VStack {
+                ResultTopView(resultTitle: "result test")
+                Spacer()
+                ResultBottomView {
+                    print(user.elementsList)
+                }
             }
-            .onAppear(){
-                Symtom.getSymptomsList().forEach { symptom in
-                    if user.symptomsList.contains(symptom.enName) {
-                        user.elementsList.append(contentsOf: symptom.elements)
-                    }
-                }
-                user.elementsList.forEach { element in
-                    if user.elementsList.filter({$0 == element}).count > 1 {
-                        user.lowElementsList.append(element)
-                    }
-                    else { return }
-                }
+            .padding(.vertical, 5.0)
         }
+        .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
+        .onAppear(){
+            Symtom.getSymptomsList().forEach { symptom in
+                if user.symptomsList.contains(symptom.enName) {
+                    user.elementsList.append(contentsOf: symptom.elements)
+                }
+            }
+            user.elementsList.forEach { element in
+                if user.elementsList.filter({$0 == element}).count > 1 {
+                    user.lowElementsList.append(element)
+                }
+                else { return }
+            }
+        }
     }
 }
 

@@ -21,6 +21,8 @@
 		CF87F582269204FE00ED6710 /* CustomCellResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F581269204FE00ED6710 /* CustomCellResultView.swift */; };
 		CF87F5842692067600ED6710 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* ElementsList.swift */; };
 		CF87F5862692D47700ED6710 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5852692D47700ED6710 /* ElementDetailView.swift */; };
+		CF87F5882692F34400ED6710 /* ResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5872692F34400ED6710 /* ResultTopView.swift */; };
+		CF87F58A2692F54200ED6710 /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5892692F54200ED6710 /* ResultBottomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		CF87F581269204FE00ED6710 /* CustomCellResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellResultView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* ElementsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; };
 		CF87F5852692D47700ED6710 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
+		CF87F5872692F34400ED6710 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
+		CF87F5892692F54200ED6710 /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */,
 				CF87F581269204FE00ED6710 /* CustomCellResultView.swift */,
 				CF87F5852692D47700ED6710 /* ElementDetailView.swift */,
+				CF87F5872692F34400ED6710 /* ResultTopView.swift */,
+				CF87F5892692F54200ED6710 /* ResultBottomView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -199,8 +205,10 @@
 				CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */,
 				CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */,
 				CF2BF9982690974A00842794 /* SymtomList.swift in Sources */,
+				CF87F5882692F34400ED6710 /* ResultTopView.swift in Sources */,
 				CF2BF99F2690B37400842794 /* CustomCell.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */,
+				CF87F58A2692F54200ED6710 /* ResultBottomView.swift in Sources */,
 				CF2BF9A326916D0A00842794 /* SymptomsTopView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,

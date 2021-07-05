@@ -1,13 +1,13 @@
 //
-//  CardListBottom.swift
+//  ResultBottomView.swift
 //  VitaMi
 //
-//  Created by Иван Маришин on 04.07.2021.
+//  Created by Иван Маришин on 05.07.2021.
 //
 
 import SwiftUI
 
-struct SymptomsBottomView: View {
+struct ResultBottomView: View {
     
     @Environment(\.presentationMode) var presentation
     var action: () -> Void
@@ -32,7 +32,7 @@ struct SymptomsBottomView: View {
                 Spacer()
                 Button(action: self.action,
                        label: {
-                        Text("Clear")
+                        Text("Print")
                        })
                     .frame(width: 80, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .background(Color.white.opacity(0.8))
@@ -40,7 +40,7 @@ struct SymptomsBottomView: View {
                     .shadow(color: Color.black.opacity(0.7), radius: 5, x: 0, y: 0)
                 Spacer()
                 NavigationLink(
-                    destination: ResultView(),
+                    destination: Text("result blood test"),
                     label: {
                     Text("Save")
                     Image(systemName: "chevron.right.circle")
