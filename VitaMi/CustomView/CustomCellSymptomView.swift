@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomCellSymptomView: View {
+    
     var title: String
     var isSelected: Bool
     var action: () -> Void

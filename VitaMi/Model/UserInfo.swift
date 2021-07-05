@@ -13,4 +13,7 @@ class User: ObservableObject {
     @Published var elementsList: [String] = []
     @Published var lowElementsList: [String] = []
     
+    func elementsFilterAlgorinm() {
+        
+    }
 }

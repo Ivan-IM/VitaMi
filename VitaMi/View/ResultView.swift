@@ -46,6 +46,7 @@ struct ResultView: View {
         .padding(.horizontal, 5.0)
         .navigationBarHidden(true)
         .onAppear(){
+            user.elementsFilterAlgorinm()
             Symtom.getSymptomsList().forEach { symptom in
                 if user.symptomsList.contains(symptom.enName) {
                     user.elementsList.append(contentsOf: symptom.elements)
