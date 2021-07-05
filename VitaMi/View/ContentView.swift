@@ -53,18 +53,18 @@ struct ContentView: View {
                 return
             }
             
-            Symtom.getSymptomsList().forEach { symptom in
-                if user.symptomsList.contains(symptom.enName) {
-                    user.elementsList.append(contentsOf: symptom.elements)
-                }
-            }
-            
-            user.elementsList.forEach { element in
-                if user.elementsList.filter({$0 == element}).count > 1 {
-                    user.lowElementsList.append(element)
-                }
-                else { return }
-            }
+//            Symtom.getSymptomsList().forEach { symptom in
+//                if user.symptomsList.contains(symptom.enName) {
+//                    user.elementsList.append(contentsOf: symptom.elements)
+//                }
+//            }
+//            
+//            user.elementsList.forEach { element in
+//                if user.elementsList.filter({$0 == element}).count > 1 {
+//                    user.lowElementsList.append(element)
+//                }
+//                else { return }
+//            }
         }
         .padding(.horizontal, 5.0)
         .navigationViewStyle(StackNavigationViewStyle())

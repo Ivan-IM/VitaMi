@@ -12,6 +12,7 @@ struct ResultView: View {
     @EnvironmentObject var user: User
     @Environment(\.presentationMode) var presentation
     @State private var showingDetail = false
+    @State private var elementName: String = ""
     
     var body: some View {
         ZStack {
@@ -20,8 +21,10 @@ struct ResultView: View {
                     if user.lowElementsList.contains(element.name) {
                         CustomCellResultView(title: element.name) {
                             showingDetail = true
-                        }.sheet(isPresented: $showingDetail, content: {
-                            ElementDetailView(info: element.name)
+                            elementName = element.name
+                        }
+                        .sheet(isPresented: $showingDetail, content: {
+                            ElementDetailView(info: elementName)
                         })
                         .padding(.horizontal, 10.0)
                         .padding(.vertical, 2.0)
@@ -54,6 +57,10 @@ struct ResultView: View {
                 }
                 else { return }
             }
+        }
+        .onDisappear(){
+            user.elementsList.removeAll()
+            user.lowElementsList.removeAll()
         }
     }
 }
