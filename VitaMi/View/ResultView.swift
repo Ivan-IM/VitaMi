@@ -19,10 +19,10 @@ struct ResultView: View {
             
             ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
-                    if user.lowElementsList.contains(element.name) {
-                        CustomCellResultView(title: element.name) {
+                    if user.lowElementsList.contains(element.symbol) {
+                        CustomCellResultView(title: element.ruName) {
                             showingDetail = true
-                            elementName = element.name
+                            elementName = element.symbol
                         }
                         .sheet(isPresented: $showingDetail, content: {
                             ElementDetailView(info: elementName)
@@ -46,7 +46,7 @@ struct ResultView: View {
         }
         .navigationBarHidden(true)
         .onAppear(){
-            user.elementsFilterAlgorinm()
+            //user.elementsFilterAlgorinm()
             Symtom.getSymptomsList().forEach { symptom in
                 if user.symptomsList.contains(symptom.enName) {
                     user.elementsList.append(contentsOf: symptom.elements)
