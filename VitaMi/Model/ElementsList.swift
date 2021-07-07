@@ -17,8 +17,8 @@ struct Element: Identifiable {
     let normalValue: [String: Array<Double>]?
     let symptomsLowValue: Set<String>?
     let symptomsHighValue: Set<String>?
-    let helper: Set<String>?
-    let blocker: Set<String>?
+    let helper: Array<String>
+    let blocker: Array<String>
     
     static func getElementsList() -> [Element] {
         [
@@ -44,7 +44,7 @@ struct Element: Identifiable {
                         "skin numbness",
                     ],
                     symptomsHighValue: [],
-                    helper: ["B2", "B6", "B9", "Cu"],
+                    helper: ["Vitamin B2", "Vitamin B6", "Vitamin B9", "Cu"],
                     blocker: ["Ca", "P", "Zn"]),
             Element(symbol: "K",
                     enName: "Potassium",
@@ -83,7 +83,7 @@ struct Element: Identifiable {
                         "abdominal pain",
                     ],
                     symptomsHighValue: [],
-                    helper: ["D"],
+                    helper: ["Vitamin D"],
                     blocker: ["P", "Mg", "Fe"]),
             Element(symbol: "Mg",
                     enName: "Magnesium",
@@ -123,7 +123,7 @@ struct Element: Identifiable {
                     ],
                     symptomsHighValue: [],
                     helper: ["Fe"],
-                    blocker: ["C"]),
+                    blocker: ["Vitamin C"]),
             Element(symbol: "Na",
                     enName: "Sodium",
                     ruName: "Натрий",
@@ -211,7 +211,7 @@ struct Element: Identifiable {
                         "hair loss and brittleness",
                     ],
                     symptomsHighValue: [],
-                    helper: [],
+                    helper: ["Fe"],
                     blocker: []),
             Element(symbol: "Vitanim PP",
                     enName: "Vitanim PP",
@@ -259,7 +259,7 @@ struct Element: Identifiable {
                         "dizziness",
                     ],
                     symptomsHighValue: [],
-                    helper: [],
+                    helper: ["Fe"],
                     blocker: []),
             Element(symbol: "Vitanim B9",
                     enName: "Vitanim B9",
@@ -276,7 +276,7 @@ struct Element: Identifiable {
                         "abdominal pain",
                     ],
                     symptomsHighValue: [],
-                    helper: [],
+                    helper: ["Fe"],
                     blocker: []),
             Element(symbol: "Vitanim B12",
                     enName: "Vitanim B12",
@@ -308,8 +308,8 @@ struct Element: Identifiable {
                         "dizziness",
                     ],
                     symptomsHighValue: [],
-                    helper: [],
-                    blocker: []),
+                    helper: ["Vitamin A"],
+                    blocker: ["Cu"]),
             Element(symbol: "Vitanim P",
                     enName: "Vitanim P",
                     ruName: "Витамин P",
@@ -343,7 +343,7 @@ struct Element: Identifiable {
                         "decreased visual acuity",
                     ],
                     symptomsHighValue: [],
-                    helper: ["E", "C"],
+                    helper: ["Vitamin E", "Vitamin C"],
                     blocker: []),
             Element(symbol: "Vitamin D",
                     enName: "Vitamin D",
@@ -378,7 +378,7 @@ struct Element: Identifiable {
                         "skin numbness",
                     ],
                     symptomsHighValue: [],
-                    helper: [],
+                    helper: ["Vitamin A"],
                     blocker: []),
             Element(symbol: "Vitamin F",
                     enName: "Vitamin F",

@@ -36,7 +36,6 @@ struct SymptomsView: View {
                 Spacer()
                 SymptomsBottomView {
                     user.symptomsList.removeAll()
-                    user.elementsList.removeAll()
                     user.lowElementsList.removeAll()
                     UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
                 }

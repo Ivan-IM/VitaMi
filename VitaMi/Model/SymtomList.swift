@@ -16,7 +16,7 @@ struct Symtom: Identifiable {
     static func getSymptomsList() -> [Symtom] {
         [
             Symtom(enName: "muscle pain and(or) spasm", ruName: "боли и(или) спазмы мышц", elements: ["K", "Ca", "Mg", "Na", "P", "Vitamin D"]),
-            Symtom(enName: "bone fractures (more often than once a year)", ruName: "переломы (чаще 1 раза в год)", elements: ["Ca", "Cu", "Vitamin A", "Vitamin D"]),
+            Symtom(enName: "bone fractures (more often than once a year)", ruName: "переломы (чаще 1 раза в год)", elements: ["Ca", "Ca", "Cu", "Vitamin A", "Vitamin D"]),
             Symtom(enName: "edemas", ruName: "отеки", elements: ["Fe", "Na", "Vitamin B6", "Vitamin C"]),
             Symtom(enName: "acne", ruName: "угревая сыпь", elements: ["K", "Na", "Zn", "Vitamin F"]),
             Symtom(enName: "dermatitis", ruName: "дерматит", elements: ["Na", "Zn", "Vitanim PP", "Vitanim B5", "Vitamin B6", "Vitamin F"]),
@@ -25,7 +25,7 @@ struct Symtom: Identifiable {
             Symtom(enName: "hair loss and brittleness", ruName: "выпадение и ломкость волос", elements: ["K", "Zn", "Vitanim B2", "Vitanim B5", "Vitamin A", "Vitamin F"]),
             Symtom(enName: "skin numbness", ruName: "периодическое онемение кожи", elements: ["Fe", "Ca", "Vitanim B1", "Vitamin B6", "Vitanim B12", "Vitamin D", "Vitamin E"]),
             Symtom(enName: "deformation and fragility of nails", ruName: "деформация и ломкость ногтей", elements: ["Fe", "Zn", "Vitanim B2", "Vitanim B5", "Vitamin A"]),
-            Symtom(enName: "pallor of skin", ruName: "бледность кожи", elements: ["Fe", "Fe", "Cu", "Vitamin B6", "Vitanim B9", "Vitanim B12", "Vitamin C", "Vitamin E"]),
+            Symtom(enName: "pallor of skin", ruName: "бледность кожи", elements: ["Fe", "Cu", "Vitamin B6", "Vitanim B9", "Vitanim B12", "Vitamin C", "Vitamin E"]),
             Symtom(enName: "bleeding gums", ruName: "кровоточивость десен", elements: ["Vitanim P", "Vitanim P"]),
             Symtom(enName: "frequent bruising", ruName: "частое появление синяков", elements: ["Ca", "P", "Vitanim P", "Vitamin D"]),
             Symtom(enName: "white spots on the nails", ruName: "белые пятна на ногтях", elements: ["Zn", "Zn"]),

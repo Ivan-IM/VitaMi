@@ -39,28 +39,15 @@ struct ResultView: View {
                 ResultTopView(resultTitle: "result test")
                 Spacer()
                 ResultBottomView {
-                    print(user.elementsList)
                 }
             }
             .padding(.all, 5.0)
         }
         .navigationBarHidden(true)
         .onAppear(){
-            //user.elementsFilterAlgorinm()
-            Symtom.getSymptomsList().forEach { symptom in
-                if user.symptomsList.contains(symptom.enName) {
-                    user.elementsList.append(contentsOf: symptom.elements)
-                }
-            }
-            user.elementsList.forEach { element in
-                if user.elementsList.filter({$0 == element}).count > 1 {
-                    user.lowElementsList.append(element)
-                }
-                else { return }
-            }
+            user.elementsFilterAlgorinm()
         }
         .onDisappear(){
-            user.elementsList.removeAll()
             user.lowElementsList.removeAll()
         }
     }
