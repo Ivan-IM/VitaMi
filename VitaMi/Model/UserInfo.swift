@@ -15,7 +15,7 @@ class User: ObservableObject {
     @Published var symptomsList: [String] = []
     @Published var lowElementsList: [String] = []
     
-    func elementsFilterAlgorinm() {
+    func elementsFilterAlgorithm() {
         var elementsList: [String] = []
         var blockList: [String] = []
         var helperList: [String] = []

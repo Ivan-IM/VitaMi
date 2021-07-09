@@ -12,20 +12,11 @@
 		CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98C269096FC00842794 /* Assets.xcassets */; };
 		CF2BF990269096FC00842794 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98F269096FC00842794 /* Preview Assets.xcassets */; };
 		CF2BF9982690974A00842794 /* SymtomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9972690974A00842794 /* SymtomList.swift */; };
-		CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF99B2690ADC000842794 /* SymptomsView.swift */; };
-		CF2BF99F2690B37400842794 /* CustomCellSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF99E2690B37400842794 /* CustomCellSymptomView.swift */; };
-		CF2BF9A326916D0A00842794 /* SymptomsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A226916D0A00842794 /* SymptomsTopView.swift */; };
-		CF2BF9A5269170B100842794 /* SymptomsBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */; };
 		CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserInfo.swift */; };
-		CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47B4E32691A7FD00DCAB9E /* ResultView.swift */; };
 		CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsListView.swift */; };
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
 		CF758F93269893D9004E73EE /* BiochemicalAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F92269893D9004E73EE /* BiochemicalAnalysisView.swift */; };
 		CF87F5842692067600ED6710 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* ElementsList.swift */; };
-		CF87F5862692D47700ED6710 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5852692D47700ED6710 /* ElementDetailView.swift */; };
-		CF87F5882692F34400ED6710 /* ResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5872692F34400ED6710 /* ResultTopView.swift */; };
-		CF87F58A2692F54200ED6710 /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5892692F54200ED6710 /* ResultBottomView.swift */; };
-		CF87F5AC2697FDB800ED6710 /* BloodTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */; };
 		CF87F5AE26988D8600ED6710 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AD26988D8600ED6710 /* TestingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,20 +28,11 @@
 		CF2BF98F269096FC00842794 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF2BF991269096FC00842794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2BF9972690974A00842794 /* SymtomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymtomList.swift; sourceTree = "<group>"; };
-		CF2BF99B2690ADC000842794 /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
-		CF2BF99E2690B37400842794 /* CustomCellSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSymptomView.swift; sourceTree = "<group>"; };
-		CF2BF9A226916D0A00842794 /* SymptomsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTopView.swift; sourceTree = "<group>"; };
-		CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsBottomView.swift; sourceTree = "<group>"; };
 		CF2BF9A6269173BF00842794 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		CF47B4E32691A7FD00DCAB9E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		CF758F8E26988EEA004E73EE /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
 		CF758F92269893D9004E73EE /* BiochemicalAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiochemicalAnalysisView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* ElementsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; };
-		CF87F5852692D47700ED6710 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
-		CF87F5872692F34400ED6710 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
-		CF87F5892692F54200ED6710 /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
-		CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestView.swift; sourceTree = "<group>"; };
 		CF87F5AD26988D8600ED6710 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,9 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
-				CF2BF99B2690ADC000842794 /* SymptomsView.swift */,
-				CF47B4E32691A7FD00DCAB9E /* ResultView.swift */,
-				CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */,
 				CF87F5AD26988D8600ED6710 /* TestingView.swift */,
 				CF758F8E26988EEA004E73EE /* SymptomsListView.swift */,
 				CF758F9026989348004E73EE /* ResultTestingView.swift */,
@@ -131,12 +110,6 @@
 		CF2BF99D2690B30200842794 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				CF2BF99E2690B37400842794 /* CustomCellSymptomView.swift */,
-				CF2BF9A226916D0A00842794 /* SymptomsTopView.swift */,
-				CF2BF9A4269170B100842794 /* SymptomsBottomView.swift */,
-				CF87F5852692D47700ED6710 /* ElementDetailView.swift */,
-				CF87F5872692F34400ED6710 /* ResultTopView.swift */,
-				CF87F5892692F54200ED6710 /* ResultBottomView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -210,24 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF87F5862692D47700ED6710 /* ElementDetailView.swift in Sources */,
 				CF87F5842692067600ED6710 /* ElementsList.swift in Sources */,
-				CF2BF9A5269170B100842794 /* SymptomsBottomView.swift in Sources */,
-				CF2BF99C2690ADC000842794 /* SymptomsView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */,
 				CF87F5AE26988D8600ED6710 /* TestingView.swift in Sources */,
-				CF47B4E42691A7FD00DCAB9E /* ResultView.swift in Sources */,
 				CF2BF9982690974A00842794 /* SymtomList.swift in Sources */,
-				CF87F5882692F34400ED6710 /* ResultTopView.swift in Sources */,
-				CF2BF99F2690B37400842794 /* CustomCellSymptomView.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF758F93269893D9004E73EE /* BiochemicalAnalysisView.swift in Sources */,
-				CF87F58A2692F54200ED6710 /* ResultBottomView.swift in Sources */,
-				CF2BF9A326916D0A00842794 /* SymptomsTopView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
-				CF87F5AC2697FDB800ED6710 /* BloodTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

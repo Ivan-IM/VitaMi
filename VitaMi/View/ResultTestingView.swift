@@ -48,7 +48,7 @@ struct CustomCellResultView: View {
                     Text(self.title)
                         .foregroundColor(Color.black)
                     Spacer()
-                    Image(systemName: "questionmark.square")
+                    Image(systemName: "questionmark.circle")
                 }
                 .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
             }

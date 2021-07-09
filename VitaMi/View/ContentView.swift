@@ -27,21 +27,6 @@ struct ContentView: View {
                                 label: {
                                     Text("Testing")
                                 })
-                            NavigationLink(
-                                destination: SymptomsView(),
-                                label: {
-                                    Text("Symptoms List")
-                                })
-                            NavigationLink(
-                                destination: BloodTestView(),
-                                label: {
-                                    Text("Biochemical analysis")
-                                })
-                            NavigationLink(
-                                destination: ResultView(),
-                                label: {
-                                    Text("Result")
-                                })
                         }
                     }
                 }

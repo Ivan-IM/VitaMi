@@ -18,20 +18,20 @@ struct TestingView: View {
                 .onDisappear(){
                     UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
                     user.lowElementsList.removeAll()
-                    user.elementsFilterAlgorinm()
+                    user.elementsFilterAlgorithm()
                 }
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image(systemName: "hand.point.up.braille")
                     Text("Symptoms")
                 }
             ResultTestingView()
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image(systemName: "leaf.arrow.triangle.circlepath")
                     Text("Result")
                 }
             BiochemicalAnalysisView()
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image(systemName: "eyedropper.halffull")
                     Text("BioAnalysis")
                 }
         }
