@@ -23,6 +23,11 @@ struct ContentView: View {
                         }
                         Section(header: Text("Testing")) {
                             NavigationLink(
+                                destination: TestingView(),
+                                label: {
+                                    Text("Testing")
+                                })
+                            NavigationLink(
                                 destination: SymptomsView(),
                                 label: {
                                     Text("Symptoms List")
