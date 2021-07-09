@@ -39,7 +39,7 @@ struct ResultBottomView: View {
                        })
                 Spacer()
                 NavigationLink(
-                    destination: Text("result blood test"),
+                    destination: BloodTestView(),
                     label: {
                         Text("Save")
                             .font(.headline)

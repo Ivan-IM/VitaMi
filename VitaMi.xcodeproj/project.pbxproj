@@ -23,6 +23,7 @@
 		CF87F5862692D47700ED6710 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5852692D47700ED6710 /* ElementDetailView.swift */; };
 		CF87F5882692F34400ED6710 /* ResultTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5872692F34400ED6710 /* ResultTopView.swift */; };
 		CF87F58A2692F54200ED6710 /* ResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5892692F54200ED6710 /* ResultBottomView.swift */; };
+		CF87F5AC2697FDB800ED6710 /* BloodTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CF87F5852692D47700ED6710 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
 		CF87F5872692F34400ED6710 /* ResultTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTopView.swift; sourceTree = "<group>"; };
 		CF87F5892692F54200ED6710 /* ResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBottomView.swift; sourceTree = "<group>"; };
+		CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CF2BF99B2690ADC000842794 /* SymptomsView.swift */,
 				CF47B4E32691A7FD00DCAB9E /* ResultView.swift */,
+				CF87F5AB2697FDB800ED6710 /* BloodTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				CF2BF9A326916D0A00842794 /* SymptomsTopView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
+				CF87F5AC2697FDB800ED6710 /* BloodTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
