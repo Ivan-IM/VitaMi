@@ -14,36 +14,34 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                
                 VStack {
-                    NavigationLink(
-                        destination: SymptomsView(),
-                        label: {
-                            Text("Symptoms List")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.black)
-                        })
-                        .padding()
-                        .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: .black, radius: 5, x: 3, y: 3)
-                    NavigationLink(
-                        destination: ResultView(),
-                        label: {
-                            Text("Result List")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.black)
-                        })
-                        .padding()
-                        .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: .black, radius: 5, x: 3, y: 3)
+                    Form {
+                        Section(header: Text("Personal Info")) {
+                            TextField("Name", text: $user.name)
+                            TextField("Gender", text: $user.gender)
+                            TextField("Age", text: $user.age)
+                        }
+                        Section(header: Text("Testing")) {
+                            NavigationLink(
+                                destination: SymptomsView(),
+                                label: {
+                                    Text("Symptoms List")
+                                })
+                            NavigationLink(
+                                destination: BloodTestView(),
+                                label: {
+                                    Text("Biochemical analysis")
+                                })
+                            NavigationLink(
+                                destination: ResultView(),
+                                label: {
+                                    Text("Result")
+                                })
+                        }
+                    }
                 }
             }
+            .navigationTitle("Profile")
         }
         .onAppear(){
             if let symptomsList = UserDefaults.standard.array(forKey: "SymptomsList") {
@@ -57,7 +55,6 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarHidden(true)
         .environmentObject(user)
     }
 }

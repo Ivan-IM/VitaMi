@@ -9,6 +9,9 @@ import SwiftUI
 
 class User: ObservableObject {
     
+    @Published var name: String = ""
+    @Published var gender: String = ""
+    @Published var age: String = ""
     @Published var symptomsList: [String] = []
     @Published var lowElementsList: [String] = []
     

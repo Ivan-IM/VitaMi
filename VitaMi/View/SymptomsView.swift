@@ -13,7 +13,6 @@ struct SymptomsView: View {
     
     var body: some View {
         ZStack {
-            
             ScrollView(showsIndicators: false) {
                 ForEach(Symtom.getSymptomsList()) { symptom in
                     CustomCellSymptomView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
