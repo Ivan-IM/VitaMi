@@ -33,25 +33,6 @@ struct ContentView: View {
             }
             .navigationTitle("Profile")
         }
-        .onAppear(){
-            if let symptomsList = UserDefaults.standard.array(forKey: "SymptomsList") {
-                for i in symptomsList{
-                    user.symptomsList.append(i as! String)
-                }
-            }
-            else {
-                return
-            }
-            
-            if let lowElementsList = UserDefaults.standard.array(forKey: "lowElementsList") {
-                for i in lowElementsList{
-                    user.lowElementsList.append(i as! String)
-                }
-            }
-            else {
-                return
-            }
-        }
         .navigationViewStyle(StackNavigationViewStyle())
         .environmentObject(user)
     }

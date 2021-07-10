@@ -9,17 +9,39 @@ import SwiftUI
 
 class User: ObservableObject {
     
-    @Published var name: String = ""
-    @Published var gender: String = ""
-    @Published var age: String = ""
-    @Published var symptomsList: [String] = []
-    @Published var lowElementsList: [String] = []
+    @Published var name: String {
+        didSet {
+            UserDefaults.standard.set(name, forKey: "Name")
+        }
+    }
+    @Published var gender: String {
+        didSet {
+            UserDefaults.standard.set(gender, forKey: "Gender")
+        }
+    }
+    @Published var age: String {
+        didSet {
+            UserDefaults.standard.set(age, forKey: "Age")
+        }
+    }
+    @Published var symptomsList: [String] {
+        didSet {
+            UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
+        }
+    }
+    @Published var lowElementsList: [String] {
+        didSet {
+            UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
+        }
+    }
     
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
         var blockList: [String] = []
         var helperList: [String] = []
         var firstFilterList: [String] = []
+        
+        lowElementsList.removeAll()
 
         Symtom.getSymptomsList().forEach { symptom in
             if symptomsList.contains(symptom.enName) {
@@ -72,6 +94,16 @@ class User: ObservableObject {
         }
         print(lowElementsList)
     }
+    
+    init() {
+        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
+        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
+        self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
+        self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? [""]
+        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? [""]
+        self.elementsFilterAlgorithm()
+    }
+    
 }
 
 extension Array where Element: Equatable {
