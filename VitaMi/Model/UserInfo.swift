@@ -61,10 +61,16 @@ class User: ObservableObject {
         
         elementsList.forEach { element in
             if elementsList.filter({$0 == element}).count > 3 {
-                lowElementsList.append(element)
+                if lowElementsList.contains(element) {
+                    return
+                }
+                else {
+                    lowElementsList.append(element)
+                }
             }
             else { return }
         }
+        print(lowElementsList)
     }
 }
 
@@ -72,5 +78,12 @@ extension Array where Element: Equatable {
     mutating func remove(object: Element) {
         guard let index = firstIndex(of: object) else {return}
         remove(at: index)
+    }
+}
+
+extension Sequence where Element: Hashable {
+    func uniqued() -> [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
     }
 }

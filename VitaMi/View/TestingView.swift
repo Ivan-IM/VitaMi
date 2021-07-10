@@ -16,9 +16,15 @@ struct TestingView: View {
         TabView {
             SymptomsListView()
                 .onDisappear(){
-                    UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
-                    user.lowElementsList.removeAll()
-                    user.elementsFilterAlgorithm()
+                    if user.symptomsList == UserDefaults.standard.array(forKey: "SymptomsList") as! Array<String> {
+                        print("base did not changed")
+                    }
+                    else {
+                        UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
+                        user.lowElementsList.removeAll()
+                        user.elementsFilterAlgorithm()
+                        UserDefaults.standard.set(user.lowElementsList, forKey: "lowElementsList")
+                    }
                 }
                 .tabItem {
                     Image(systemName: "hand.point.up.braille")
@@ -45,6 +51,7 @@ struct TestingView: View {
                 user.symptomsList.removeAll()
                 user.lowElementsList.removeAll()
                 UserDefaults.standard.set(user.symptomsList, forKey: "SymptomsList")
+                UserDefaults.standard.set(user.lowElementsList, forKey: "lowElementsList")
             }), secondaryButton: .cancel())
         }
     }

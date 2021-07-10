@@ -40,7 +40,15 @@ struct ContentView: View {
                 }
             }
             else {
-                print("Data Erorr")
+                return
+            }
+            
+            if let lowElementsList = UserDefaults.standard.array(forKey: "lowElementsList") {
+                for i in lowElementsList{
+                    user.lowElementsList.append(i as! String)
+                }
+            }
+            else {
                 return
             }
         }
