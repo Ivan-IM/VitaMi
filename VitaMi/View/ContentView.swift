@@ -28,12 +28,12 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: TestingView(),
                                 label: {
-                                    Text("Testing")
+                                    Text("Get Test")
                                         .font(.title)
                                         .fontWeight(.bold)
                                         
                                 })
-                                .frame(height: 100)
+                                .frame(height: 70)
                         }
                     }
                 }
