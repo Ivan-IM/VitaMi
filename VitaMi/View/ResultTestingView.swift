@@ -23,7 +23,6 @@ struct ResultTestingView: View {
                 }
             }
         }
-        
     }
 }
 

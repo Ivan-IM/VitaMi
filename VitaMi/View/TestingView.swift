@@ -42,6 +42,7 @@ struct TestingView: View {
             Alert(title: Text("Clear"), message: Text("Are you want clear symptoms list?"), primaryButton: .destructive(Text("Ok"), action: {
                 user.symptomsList.removeAll()
                 user.lowElementsList.removeAll()
+                user.bioAnalysisDict.removeAll()
             }), secondaryButton: .cancel())
         }
     }

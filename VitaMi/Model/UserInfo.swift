@@ -34,6 +34,11 @@ class User: ObservableObject {
             UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
         }
     }
+    @Published var bioAnalysisDict: [String:String] {
+        didSet {
+            UserDefaults.standard.set(bioAnalysisDict, forKey: "BioAnalysisDict")
+        }
+    }
     
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
@@ -41,66 +46,73 @@ class User: ObservableObject {
         var helperList: [String] = []
         var firstFilterList: [String] = []
         
-        lowElementsList.removeAll()
-
-        Symtom.getSymptomsList().forEach { symptom in
-            if symptomsList.contains(symptom.enName) {
-                elementsList.append(contentsOf: symptom.elements)
-                elementsList.append(contentsOf: symptom.elements)
-            }
-            else { return }
+        if symptomsList.isEmpty {
+            return
         }
-        print("All elements \(elementsList)")
-        
-        elementsList.forEach { element in
-            if elementsList.filter({$0 == element}).count > 2 {
-                firstFilterList.append(element)
-            }
-            else { return }
-        }
-        print("Double filtration \(firstFilterList)")
-        
-        Element.getElementsList().forEach { element in
-            if firstFilterList.contains(element.symbol) {
-                blockList.append(contentsOf: element.blocker)
-                helperList.append(contentsOf: element.helper)
-            }
-            else { return }
-        }
-        print("Block list \(blockList)")
-        print("Help list \(helperList)")
-        
-        blockList.forEach() { element in
-            if elementsList.contains(element) {
-                elementsList.remove(object: element)
-            }
-            else { return }
-        }
-        print("Remove block \(elementsList)")
-        
-        elementsList.append(contentsOf: helperList)
-        print("Add help \(elementsList)")
-        
-        elementsList.forEach { element in
-            if elementsList.filter({$0 == element}).count > 3 {
-                if lowElementsList.contains(element) {
-                    return
+        else {
+            lowElementsList.removeAll()
+            
+            Symtom.getSymptomsList().forEach { symptom in
+                if symptomsList.contains(symptom.enName) {
+                    elementsList.append(contentsOf: symptom.elements)
+                    elementsList.append(contentsOf: symptom.elements)
                 }
-                else {
-                    lowElementsList.append(element)
-                }
+                else { return }
             }
-            else { return }
+            print("All elements \(elementsList)")
+            
+            elementsList.forEach { element in
+                if elementsList.filter({$0 == element}).count > 2 {
+                    firstFilterList.append(element)
+                }
+                else { return }
+            }
+            print("Double filtration \(firstFilterList)")
+            
+            Element.getElementsList().forEach { element in
+                if firstFilterList.contains(element.symbol) {
+                    blockList.append(contentsOf: element.blocker)
+                    helperList.append(contentsOf: element.helper)
+                }
+                else { return }
+            }
+            print("Block list \(blockList)")
+            print("Help list \(helperList)")
+            
+            blockList.forEach() { element in
+                if elementsList.contains(element) {
+                    elementsList.remove(object: element)
+                }
+                else { return }
+            }
+            print("Remove block \(elementsList)")
+            
+            elementsList.append(contentsOf: helperList)
+            print("Add help \(elementsList)")
+            
+            elementsList.forEach { element in
+                if elementsList.filter({$0 == element}).count > 3 {
+                    if lowElementsList.contains(element) {
+                        return
+                    }
+                    else {
+                        lowElementsList.append(element)
+                    }
+                }
+                else { return }
+            }
+            print("Result \(lowElementsList)")
+            print(bioAnalysisDict)
         }
-        print(lowElementsList)
     }
     
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
         self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
-        self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? [""]
-        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? [""]
+        self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
+        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
+        self.bioAnalysisDict = UserDefaults.standard.object(forKey: "BioAnalysisDict") as? [String:String] ?? [:]
         self.elementsFilterAlgorithm()
     }
     
