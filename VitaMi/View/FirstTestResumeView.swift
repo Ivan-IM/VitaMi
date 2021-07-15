@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BiochemicalAnalysisView: View {
+struct FirstTestResumeView: View {
     
     @EnvironmentObject var user: User
     
@@ -37,6 +37,6 @@ struct BiochemicalAnalysisView: View {
 
 struct BiochemicalAnalysisView_Previews: PreviewProvider {
     static var previews: some View {
-        BiochemicalAnalysisView()
+        FirstTestResumeView()
     }
 }

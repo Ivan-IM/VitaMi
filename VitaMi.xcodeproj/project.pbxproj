@@ -15,7 +15,7 @@
 		CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserInfo.swift */; };
 		CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsListView.swift */; };
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
-		CF758F93269893D9004E73EE /* BiochemicalAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F92269893D9004E73EE /* BiochemicalAnalysisView.swift */; };
+		CF758F93269893D9004E73EE /* FirstTestResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F92269893D9004E73EE /* FirstTestResumeView.swift */; };
 		CF87F5842692067600ED6710 /* ElementsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* ElementsList.swift */; };
 		CF87F5AE26988D8600ED6710 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AD26988D8600ED6710 /* TestingView.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		CF2BF9A6269173BF00842794 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CF758F8E26988EEA004E73EE /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
-		CF758F92269893D9004E73EE /* BiochemicalAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiochemicalAnalysisView.swift; sourceTree = "<group>"; };
+		CF758F92269893D9004E73EE /* FirstTestResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTestResumeView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* ElementsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsList.swift; sourceTree = "<group>"; };
 		CF87F5AD26988D8600ED6710 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 				CF87F5AD26988D8600ED6710 /* TestingView.swift */,
 				CF758F8E26988EEA004E73EE /* SymptomsListView.swift */,
 				CF758F9026989348004E73EE /* ResultTestingView.swift */,
-				CF758F92269893D9004E73EE /* BiochemicalAnalysisView.swift */,
+				CF758F92269893D9004E73EE /* FirstTestResumeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 				CF2BF9982690974A00842794 /* SymtomList.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
-				CF758F93269893D9004E73EE /* BiochemicalAnalysisView.swift in Sources */,
+				CF758F93269893D9004E73EE /* FirstTestResumeView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
 			);

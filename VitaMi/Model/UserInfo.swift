@@ -34,11 +34,6 @@ class User: ObservableObject {
             UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
         }
     }
-    @Published var bioAnalysisDict: [String:String] {
-        didSet {
-            UserDefaults.standard.set(bioAnalysisDict, forKey: "BioAnalysisDict")
-        }
-    }
     
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
@@ -102,7 +97,6 @@ class User: ObservableObject {
                 else { return }
             }
             print("Result \(lowElementsList)")
-            print(bioAnalysisDict)
         }
     }
     
@@ -112,7 +106,6 @@ class User: ObservableObject {
         self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
-        self.bioAnalysisDict = UserDefaults.standard.object(forKey: "BioAnalysisDict") as? [String:String] ?? [:]
         self.elementsFilterAlgorithm()
     }
     

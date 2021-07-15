@@ -27,10 +27,10 @@ struct TestingView: View {
                     Image(systemName: "leaf.arrow.triangle.circlepath")
                     Text("Result")
                 }
-            BiochemicalAnalysisView()
+            FirstTestResumeView()
                 .tabItem {
-                    Image(systemName: "eyedropper.halffull")
-                    Text("BioAnalysis")
+                    Image(systemName: "doc.text")
+                    Text("Resume")
                 }
         }
         .navigationTitle("Testing")
@@ -42,7 +42,6 @@ struct TestingView: View {
             Alert(title: Text("Clear"), message: Text("Are you want clear symptoms list?"), primaryButton: .destructive(Text("Ok"), action: {
                 user.symptomsList.removeAll()
                 user.lowElementsList.removeAll()
-                user.bioAnalysisDict.removeAll()
             }), secondaryButton: .cancel())
         }
     }
