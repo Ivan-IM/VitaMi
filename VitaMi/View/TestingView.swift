@@ -10,6 +10,7 @@ import SwiftUI
 struct TestingView: View {
     
     @EnvironmentObject var user: User
+    @State private var showingClearAlert = false
     @State private var showingAlert = false
     
     var body: some View {
@@ -17,6 +18,10 @@ struct TestingView: View {
             SymptomsListView()
                 .onDisappear(){
                     user.elementsFilterAlgorithm()
+                    if !user.lowElementsList.isEmpty {
+                        showingAlert.toggle()
+                    }
+                    else { return }
                 }
                 .tabItem {
                     Image(systemName: "hand.point.up.braille")
@@ -24,21 +29,19 @@ struct TestingView: View {
                 }
             ResultTestingView()
                 .tabItem {
-                    Image(systemName: "leaf.arrow.triangle.circlepath")
+                    Image(systemName: "doc.text")
                     Text("Result")
                 }
-            FirstTestResumeView()
-                .tabItem {
-                    Image(systemName: "doc.text")
-                    Text("Resume")
-                }
+                .alert(isPresented: $showingAlert, content: {
+                    Alert(title: Text("You have a micronutrient imbalance"), message: Text("Please do a blood test and check it"), dismissButton: .default(Text("OK")))
+                })
         }
         .navigationTitle("Testing")
         .navigationBarItems(trailing: Button(action: {
-            showingAlert.toggle()
+            showingClearAlert.toggle()
         }, label: {
             Text("Clear")
-        })).alert(isPresented: $showingAlert) {
+        })).alert(isPresented: $showingClearAlert) {
             Alert(title: Text("Clear"), message: Text("Are you want clear symptoms list?"), primaryButton: .destructive(Text("Ok"), action: {
                 user.symptomsList.removeAll()
                 user.lowElementsList.removeAll()
