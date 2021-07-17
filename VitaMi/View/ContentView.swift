@@ -29,11 +29,10 @@ struct ContentView: View {
                                 destination: TestingView(),
                                 label: {
                                     Text("Get Test")
-                                        .font(.title)
+                                        .font(.title2)
                                         .fontWeight(.bold)
                                         
                                 })
-                                .frame(height: 70)
                         }
                     }
                 }
