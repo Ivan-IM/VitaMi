@@ -55,10 +55,17 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            Text(element.ruName)
+                .padding()
+            Text("Продукты с высоким содержанием:")
+                .padding()
+            Text(element.productInfo)
+                .padding()
+            Spacer()
             Button("Dismiss Me") {
                 presentationMode.wrappedValue.dismiss()
             }
-            Text(element.ruName)
+            .padding()
         }
     }
 }
