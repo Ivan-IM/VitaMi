@@ -31,7 +31,6 @@ struct ContentView: View {
                                     Text("Get Test")
                                         .font(.title2)
                                         .fontWeight(.bold)
-                                        
                                 })
                         }
                     }

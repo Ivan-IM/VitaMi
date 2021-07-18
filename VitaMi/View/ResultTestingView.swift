@@ -22,14 +22,14 @@ struct ResultTestingView: View {
             ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
                     if user.lowElementsList.contains(element.symbol) {
-                            NavigationLink(destination: DetailView(element: element)) {
-                                HStack {
-                                    Text(element.ruName)
-                                        .foregroundColor(Color("text"))
-                                    Spacer()
-                                    Image(systemName: "questionmark.circle")
-                                }
-                                .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+                        NavigationLink(destination: DetailView(element: element)) {
+                            HStack {
+                                Text(element.ruName)
+                                    .foregroundColor(Color("text"))
+                                Spacer()
+                                Image(systemName: "questionmark.circle")
+                            }
+                            .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
                         }
                         .frame(height: 40)
                         .overlay(Capsule(style: .continuous).stroke())
@@ -59,8 +59,16 @@ struct DetailView: View {
                 .padding()
             Text("Продукты с высоким содержанием:")
                 .padding()
-            Text(element.productInfo)
-                .padding()
+            List() {
+                ForEach(element.ruProductInfo, id: \.self) { el in
+                    Text(el)
+                }
+            }
+            .padding()
+            ScrollView {
+                Text(element.elementInfo)
+            }
+            .padding()
             Spacer()
             Button("Dismiss Me") {
                 presentationMode.wrappedValue.dismiss()
