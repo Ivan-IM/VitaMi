@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestingView: View {
+struct SymptomsTestingView: View {
     
     @EnvironmentObject var user: User
     @State private var showingClearAlert = false
@@ -36,7 +36,7 @@ struct TestingView: View {
                     Alert(title: Text("You have a micronutrient imbalance"), message: Text("Please do a blood test and check it"), dismissButton: .default(Text("OK")))
                 })
         }
-        .navigationTitle("Testing")
+        .navigationTitle("Symptoms testing")
         .navigationBarItems(trailing: Button(action: {
             showingClearAlert.toggle()
         }, label: {
@@ -52,6 +52,6 @@ struct TestingView: View {
 
 struct TestingView_Previews: PreviewProvider {
     static var previews: some View {
-        TestingView()
+        SymptomsTestingView()
     }
 }

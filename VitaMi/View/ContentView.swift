@@ -26,10 +26,15 @@ struct ContentView: View {
                         }
                         Section(header: Text("Testing")) {
                             NavigationLink(
-                                destination: TestingView(),
+                                destination: SymptomsTestingView(),
                                 label: {
-                                    Text("Get Test")
-                                        .font(.title2)
+                                    Text("Symptoms testing")
+                                        .fontWeight(.bold)
+                                })
+                            NavigationLink(
+                                destination: BiochemicalAnalysisView(),
+                                label: {
+                                    Text("Biochemical Analysis")
                                         .fontWeight(.bold)
                                 })
                         }

@@ -22,7 +22,7 @@ struct ResultTestingView: View {
             ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
                     if user.lowElementsList.contains(element.symbol) {
-                        NavigationLink(destination: DetailView(element: element)) {
+                        NavigationLink(destination: ElementDetailView(element: element)) {
                             HStack {
                                 Text(element.ruName)
                                     .foregroundColor(Color("text"))
@@ -45,35 +45,5 @@ struct ResultTestingView: View {
 struct ResultTestingView_Previews: PreviewProvider {
     static var previews: some View {
         ResultTestingView()
-    }
-}
-
-struct DetailView: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    let element: Element
-    
-    var body: some View {
-        VStack {
-            Text(element.ruName)
-                .padding()
-            Text("Продукты с высоким содержанием:")
-                .padding()
-            List() {
-                ForEach(element.ruProductInfo, id: \.self) { el in
-                    Text(el)
-                }
-            }
-            .padding()
-            ScrollView {
-                Text(element.elementInfo)
-            }
-            .padding()
-            Spacer()
-            Button("Dismiss Me") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
-        }
     }
 }
