@@ -10,15 +10,22 @@ import SwiftUI
 struct ResultTestingView: View {
     
     @EnvironmentObject var user: User
+    let pathBounds = UIBezierPath.calculateBounds(paths: [.logoPath1])
     @State private var viewHidden = false
     
     var body: some View {
         ZStack {
             VStack {
                 Text("You are healthy!")
-                    .font(.title3)
+                    .font(.title)
+                Text("Your symptoms are not related to micronutrient deficiencies")
+                    .multilineTextAlignment(.center)
+                ShapeView(bezier: .logoPath1, pathBounds: pathBounds)
+                    .stroke(Color.red, lineWidth: 5)
+                    .frame(width: 300, height: 300, alignment: .center)
+                    .padding()
             }
-            .hidden()
+            .opacity(viewHidden ? 1:0)
             ScrollView(showsIndicators: false) {
                 ForEach(Element.getElementsList()) { element in
                     if user.lowElementsList.contains(element.symbol) {
@@ -38,6 +45,13 @@ struct ResultTestingView: View {
                     }
                 }
             }
+            .opacity(viewHidden ? 0:1)
+        }
+        .onAppear() {
+            if user.lowElementsList.isEmpty {
+                viewHidden = true
+            }
+            else { return }
         }
     }
 }

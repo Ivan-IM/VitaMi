@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23948C26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift */; };
 		CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */; };
+		CF23949426A4765000AB3BC1 /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */; };
+		CF23949526A4765000AB3BC1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949226A4765000AB3BC1 /* UIColor+extension.swift */; };
+		CF23949626A4765000AB3BC1 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949326A4765000AB3BC1 /* ShapeView.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
 		CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98C269096FC00842794 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		CF23948C26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiochemicalAnalysisView.swift; sourceTree = "<group>"; };
 		CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
+		CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
+		CF23949226A4765000AB3BC1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		CF23949326A4765000AB3BC1 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
 		CF2BF98A269096FB00842794 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF23949026A4762100AB3BC1 /* DrawService */ = {
+			isa = PBXGroup;
+			children = (
+				CF23949326A4765000AB3BC1 /* ShapeView.swift */,
+				CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */,
+				CF23949226A4765000AB3BC1 /* UIColor+extension.swift */,
+			);
+			path = DrawService;
+			sourceTree = "<group>";
+		};
 		CF2BF97C269096FB00842794 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +84,7 @@
 		CF2BF987269096FB00842794 /* VitaMi */ = {
 			isa = PBXGroup;
 			children = (
+				CF23949026A4762100AB3BC1 /* DrawService */,
 				CF2BF99D2690B30200842794 /* CustomView */,
 				CF2BF99A2690AD5C00842794 /* Model */,
 				CF2BF9992690AD4800842794 /* View */,
@@ -189,10 +206,13 @@
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */,
 				CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */,
+				CF23949526A4765000AB3BC1 /* UIColor+extension.swift in Sources */,
+				CF23949626A4765000AB3BC1 /* ShapeView.swift in Sources */,
 				CF87F5AE26988D8600ED6710 /* SymptomsTestingView.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserInfo.swift in Sources */,
 				CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */,
+				CF23949426A4765000AB3BC1 /* UIBezierPath+Extension.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
