@@ -108,7 +108,6 @@ class User: ObservableObject {
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsFilterAlgorithm()
     }
-    
 }
 
 extension Array where Element: Equatable {

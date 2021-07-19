@@ -47,12 +47,13 @@ struct ResultTestingView: View {
             }
             .opacity(viewHidden ? 0:1)
         }
-        .onAppear() {
-            if user.lowElementsList.isEmpty {
-                viewHidden = true
-            }
-            else { return }
-        }
+        // SwiftUI bug
+//        .onAppear() {
+//            if user.lowElementsList.isEmpty {
+//                viewHidden = true
+//            }
+//            else { return }
+//        }
     }
 }
 
