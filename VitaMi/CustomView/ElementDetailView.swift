@@ -22,7 +22,7 @@ struct ElementDetailView: View {
                     }
                 }
                 Section(header: Text("Справочная информация:")) {
-                        Text(element.elementInfo)
+                    Text(element.elementInfo)
                 }
             }
         }

@@ -27,6 +27,9 @@ struct ContentView: View {
                         TextField("Age", text: $user.age)
                             .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
                     }
+                    .onTapGesture {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
                     Section(header: Text("Testing")) {
                         NavigationLink(
                             destination: SymptomsTestingView(),

@@ -15,7 +15,7 @@ struct BiochemicalAnalysisView: View {
         TabView {
             Text("Dev")
                 .tabItem {
-                    Image(systemName: "hand.point.up.braille")
+                    Image(systemName: "eyedropper.halffull")
                     Text("BioAnalysis")
                 }
             ResultTestingView()

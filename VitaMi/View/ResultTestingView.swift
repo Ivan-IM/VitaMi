@@ -47,7 +47,7 @@ struct ResultTestingView: View {
             }
             .opacity(viewHidden ? 0:1)
         }
-        // SwiftUI bug
+        /// SwiftUI bug
         //        .onAppear() {
         //            if user.lowElementsList.isEmpty {
         //                viewHidden = true
