@@ -9,30 +9,23 @@ import SwiftUI
 
 struct ElementDetailView: View {
     
-    @Environment(\.presentationMode) var presentationMode
     let element: Element
     
     var body: some View {
         VStack {
-            Text(element.ruName)
-                .padding()
-            Text("Продукты с высоким содержанием:")
-                .padding()
-            List() {
-                ForEach(element.ruProductInfo, id: \.self) { el in
-                    Text(el)
+            Form {
+                Section(header: Text("Продукты с высоким содержанием:")) {
+                    List() {
+                        ForEach(element.ruProductInfo, id: \.self) { el in
+                            Text(el)
+                        }
+                    }
+                }
+                Section(header: Text("Справочная информация:")) {
+                        Text(element.elementInfo)
                 }
             }
-            .padding()
-            ScrollView {
-                Text(element.elementInfo)
-            }
-            .padding()
-            Spacer()
-            Button("Dismiss Me") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
         }
+        .navigationTitle(Text("\(element.ruName) (\(element.symbol))"))
     }
 }
