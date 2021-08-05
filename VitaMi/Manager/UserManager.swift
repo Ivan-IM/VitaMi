@@ -9,6 +9,16 @@ import SwiftUI
 
 class User: ObservableObject {
     
+    @Published var login: String {
+        didSet {
+            UserDefaults.standard.set(login, forKey: "Login")
+        }
+    }
+    @Published var password: String {
+        didSet {
+            UserDefaults.standard.set(password, forKey: "Password")
+        }
+    }
     @Published var name: String {
         didSet {
             UserDefaults.standard.set(name, forKey: "Name")
@@ -54,7 +64,7 @@ class User: ObservableObject {
                 }
                 else { return }
             }
-            print("All elements \(elementsList)")
+            //print("All elements \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 2 {
@@ -62,7 +72,7 @@ class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Double filtration \(firstFilterList)")
+            //print("Double filtration \(firstFilterList)")
             
             Element.getElementsList().forEach { element in
                 if firstFilterList.contains(element.symbol) {
@@ -71,8 +81,8 @@ class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Block list \(blockList)")
-            print("Help list \(helperList)")
+            //print("Block list \(blockList)")
+            //print("Help list \(helperList)")
             
             blockList.forEach() { element in
                 if elementsList.contains(element) {
@@ -80,10 +90,10 @@ class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Remove block \(elementsList)")
+            //print("Remove block \(elementsList)")
             
             elementsList.append(contentsOf: helperList)
-            print("Add help \(elementsList)")
+            //print("Add help \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 3 {
@@ -96,23 +106,18 @@ class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Result \(lowElementsList)")
+            //print("Result \(lowElementsList)")
         }
     }
     
     init() {
+        self.login = UserDefaults.standard.object(forKey: "Login") as? String ?? ""
+        self.password = UserDefaults.standard.object(forKey: "Password") as? String ?? ""
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
         self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsFilterAlgorithm()
-    }
-}
-
-extension Array where Element: Equatable {
-    mutating func remove(object: Element) {
-        guard let index = firstIndex(of: object) else {return}
-        remove(at: index)
     }
 }
