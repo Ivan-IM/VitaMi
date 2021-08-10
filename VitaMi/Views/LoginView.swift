@@ -1,20 +1,20 @@
 //
-//  BackgroundView.swift
+//  LoginView.swift
 //  VitaMi
 //
-//  Created by Иван Маришин on 05.08.2021.
+//  Created by Иван Маришин on 10.08.2021.
 //
 
 import SwiftUI
 
-struct BackgroundView: View {
+struct LoginView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct BackgroundView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView()
+        LoginView()
     }
 }

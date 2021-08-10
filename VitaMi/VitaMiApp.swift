@@ -11,7 +11,9 @@ import SwiftUI
 struct VitaMiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(User())
+            ContentView()
+                .environmentObject(User())
+                .environmentObject(ViewChanger())
         }
     }
 }
