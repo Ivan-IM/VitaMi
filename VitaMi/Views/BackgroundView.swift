@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    
     @State private var brandGradient: Gradient = Gradient(colors: [Color(.systemBlue), Color(.systemTeal), Color(.systemOrange)])
     @State private var sunGradient: Gradient = Gradient(colors: [Color(.systemOrange), Color(.systemYellow), Color.white.opacity(0)])
     @State private var start = UnitPoint(x: 0.15, y: 0.15)

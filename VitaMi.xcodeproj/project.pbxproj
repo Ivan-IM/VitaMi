@@ -8,27 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
-		CF1B39E326BC3D3600D45DD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39E226BC3D3600D45DD6 /* LoginView.swift */; };
-		CF1B39E526BC3D8700D45DD6 /* TextFieldLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39E426BC3D8700D45DD6 /* TextFieldLoginView.swift */; };
-		CF1B39E726BC3D9800D45DD6 /* ButtonLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39E626BC3D9800D45DD6 /* ButtonLoginView.swift */; };
-		CF1B39EB26BC404C00D45DD6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39EA26BC404C00D45DD6 /* MainView.swift */; };
 		CF1B39ED26BC40D200D45DD6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39EC26BC40D200D45DD6 /* BackgroundView.swift */; };
-		CF1B39EF26BC41BF00D45DD6 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39EE26BC41BF00D45DD6 /* FormView.swift */; };
 		CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23948C26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift */; };
 		CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */; };
-		CF23949426A4765000AB3BC1 /* UIBezierPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */; };
-		CF23949526A4765000AB3BC1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949226A4765000AB3BC1 /* UIColor+extension.swift */; };
-		CF23949626A4765000AB3BC1 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23949326A4765000AB3BC1 /* ShapeView.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
 		CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98C269096FC00842794 /* Assets.xcassets */; };
 		CF2BF990269096FC00842794 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2BF98F269096FC00842794 /* Preview Assets.xcassets */; };
 		CF2BF9982690974A00842794 /* Symtoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9972690974A00842794 /* Symtoms.swift */; };
 		CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserManager.swift */; };
-		CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsListView.swift */; };
+		CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsView.swift */; };
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
 		CF87F5AE26988D8600ED6710 /* SymptomsTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AD26988D8600ED6710 /* SymptomsTestingView.swift */; };
+		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
+		CFA42A3126C272C600B855E8 /* CustomCellSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */; };
+		CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */; };
+		CFA42A3626C27CE600B855E8 /* TopPanelSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */; };
+		CFA42A3826C27D1400B855E8 /* BottomPanelSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
 		CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6D26C26C4200155191 /* LoginView.swift */; };
@@ -36,17 +33,9 @@
 
 /* Begin PBXFileReference section */
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		CF1B39E226BC3D3600D45DD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		CF1B39E426BC3D8700D45DD6 /* TextFieldLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLoginView.swift; sourceTree = "<group>"; };
-		CF1B39E626BC3D9800D45DD6 /* ButtonLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLoginView.swift; sourceTree = "<group>"; };
-		CF1B39EA26BC404C00D45DD6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CF1B39EC26BC40D200D45DD6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		CF1B39EE26BC41BF00D45DD6 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		CF23948C26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiochemicalAnalysisView.swift; sourceTree = "<group>"; };
 		CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
-		CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extension.swift"; sourceTree = "<group>"; };
-		CF23949226A4765000AB3BC1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
-		CF23949326A4765000AB3BC1 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
 		CF2BF98A269096FB00842794 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,10 +44,15 @@
 		CF2BF991269096FC00842794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2BF9972690974A00842794 /* Symtoms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symtoms.swift; sourceTree = "<group>"; };
 		CF2BF9A6269173BF00842794 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		CF758F8E26988EEA004E73EE /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
+		CF758F8E26988EEA004E73EE /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		CF87F5AD26988D8600ED6710 /* SymptomsTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTestingView.swift; sourceTree = "<group>"; };
+		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSsView.swift; sourceTree = "<group>"; };
+		CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSsView.swift; sourceTree = "<group>"; };
+		CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelSsView.swift; sourceTree = "<group>"; };
+		CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelSsView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CFC93F6D26C26C4200155191 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -75,16 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF1B39E126BC3CEA00D45DD6 /* LoginView */ = {
-			isa = PBXGroup;
-			children = (
-				CF1B39E226BC3D3600D45DD6 /* LoginView.swift */,
-				CF1B39E426BC3D8700D45DD6 /* TextFieldLoginView.swift */,
-				CF1B39E626BC3D9800D45DD6 /* ButtonLoginView.swift */,
-			);
-			path = LoginView;
-			sourceTree = "<group>";
-		};
 		CF1B39E826BC3E0E00D45DD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,22 +83,13 @@
 			children = (
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CF1B39EC26BC40D200D45DD6 /* BackgroundView.swift */,
-				CF1B39EA26BC404C00D45DD6 /* MainView.swift */,
-				CF1B39EE26BC41BF00D45DD6 /* FormView.swift */,
 				CFC93F6B26C26AC000155191 /* StartView.swift */,
 				CFC93F6D26C26C4200155191 /* LoginView.swift */,
+				CFA42A2C26C26ED900B855E8 /* MainView.swift */,
+				CF758F8E26988EEA004E73EE /* SymptomsView.swift */,
+				CF758F9026989348004E73EE /* ResultTestingView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CF23949026A4762100AB3BC1 /* DrawService */ = {
-			isa = PBXGroup;
-			children = (
-				CF23949326A4765000AB3BC1 /* ShapeView.swift */,
-				CF23949126A4765000AB3BC1 /* UIBezierPath+Extension.swift */,
-				CF23949226A4765000AB3BC1 /* UIColor+extension.swift */,
-			);
-			path = DrawService;
 			sourceTree = "<group>";
 		};
 		CF2BF97C269096FB00842794 = {
@@ -136,13 +111,15 @@
 		CF2BF987269096FB00842794 /* VitaMi */ = {
 			isa = PBXGroup;
 			children = (
-				CFC93F6826C268B600155191 /* ViewChanger */,
 				CF1B39E926BC403300D45DD6 /* Views */,
+				CFA42A2A26C26E2600B855E8 /* StartViewDetail */,
+				CFA42A2B26C26E3400B855E8 /* ConnectViewDetail */,
+				CFA42A2E26C26F8000B855E8 /* MainViewDetail */,
+				CFA42A2F26C2727B00B855E8 /* SymptomsViewDetail */,
+				CFA42A3226C275CD00B855E8 /* ResultTestingViewDetail */,
+				CFC93F6826C268B600155191 /* ViewChangManager */,
+				CF2BF99A2690AD5C00842794 /* UserManager */,
 				CF1B39E826BC3E0E00D45DD6 /* Model */,
-				CF1B39E126BC3CEA00D45DD6 /* LoginView */,
-				CF23949026A4762100AB3BC1 /* DrawService */,
-				CF2BF99D2690B30200842794 /* CustomView */,
-				CF2BF99A2690AD5C00842794 /* Manager */,
 				CF2BF9992690AD4800842794 /* View */,
 				CF2BF988269096FB00842794 /* VitaMiApp.swift */,
 				CF2BF98C269096FC00842794 /* Assets.xcassets */,
@@ -164,36 +141,66 @@
 			isa = PBXGroup;
 			children = (
 				CF87F5AD26988D8600ED6710 /* SymptomsTestingView.swift */,
-				CF758F8E26988EEA004E73EE /* SymptomsListView.swift */,
-				CF758F9026989348004E73EE /* ResultTestingView.swift */,
 				CF23948C26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		CF2BF99A2690AD5C00842794 /* Manager */ = {
+		CF2BF99A2690AD5C00842794 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
 				CF2BF9A6269173BF00842794 /* UserManager.swift */,
 				CF1B39DF26BC3C4900D45DD6 /* Extension.swift */,
 			);
-			path = Manager;
+			path = UserManager;
 			sourceTree = "<group>";
 		};
-		CF2BF99D2690B30200842794 /* CustomView */ = {
+		CFA42A2A26C26E2600B855E8 /* StartViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StartViewDetail;
+			sourceTree = "<group>";
+		};
+		CFA42A2B26C26E3400B855E8 /* ConnectViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConnectViewDetail;
+			sourceTree = "<group>";
+		};
+		CFA42A2E26C26F8000B855E8 /* MainViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainViewDetail;
+			sourceTree = "<group>";
+		};
+		CFA42A2F26C2727B00B855E8 /* SymptomsViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */,
+				CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */,
+				CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */,
+				CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */,
+			);
+			path = SymptomsViewDetail;
+			sourceTree = "<group>";
+		};
+		CFA42A3226C275CD00B855E8 /* ResultTestingViewDetail */ = {
 			isa = PBXGroup;
 			children = (
 				CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */,
 			);
-			path = CustomView;
+			path = ResultTestingViewDetail;
 			sourceTree = "<group>";
 		};
-		CFC93F6826C268B600155191 /* ViewChanger */ = {
+		CFC93F6826C268B600155191 /* ViewChangManager */ = {
 			isa = PBXGroup;
 			children = (
 				CFC93F6926C268E400155191 /* ViewChangeManager.swift */,
 			);
-			path = ViewChanger;
+			path = ViewChangManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,27 +272,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1B39E526BC3D8700D45DD6 /* TextFieldLoginView.swift in Sources */,
+				CFA42A3126C272C600B855E8 /* CustomCellSsView.swift in Sources */,
 				CFC93F6C26C26AC000155191 /* StartView.swift in Sources */,
-				CF1B39EB26BC404C00D45DD6 /* MainView.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
-				CF758F8F26988EEA004E73EE /* SymptomsListView.swift in Sources */,
+				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */,
-				CF1B39E326BC3D3600D45DD6 /* LoginView.swift in Sources */,
-				CF23949526A4765000AB3BC1 /* UIColor+extension.swift in Sources */,
-				CF23949626A4765000AB3BC1 /* ShapeView.swift in Sources */,
+				CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */,
+				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
+				CFA42A3626C27CE600B855E8 /* TopPanelSsView.swift in Sources */,
 				CF87F5AE26988D8600ED6710 /* SymptomsTestingView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
+				CFA42A3826C27D1400B855E8 /* BottomPanelSsView.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
-				CF1B39EF26BC41BF00D45DD6 /* FormView.swift in Sources */,
 				CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,
-				CF23949426A4765000AB3BC1 /* UIBezierPath+Extension.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
-				CF1B39E726BC3D9800D45DD6 /* ButtonLoginView.swift in Sources */,
 				CF1B39ED26BC40D200D45DD6 /* BackgroundView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
 			);

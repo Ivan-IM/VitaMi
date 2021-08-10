@@ -8,9 +8,9 @@
 import Foundation
 
 final class ViewChanger: ObservableObject {
-    @Published var changer: LoadingView = .startView
+    @Published var loading: LoadingView = .startView
 }
 
 enum LoadingView {
-    case startView
+    case startView, loginView, mainView, symtomsView, resultView
 }

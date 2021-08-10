@@ -15,7 +15,7 @@ struct SymptomsTestingView: View {
     
     var body: some View {
         TabView {
-            SymptomsListView()
+            SymptomsView()
                 .onDisappear(){
                     user.elementsFilterAlgorithm()
                     if !user.lowElementsList.isEmpty {

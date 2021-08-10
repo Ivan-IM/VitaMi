@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject var changer: ViewChanger
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 30) {
+            Text("""
+                connect
+                """)
+                .multilineTextAlignment(.center)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            
+            Button(action: {
+                changer.loading = .mainView
+            }, label: {
+                Text("Next")
+            })
+        }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView().environmentObject(ViewChanger())
     }
 }

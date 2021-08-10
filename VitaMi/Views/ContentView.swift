@@ -15,9 +15,17 @@ struct ContentView: View {
         ZStack {
             BackgroundView()
             
-            switch changer.changer {
+            switch changer.loading {
             case .startView:
                 StartView()
+            case .loginView:
+                LoginView()
+            case .mainView:
+                MainView()
+            case .symtomsView:
+                SymptomsView()
+            case .resultView:
+                ResultTestingView()
             }
         }
     }
