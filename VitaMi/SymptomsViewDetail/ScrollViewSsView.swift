@@ -13,8 +13,6 @@ struct ScrollViewSsView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            Text("Symtoms")
-                .padding(.top, 100)
             ForEach(Symtom.getSymptomsList()) { symptom in
                 CustomCellSsView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
                     if user.symptomsList.contains(symptom.enName) {
@@ -24,9 +22,10 @@ struct ScrollViewSsView: View {
                         user.symptomsList.append(symptom.enName)
                     }
                 }
-                .padding(.vertical, 2.0)
+                .padding(.vertical, 3.0)
                 .padding(.horizontal, 10.0)
             }
+            .padding(.vertical, 100)
         }
     }
 }

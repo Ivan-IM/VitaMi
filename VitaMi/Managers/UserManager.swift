@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class User: ObservableObject {
+final class User: ObservableObject {
     
     @Published var login: String {
         didSet {

@@ -12,20 +12,39 @@ struct StartView: View {
     @EnvironmentObject var changer: ViewChanger
     
     var body: some View {
-        VStack(spacing: 30) {
-            Text("""
-                Some information
-                about micronutrient
-                imbalance
-                """)
-                .multilineTextAlignment(.center)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            
-            Button(action: {
-                changer.loading = .loginView
-            }, label: {
-                Text("Next")
-            })
+        ZStack {
+            Color("backgroundColorSet")
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                switch changer.startViewChanger {
+                case .info:
+                    InfoView()
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .transition(.slide)
+                        .animation(.default)
+                        .zIndex(1)
+                case .login:
+                    LoginView()
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .transition(.slide)
+                        .animation(.default)
+                        .zIndex(1)
+                }
+                Spacer()
+                Button(action: {
+                    switch changer.startViewChanger {
+                    case .info:
+                        changer.startViewChanger = .login
+                    case .login:
+                        changer.mainViewChanger = .mainView
+                    }
+                }, label: {
+                    Text("Next")
+                        .frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                })
+                .buttonStyle(CustomButtonStyle())
+            }
         }
     }
 }

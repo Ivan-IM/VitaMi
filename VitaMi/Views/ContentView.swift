@@ -13,19 +13,33 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView()
+            Color("backgroundColorSet")
+                .ignoresSafeArea()
             
-            switch changer.loading {
+            Spacer()
+            switch changer.mainViewChanger {
             case .startView:
                 StartView()
-            case .loginView:
-                LoginView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(.slide)
+                    .animation(.default)
+                    .zIndex(1)
             case .mainView:
                 MainView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(.slide)
+                    .animation(.default)
+                    .zIndex(2)
             case .symtomsView:
                 SymptomsView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(.slide)
+                    .animation(.default)
             case .resultView:
                 ResultTestingView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(.slide)
+                    .animation(.default)
             }
         }
     }
@@ -33,6 +47,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(ViewChanger())
+        ContentView()
+            .environmentObject(ViewChanger())
+            .environmentObject(User())
     }
 }

@@ -21,6 +21,9 @@
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
 		CF87F5AE26988D8600ED6710 /* SymptomsTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5AD26988D8600ED6710 /* SymptomsTestingView.swift */; };
+		CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364D926C376EB00958920 /* CustomButtonStyle.swift */; };
+		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
+		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
 		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
 		CFA42A3126C272C600B855E8 /* CustomCellSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */; };
@@ -48,6 +51,9 @@
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		CF87F5AD26988D8600ED6710 /* SymptomsTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsTestingView.swift; sourceTree = "<group>"; };
+		CFA364D926C376EB00958920 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
+		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSsView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSsView.swift; sourceTree = "<group>"; };
@@ -84,7 +90,6 @@
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CF1B39EC26BC40D200D45DD6 /* BackgroundView.swift */,
 				CFC93F6B26C26AC000155191 /* StartView.swift */,
-				CFC93F6D26C26C4200155191 /* LoginView.swift */,
 				CFA42A2C26C26ED900B855E8 /* MainView.swift */,
 				CF758F8E26988EEA004E73EE /* SymptomsView.swift */,
 				CF758F9026989348004E73EE /* ResultTestingView.swift */,
@@ -117,9 +122,9 @@
 				CFA42A2E26C26F8000B855E8 /* MainViewDetail */,
 				CFA42A2F26C2727B00B855E8 /* SymptomsViewDetail */,
 				CFA42A3226C275CD00B855E8 /* ResultTestingViewDetail */,
-				CFC93F6826C268B600155191 /* ViewChangManager */,
-				CF2BF99A2690AD5C00842794 /* UserManager */,
+				CF2BF99A2690AD5C00842794 /* Managers */,
 				CF1B39E826BC3E0E00D45DD6 /* Model */,
+				CFA364D826C376C200958920 /* Decorators */,
 				CF2BF9992690AD4800842794 /* View */,
 				CF2BF988269096FB00842794 /* VitaMiApp.swift */,
 				CF2BF98C269096FC00842794 /* Assets.xcassets */,
@@ -146,18 +151,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CF2BF99A2690AD5C00842794 /* UserManager */ = {
+		CF2BF99A2690AD5C00842794 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CFC93F6926C268E400155191 /* ViewChangeManager.swift */,
 				CF2BF9A6269173BF00842794 /* UserManager.swift */,
 				CF1B39DF26BC3C4900D45DD6 /* Extension.swift */,
 			);
-			path = UserManager;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CFA364D826C376C200958920 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				CFA364D926C376EB00958920 /* CustomButtonStyle.swift */,
+				CFA364DB26C3889400958920 /* DesignTestView.swift */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 		CFA42A2A26C26E2600B855E8 /* StartViewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CFA364DD26C3C1FF00958920 /* InfoView.swift */,
+				CFC93F6D26C26C4200155191 /* LoginView.swift */,
 			);
 			path = StartViewDetail;
 			sourceTree = "<group>";
@@ -193,14 +210,6 @@
 				CF23948E26A4614900AB3BC1 /* ElementDetailView.swift */,
 			);
 			path = ResultTestingViewDetail;
-			sourceTree = "<group>";
-		};
-		CFC93F6826C268B600155191 /* ViewChangManager */ = {
-			isa = PBXGroup;
-			children = (
-				CFC93F6926C268E400155191 /* ViewChangeManager.swift */,
-			);
-			path = ViewChangManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +287,7 @@
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */,
+				CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
 				CFA42A3626C27CE600B855E8 /* TopPanelSsView.swift in Sources */,
@@ -286,7 +296,9 @@
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CFA42A3826C27D1400B855E8 /* BottomPanelSsView.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
+				CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */,
 				CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */,
+				CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,

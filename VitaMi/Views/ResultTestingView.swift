@@ -13,24 +13,22 @@ struct ResultTestingView: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        NavigationView {
-            ScrollView(showsIndicators: false) {
-                ForEach(Element.getElementsList()) { element in
-                    if user.lowElementsList.contains(element.symbol) {
-                        NavigationLink(destination: ElementDetailView(element: element)) {
-                            HStack {
-                                Text(element.ruName)
-                                    .foregroundColor(Color("text"))
-                                Spacer()
-                                Image(systemName: "questionmark.circle")
-                            }
-                            .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+        ScrollView(showsIndicators: false) {
+            ForEach(Element.getElementsList()) { element in
+                if user.lowElementsList.contains(element.symbol) {
+                    NavigationLink(destination: ElementDetailView(element: element)) {
+                        HStack {
+                            Text(element.ruName)
+                                .foregroundColor(Color("text"))
+                            Spacer()
+                            Image(systemName: "questionmark.circle")
                         }
-                        .frame(height: 40)
-                        .overlay(Capsule(style: .continuous).stroke())
-                        .padding(.vertical, 2.0)
-                        .padding(.horizontal, 10.0)
+                        .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
                     }
+                    .frame(height: 40)
+                    .overlay(Capsule(style: .continuous).stroke())
+                    .padding(.vertical, 2.0)
+                    .padding(.horizontal, 10.0)
                 }
             }
         }

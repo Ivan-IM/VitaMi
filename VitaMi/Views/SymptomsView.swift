@@ -17,21 +17,6 @@ struct SymptomsView: View {
             VStack {
                 ScrollViewSsView()
             }
-            
-            VStack {
-                Spacer()
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [Color.white, Color.white, Color.white.opacity(0)]), startPoint: .bottom, endPoint: .top)
-                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                    Button(action: {
-                        chager.loading = .resultView
-                    }, label: {
-                        Text("Result")
-                    })
-                    .padding()
-                    .overlay(Capsule().stroke())
-                }
-            }
         }
         .onDisappear() {
             user.elementsFilterAlgorithm()
@@ -41,7 +26,9 @@ struct SymptomsView: View {
 
 struct SymptomsListView_Previews: PreviewProvider {
     static var previews: some View {
-        SymptomsView().environmentObject(User()).environmentObject(ViewChanger())
+        SymptomsView()
+            .environmentObject(User())
+            .environmentObject(ViewChanger())
     }
 }
 
