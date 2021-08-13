@@ -12,19 +12,19 @@ struct ElementDetailView: View {
     let element: Element
     
     var body: some View {
-        ZStack {
-            VStack {
-                Text(element.enName)
+        VStack {
+            Text(element.enName)
+            Text(element.elementInfo)
+            List {
+                ForEach(element.ruProductInfo, id: \.self) { prod in
+                    Text(prod)
+                }
             }
+            .background(Color.clear)
         }
-        .font(.system(size: 20, weight: .semibold, design: .rounded))
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9019607843, green: 0.9294117647, blue: 0.9882352941, alpha: 1.0)), Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .navigationBarHidden(true)
-        .background(ZStack {
-            Color("backgroundColorSet")
-                .ignoresSafeArea()
-            ContentCardView()
-        })
     }
 }
 

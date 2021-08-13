@@ -13,7 +13,7 @@ final class ViewChanger: ObservableObject {
     @Published var mainViewChanger: MainViewChanger = .startView
     
     init() {
-        if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger") {
+        if let rawValue = UserDefaults.standard.string(forKey: "ainViewChanger") {
             self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .startView
         }
     }

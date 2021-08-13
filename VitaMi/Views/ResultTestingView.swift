@@ -16,6 +16,7 @@ struct ResultTestingView: View {
             ZStack {
                 ContentCardView()
                 ScrollViewResultView()
+                    .padding(30)
             }
             CustomButtonView(buttonTitle: "Back", action: {
                 changer.mainViewChanger = .mainView
