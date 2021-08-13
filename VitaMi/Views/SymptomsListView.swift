@@ -16,8 +16,8 @@ struct SymptomsListView: View {
     var body: some View {
         VStack {
             ZStack {
-                ContentCardView()
                 ScrollViewSymptomsListView()
+                    .background(ContentCardView())
             }
             HStack {
                 CustomButtonView(buttonTitle: "Back", action: {

@@ -14,8 +14,8 @@ struct SymptomsView: View {
     var body: some View {
         VStack {
             ZStack {
-                ContentCardView()
                 ContentSymptomsView()
+                    .background(ContentCardView())
             }
             CustomButtonView(buttonTitle: "Back", action: {
                 changer.mainViewChanger = .mainView
