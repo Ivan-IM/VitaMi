@@ -14,12 +14,9 @@ struct SymptomsView: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                ScrollViewSsView()
-            }
-        }
-        .onDisappear() {
-            user.elementsFilterAlgorithm()
+            CardSymptomsView()
+                .opacity(0.5)
+            ContentSymptomsView()
         }
     }
 }

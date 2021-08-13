@@ -38,6 +38,7 @@ struct StartView: View {
                         changer.startViewChanger = .login
                     case .login:
                         changer.mainViewChanger = .mainView
+                        UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
                     }
                 }, label: {
                     Text("Next")
@@ -45,6 +46,7 @@ struct StartView: View {
                 })
                 .buttonStyle(CustomButtonStyle())
             }
+            .padding()
         }
     }
 }

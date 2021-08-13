@@ -8,16 +8,13 @@
 import Foundation
 
 final class ViewChanger: ObservableObject {
+    
     @Published var startViewChanger: StartViewChanger = .info
-    @Published var mainViewChanger: MainViewChanger = .startView {
-        didSet {
-            UserDefaults.standard.setValue(mainViewChanger.rawValue, forKey: "MainViewChanger")
-        }
-    }
-    @Published var animator = false
+    @Published var mainViewChanger: MainViewChanger = .startView
+    @Published var testingViewChanger: TestingViewChanger?
     
     init() {
-        if let rawValue = UserDefaults.standard.string(forKey: "StartViewChanger") {
+        if let rawValue = UserDefaults.standard.string(forKey: "ainViewChanger") {
             self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .startView
         }
     }
@@ -28,6 +25,9 @@ enum StartViewChanger {
 }
 
 enum MainViewChanger: String, Codable {
-    case startView, mainView, symtomsView, resultView
+    case startView, mainView, symptomsView, resultTestingView
 }
 
+enum TestingViewChanger {
+    case symptoms, result
+}

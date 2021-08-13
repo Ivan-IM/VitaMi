@@ -25,7 +25,7 @@ struct ScrollViewSsView: View {
                 .padding(.vertical, 3.0)
                 .padding(.horizontal, 10.0)
             }
-            .padding(.vertical, 100)
+            .padding(.vertical, 10)
         }
     }
 }

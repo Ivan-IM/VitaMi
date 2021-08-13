@@ -17,7 +17,7 @@ struct InfoView: View {
                 imbalance
                 """)
                 .multilineTextAlignment(.center)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.system(size: 20, weight: .semibold, design: .rounded))
         }
     }
 }

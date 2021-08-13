@@ -24,11 +24,14 @@
 		CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364D926C376EB00958920 /* CustomButtonStyle.swift */; };
 		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
 		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
+		CFA364E026C625D200958920 /* UserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DF26C625D200958920 /* UserFormView.swift */; };
+		CFA364E226C63AFE00958920 /* TestingButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E126C63AFE00958920 /* TestingButtonMainView.swift */; };
+		CFA364E426C6617300958920 /* CardSymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E326C6617300958920 /* CardSymptomsView.swift */; };
+		CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E526C6623100958920 /* ContentSymptomsView.swift */; };
+		CFA364E826C662C800958920 /* ButtonContentSymtomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E726C662C800958920 /* ButtonContentSymtomsView.swift */; };
 		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
 		CFA42A3126C272C600B855E8 /* CustomCellSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */; };
-		CFA42A3626C27CE600B855E8 /* TopPanelSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */; };
-		CFA42A3826C27D1400B855E8 /* BottomPanelSsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
 		CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6D26C26C4200155191 /* LoginView.swift */; };
@@ -54,11 +57,14 @@
 		CFA364D926C376EB00958920 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		CFA364DF26C625D200958920 /* UserFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormView.swift; sourceTree = "<group>"; };
+		CFA364E126C63AFE00958920 /* TestingButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingButtonMainView.swift; sourceTree = "<group>"; };
+		CFA364E326C6617300958920 /* CardSymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSymptomsView.swift; sourceTree = "<group>"; };
+		CFA364E526C6623100958920 /* ContentSymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSymptomsView.swift; sourceTree = "<group>"; };
+		CFA364E726C662C800958920 /* ButtonContentSymtomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonContentSymtomsView.swift; sourceTree = "<group>"; };
 		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSsView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSsView.swift; sourceTree = "<group>"; };
-		CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelSsView.swift; sourceTree = "<group>"; };
-		CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelSsView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CFC93F6D26C26C4200155191 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -118,7 +124,6 @@
 			children = (
 				CF1B39E926BC403300D45DD6 /* Views */,
 				CFA42A2A26C26E2600B855E8 /* StartViewDetail */,
-				CFA42A2B26C26E3400B855E8 /* ConnectViewDetail */,
 				CFA42A2E26C26F8000B855E8 /* MainViewDetail */,
 				CFA42A2F26C2727B00B855E8 /* SymptomsViewDetail */,
 				CFA42A3226C275CD00B855E8 /* ResultTestingViewDetail */,
@@ -179,16 +184,11 @@
 			path = StartViewDetail;
 			sourceTree = "<group>";
 		};
-		CFA42A2B26C26E3400B855E8 /* ConnectViewDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ConnectViewDetail;
-			sourceTree = "<group>";
-		};
 		CFA42A2E26C26F8000B855E8 /* MainViewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CFA364DF26C625D200958920 /* UserFormView.swift */,
+				CFA364E126C63AFE00958920 /* TestingButtonMainView.swift */,
 			);
 			path = MainViewDetail;
 			sourceTree = "<group>";
@@ -198,8 +198,9 @@
 			children = (
 				CFA42A3026C272C600B855E8 /* CustomCellSsView.swift */,
 				CFA42A3326C27ABD00B855E8 /* ScrollViewSsView.swift */,
-				CFA42A3526C27CE600B855E8 /* TopPanelSsView.swift */,
-				CFA42A3726C27D1400B855E8 /* BottomPanelSsView.swift */,
+				CFA364E326C6617300958920 /* CardSymptomsView.swift */,
+				CFA364E526C6623100958920 /* ContentSymptomsView.swift */,
+				CFA364E726C662C800958920 /* ButtonContentSymtomsView.swift */,
 			);
 			path = SymptomsViewDetail;
 			sourceTree = "<group>";
@@ -281,25 +282,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA364E226C63AFE00958920 /* TestingButtonMainView.swift in Sources */,
 				CFA42A3126C272C600B855E8 /* CustomCellSsView.swift in Sources */,
 				CFC93F6C26C26AC000155191 /* StartView.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
+				CFA364E826C662C800958920 /* ButtonContentSymtomsView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CF23948F26A4614900AB3BC1 /* ElementDetailView.swift in Sources */,
 				CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSsView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
-				CFA42A3626C27CE600B855E8 /* TopPanelSsView.swift in Sources */,
+				CFA364E426C6617300958920 /* CardSymptomsView.swift in Sources */,
 				CF87F5AE26988D8600ED6710 /* SymptomsTestingView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
-				CFA42A3826C27D1400B855E8 /* BottomPanelSsView.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
 				CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */,
 				CF23948D26A45F2500AB3BC1 /* BiochemicalAnalysisView.swift in Sources */,
 				CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,
+				CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */,
+				CFA364E026C625D200958920 /* UserFormView.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF1B39ED26BC40D200D45DD6 /* BackgroundView.swift in Sources */,

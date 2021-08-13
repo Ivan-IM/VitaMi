@@ -21,26 +21,29 @@ struct ContentView: View {
             case .startView:
                 StartView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(.slide)
-                    .animation(.default)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
                     .zIndex(1)
             case .mainView:
                 MainView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(.slide)
-                    .animation(.default)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
                     .zIndex(2)
-            case .symtomsView:
+            case .symptomsView:
                 SymptomsView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .transition(.slide)
                     .animation(.default)
-            case .resultView:
+                    .zIndex(3)
+            case .resultTestingView:
                 ResultTestingView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .transition(.slide)
                     .animation(.default)
+                    .zIndex(4)
             }
+        }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
         }
     }
 }
