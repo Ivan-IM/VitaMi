@@ -9,16 +9,6 @@ import SwiftUI
 
 final class User: ObservableObject {
     
-    @Published var login: String {
-        didSet {
-            UserDefaults.standard.set(login, forKey: "Login")
-        }
-    }
-    @Published var password: String {
-        didSet {
-            UserDefaults.standard.set(password, forKey: "Password")
-        }
-    }
     @Published var name: String {
         didSet {
             UserDefaults.standard.set(name, forKey: "Name")
@@ -34,6 +24,7 @@ final class User: ObservableObject {
             UserDefaults.standard.set(age, forKey: "Age")
         }
     }
+    
     @Published var symptomsList: [String] {
         didSet {
             UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
@@ -43,6 +34,14 @@ final class User: ObservableObject {
         didSet {
             UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
         }
+    }
+    
+    init() {
+        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
+        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
+        self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
+        self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
+        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
     }
     
     func elementsFilterAlgorithm() {
@@ -110,14 +109,4 @@ final class User: ObservableObject {
         }
     }
     
-    init() {
-        self.login = UserDefaults.standard.object(forKey: "Login") as? String ?? ""
-        self.password = UserDefaults.standard.object(forKey: "Password") as? String ?? ""
-        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
-        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
-        self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
-        self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
-        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
-        self.elementsFilterAlgorithm()
-    }
 }

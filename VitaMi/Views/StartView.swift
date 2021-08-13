@@ -32,7 +32,7 @@ struct StartView: View {
                         .zIndex(1)
                 }
                 Spacer()
-                Button(action: {
+                CustomButtonView(buttonTitle: "Next", action: {
                     switch changer.startViewChanger {
                     case .info:
                         changer.startViewChanger = .login
@@ -40,11 +40,7 @@ struct StartView: View {
                         changer.mainViewChanger = .mainView
                         UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
                     }
-                }, label: {
-                    Text("Next")
-                        .frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                })
-                .buttonStyle(CustomButtonStyle())
+                }, width: 200, height: 50)
             }
             .padding()
         }

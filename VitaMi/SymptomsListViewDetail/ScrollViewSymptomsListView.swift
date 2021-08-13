@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ScrollViewSsView: View {
+struct ScrollViewSymptomsListView: View {
     
     @EnvironmentObject var user: User
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             ForEach(Symtom.getSymptomsList()) { symptom in
-                CustomCellSsView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
+                CustomCellSymptomsListView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
                     if user.symptomsList.contains(symptom.enName) {
                         user.symptomsList.removeAll(where: { $0 == symptom.enName })
                     }
@@ -25,7 +25,8 @@ struct ScrollViewSsView: View {
                 .padding(.vertical, 3.0)
                 .padding(.horizontal, 10.0)
             }
-            .padding(.vertical, 10)
         }
+        .padding(.vertical, 25)
+        .padding(.horizontal, 15)
     }
 }

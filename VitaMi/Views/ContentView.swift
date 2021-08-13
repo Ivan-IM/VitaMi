@@ -31,15 +31,18 @@ struct ContentView: View {
             case .symptomsView:
                 SymptomsView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(.slide)
-                    .animation(.default)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
                     .zIndex(3)
+            case .symptomsListView:
+                SymptomsListView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(4)
             case .resultTestingView:
                 ResultTestingView()
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(.slide)
-                    .animation(.default)
-                    .zIndex(4)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(5)
             }
         }
         .onTapGesture {

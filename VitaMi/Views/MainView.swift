@@ -10,12 +10,24 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var changer: ViewChanger
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
             UserFormView()
-            Spacer()
-            TestingButtonMainView()
+            VStack(spacing: 30) {
+            CustomButtonView(buttonTitle: "Start testing", action: {
+                changer.mainViewChanger = .symptomsView
+            }, width: 300, height: 60)
+            CustomButtonView(buttonTitle: "Symptoms list", action: {
+                changer.mainViewChanger = .symptomsListView
+            }, width: 300, height: 60)
+            CustomButtonView(buttonTitle: "Result", action: {
+                user.lowElementsList.removeAll()
+                user.elementsFilterAlgorithm()
+                changer.mainViewChanger = .resultTestingView
+            }, width: 300, height: 60)
+            }
             Spacer()
         }
     }

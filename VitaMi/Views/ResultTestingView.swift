@@ -9,28 +9,17 @@ import SwiftUI
 
 struct ResultTestingView: View {
     
-    @EnvironmentObject var chager: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var changer: ViewChanger
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            ForEach(Element.getElementsList()) { element in
-                if user.lowElementsList.contains(element.symbol) {
-                    NavigationLink(destination: ElementDetailView(element: element)) {
-                        HStack {
-                            Text(element.ruName)
-                                .foregroundColor(Color("text"))
-                            Spacer()
-                            Image(systemName: "questionmark.circle")
-                        }
-                        .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
-                    }
-                    .frame(height: 40)
-                    .overlay(Capsule(style: .continuous).stroke())
-                    .padding(.vertical, 2.0)
-                    .padding(.horizontal, 10.0)
-                }
+        VStack {
+            ZStack {
+                ContentCardView()
+                ScrollViewResultView()
             }
+            CustomButtonView(buttonTitle: "Back", action: {
+                changer.mainViewChanger = .mainView
+            }, width: 260, height: 60)
         }
     }
 }

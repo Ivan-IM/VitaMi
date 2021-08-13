@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomCellSsView: View {
+struct CustomCellSymptomsListView: View {
     
     var title: String
     var isSelected: Bool
@@ -17,16 +17,17 @@ struct CustomCellSsView: View {
         Button(action: self.action) {
             HStack {
                 Text(self.title)
-                    .foregroundColor(Color("text"))
+                    .foregroundColor(Color(.systemGray))
                 Spacer()
                 if self.isSelected {
                     Image(systemName: "checkmark")
-                        .foregroundColor(Color("text"))
+                        .foregroundColor(Color(.systemGray))
                 }
             }
-            .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+            .font(.system(size: 20, weight: .semibold, design: .rounded))
+            .padding(10.0)
         }
         .frame(height: 40)
-        .overlay(Capsule(style: .continuous).stroke())
+        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardSymptomsView: View {
+struct ContentCardView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
             .fill(Color.clear)
@@ -37,6 +37,6 @@ struct CardSymptomsView: View {
 
 struct CardSymptomsView_Previews: PreviewProvider {
     static var previews: some View {
-        CardSymptomsView()
+        ContentCardView()
     }
 }

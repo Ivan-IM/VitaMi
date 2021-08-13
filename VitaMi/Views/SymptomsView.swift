@@ -9,19 +9,22 @@ import SwiftUI
 
 struct SymptomsView: View {
     
-    @EnvironmentObject var chager: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var changer: ViewChanger
     
     var body: some View {
-        ZStack {
-            CardSymptomsView()
-                .opacity(0.5)
-            ContentSymptomsView()
+        VStack {
+            ZStack {
+                ContentCardView()
+                ContentSymptomsView()
+            }
+            CustomButtonView(buttonTitle: "Back", action: {
+                changer.mainViewChanger = .mainView
+            }, width: 260, height: 60)
         }
     }
 }
 
-struct SymptomsListView_Previews: PreviewProvider {
+struct SymptomsView_Previews: PreviewProvider {
     static var previews: some View {
         SymptomsView()
             .environmentObject(User())
