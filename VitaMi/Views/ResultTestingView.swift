@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultTestingView: View {
     
     @EnvironmentObject var changer: ViewChanger
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
@@ -17,6 +18,7 @@ struct ResultTestingView: View {
                 ContentCardView()
                 ScrollViewResultView()
                     .padding(30)
+                    .opacity(user.lowElementsList.isEmpty ? 0:1)
             }
             CustomButtonView(buttonTitle: "Back", action: {
                 changer.mainViewChanger = .mainView

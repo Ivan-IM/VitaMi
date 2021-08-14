@@ -15,7 +15,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             UserFormView()
-            VStack(spacing: 30) {
+            VStack(spacing: 25) {
             CustomButtonView(buttonTitle: "Start testing", action: {
                 changer.mainViewChanger = .symptomsView
             }, width: 300, height: 60)

@@ -23,10 +23,12 @@ struct SymptomsListView: View {
                 CustomButtonView(buttonTitle: "Back", action: {
                     changer.mainViewChanger = .mainView
                 }, width: 160, height: 50)
+                Spacer()
                 CustomButtonView(buttonTitle: "Clear list", action: {
                     showingClearAlert.toggle()
                 }, width: 160, height: 50)
             }
+            .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
                 Alert(title: Text("Clear"), message: Text("Are you want clear symptoms list?"), primaryButton: .destructive(Text("Ok"), action: {
                     user.symptomsList.removeAll()
