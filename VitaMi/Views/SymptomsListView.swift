@@ -36,6 +36,7 @@ struct SymptomsListView: View {
                 }), secondaryButton: .cancel())
             }
         }
+        .padding(.bottom, 16)
     }
 }
 

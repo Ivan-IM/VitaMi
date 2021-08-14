@@ -21,6 +21,7 @@ struct SymptomsView: View {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }
+        .padding(.bottom, 16)
     }
 }
 
