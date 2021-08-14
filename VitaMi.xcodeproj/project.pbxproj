@@ -27,6 +27,8 @@
 		CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364EC26C66F8A00958920 /* CustomButtonView.swift */; };
 		CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364EE26C6735F00958920 /* ScrollViewResultView.swift */; };
 		CFA364F126C67A5200958920 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364F026C67A5200958920 /* ElementDetailView.swift */; };
+		CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */; };
+		CFA364F726C820E400958920 /* CustomCircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364F626C820E400958920 /* CustomCircleButtonView.swift */; };
 		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
 		CFA42A3126C272C600B855E8 /* CustomCellSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */; };
@@ -58,6 +60,8 @@
 		CFA364EC26C66F8A00958920 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		CFA364EE26C6735F00958920 /* ScrollViewResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewResultView.swift; sourceTree = "<group>"; };
 		CFA364F026C67A5200958920 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
+		CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleButtonStyle.swift; sourceTree = "<group>"; };
+		CFA364F626C820E400958920 /* CustomCircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleButtonView.swift; sourceTree = "<group>"; };
 		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSymptomsListView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSymptomsListView.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				CFA364DB26C3889400958920 /* DesignTestView.swift */,
 				CFA364EC26C66F8A00958920 /* CustomButtonView.swift */,
 				CFA364E326C6617300958920 /* ContentCardView.swift */,
+				CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */,
+				CFA364F626C820E400958920 /* CustomCircleButtonView.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
 				CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */,
+				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
@@ -292,6 +299,7 @@
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
 				CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */,
+				CFA364F726C820E400958920 /* CustomCircleButtonView.swift in Sources */,
 				CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */,
 				CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,

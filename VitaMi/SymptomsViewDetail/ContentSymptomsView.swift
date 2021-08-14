@@ -15,13 +15,13 @@ struct ContentSymptomsView: View {
             Text("Some text")
             Spacer()
             HStack {
-                CustomButtonView(buttonTitle: "YES", action: {
+                CustomCircleButtonView(buttonTitle: "YES") {
                     
-                }, width: 100, height: 50)
+                }
                 Spacer()
-                CustomButtonView(buttonTitle: "NO", action: {
+                CustomCircleButtonView(buttonTitle: "NO") {
                     
-                }, width: 100, height: 50)
+                }
             }
         }
         .font(.system(size: 20, weight: .semibold, design: .rounded))
