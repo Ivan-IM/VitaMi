@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentSymptomsView: View {
     
+    @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var user: User
     @State private var index = 0
     @State private var downloadAmount = 0.0
@@ -43,6 +44,7 @@ struct ContentSymptomsView: View {
                         }
                         else {
                             index = Symtom.getSymptomsList().count-1
+                            changer.mainViewChanger = .resultTestingView
                         }
                     }
                 }
@@ -57,6 +59,7 @@ struct ContentSymptomsView: View {
                         }
                         else {
                             index = Symtom.getSymptomsList().count-1
+                            changer.mainViewChanger = .resultTestingView
                         }
                     }
                 }

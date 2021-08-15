@@ -25,6 +25,10 @@ struct ResultTestingView: View {
             }, width: 260, height: 60)
         }
         .padding(.bottom, 16)
+        .onAppear() {
+            user.lowElementsList.removeAll()
+            user.elementsFilterAlgorithm()
+        }
     }
 }
 

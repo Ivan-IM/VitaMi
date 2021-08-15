@@ -23,8 +23,6 @@ struct MainView: View {
                 changer.mainViewChanger = .symptomsListView
             }, width: 300, height: 60)
             CustomButtonView(buttonTitle: "Result", action: {
-                user.lowElementsList.removeAll()
-                user.elementsFilterAlgorithm()
                 changer.mainViewChanger = .resultTestingView
             }, width: 300, height: 60)
             }
