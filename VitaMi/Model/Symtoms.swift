@@ -96,7 +96,7 @@ struct Symtom: Identifiable {
                    elements: ["Fe", "Mg", "Zn"]),
             Symtom(enName: "decreased visual acuity",
                    ruName: "снижение остроты зрения",
-                   elements: ["Cu", "Zn", "Vitanim B1", "Vitamin A"]),
+                   elements: ["Cu", "Zn", "Vitanim B1", "Vitamin A"])
         ]
     }
 }
