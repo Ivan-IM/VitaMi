@@ -73,6 +73,12 @@ struct ContentSymptomsView: View {
                 startTesting = true
             }), secondaryButton: .cancel())
         }
+        .onAppear() {
+            if user.symptomsList.isEmpty {
+                startTesting = true
+            }
+            else { return }
+        }
     }
 }
 
