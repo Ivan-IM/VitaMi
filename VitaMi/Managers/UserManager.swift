@@ -38,7 +38,7 @@ final class User: ObservableObject {
     
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
-        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? ""
+        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? "Укажите пол"
         self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
