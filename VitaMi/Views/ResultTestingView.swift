@@ -20,7 +20,7 @@ struct ResultTestingView: View {
                     .padding(30)
                     .opacity(user.lowElementsList.isEmpty ? 0:1)
             }
-            CustomButtonView(buttonTitle: "Back", action: {
+            CustomButtonView(buttonTitle: "Назад", action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }

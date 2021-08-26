@@ -11,11 +11,7 @@ struct InfoView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            Text("""
-                Some information
-                about micronutrient
-                imbalance
-                """)
+            Text("Нарушение баланса микроэлементов и витаминов в организме - очень распространенное явление, зачастую мы этого не замечаем или списываем на общую усталость, недостаток сна, энергетических ресурсов, плохое настроение. Однако данная симптоматика очень часто является следствием нарушение баланса в нашем организме.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
         }

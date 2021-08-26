@@ -18,13 +18,13 @@ struct UserFormView: View {
                 .foregroundColor(Color("backgroundColorSet").opacity(0.5))
                 .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
             VStack(spacing: 15) {
-                TextField("Enter your name", text: $user.name)
+                TextField("Введите имя", text: $user.name)
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(.gray).opacity(0.5)))
-                TextField("Enter your gender", text: $user.gender)
+                TextField("Укажите пол", text: $user.gender)
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(.gray).opacity(0.5)))
-                TextField("Enter your age", text: $user.age)
+                TextField("Укажите возраст", text: $user.age)
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(.gray).opacity(0.5)))
             }

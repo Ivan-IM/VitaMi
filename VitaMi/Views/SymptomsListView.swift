@@ -20,17 +20,17 @@ struct SymptomsListView: View {
                     .background(ContentCardView())
             }
             HStack {
-                CustomButtonView(buttonTitle: "Back", action: {
+                CustomButtonView(buttonTitle: "Назад", action: {
                     changer.mainViewChanger = .mainView
                 }, width: 160, height: 50)
                 Spacer()
-                CustomButtonView(buttonTitle: "Clear list", action: {
+                CustomButtonView(buttonTitle: "Очистить", action: {
                     showingClearAlert.toggle()
                 }, width: 160, height: 50)
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Clear"), message: Text("Are you want clear symptoms list?"), primaryButton: .destructive(Text("Ok"), action: {
+                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список симптомов?"), primaryButton: .destructive(Text("Ok"), action: {
                     user.symptomsList.removeAll()
                     user.lowElementsList.removeAll()
                 }), secondaryButton: .cancel())

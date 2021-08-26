@@ -17,7 +17,7 @@ struct SymptomsView: View {
                 ContentSymptomsView()
                     .background(ContentCardView())
             }
-            CustomButtonView(buttonTitle: "Back", action: {
+            CustomButtonView(buttonTitle: "Назад", action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }

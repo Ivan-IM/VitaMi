@@ -18,11 +18,11 @@ struct ContentSymptomsView: View {
     
     var body: some View {
         VStack {
-            Text("Сhoose the symptoms that bother you regularly lately")
+            Text("Выберете симптомы, которые беспокоят Вас регулярно в последнее время")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 25, weight: .semibold, design: .rounded))
             
-            ProgressView("Question \(index+1)/\(Symtom.getSymptomsList().count)", value: Float(index)+1, total: Float(Symtom.getSymptomsList().count))
+            ProgressView("Симптом \(index+1)/\(Symtom.getSymptomsList().count)", value: Float(index)+1, total: Float(Symtom.getSymptomsList().count))
                 .padding()
             
             Spacer()
@@ -33,7 +33,7 @@ struct ContentSymptomsView: View {
             Spacer()
             
             HStack {
-                CustomCircleButtonView(buttonTitle: "YES") {
+                CustomCircleButtonView(buttonTitle: "ДА") {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -49,7 +49,7 @@ struct ContentSymptomsView: View {
                     }
                 }
                 Spacer()
-                CustomCircleButtonView(buttonTitle: "NO") {
+                CustomCircleButtonView(buttonTitle: "НЕТ") {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -67,7 +67,7 @@ struct ContentSymptomsView: View {
         }
         .padding(48)
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Start testing?"), message: Text("If you start the test the list of symptoms will clear"), primaryButton: .destructive(Text("Ok"), action: {
+            Alert(title: Text("Начать тестирование?"), message: Text("Если вы начнете тестирование список симптомов очистится"), primaryButton: .destructive(Text("Ok"), action: {
                 user.symptomsList.removeAll()
                 user.lowElementsList.removeAll()
                 startTesting = true

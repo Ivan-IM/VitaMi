@@ -14,7 +14,7 @@ struct ElementDetailView: View {
     
     var body: some View {
         VStack {
-            Text(element.enName)
+            Text(element.ruName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
             ScrollView {
                 Text(element.elementInfo)
@@ -23,7 +23,7 @@ struct ElementDetailView: View {
             .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 2))
             .padding(2)
             Form {
-                Section(header: Text("FOOD")){
+                Section(header: Text("продукты питания")){
                     ForEach(element.ruProductInfo, id: \.self) { prod in
                         Text(prod)
                     }
@@ -37,7 +37,7 @@ struct ElementDetailView: View {
                 HStack {
                     Image(systemName: "chevron.left.circle")
                         .font(.title2)
-                    Text("Result")
+                    Text("Результаты")
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
                 }
             })

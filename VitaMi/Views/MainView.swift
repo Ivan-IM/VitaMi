@@ -16,13 +16,13 @@ struct MainView: View {
         VStack {
             UserFormView()
             VStack(spacing: 25) {
-            CustomButtonView(buttonTitle: "Start testing", action: {
+            CustomButtonView(buttonTitle: "Начать тестирование", action: {
                 changer.mainViewChanger = .symptomsView
             }, width: 300, height: 60)
-            CustomButtonView(buttonTitle: "Symptoms list", action: {
+            CustomButtonView(buttonTitle: "Список симптомов", action: {
                 changer.mainViewChanger = .symptomsListView
             }, width: 300, height: 60)
-            CustomButtonView(buttonTitle: "Result", action: {
+            CustomButtonView(buttonTitle: "Результаты", action: {
                 changer.mainViewChanger = .resultTestingView
             }, width: 300, height: 60)
             }

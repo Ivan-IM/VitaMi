@@ -32,7 +32,7 @@ struct StartView: View {
                         .zIndex(1)
                 }
                 Spacer()
-                CustomButtonView(buttonTitle: "Next", action: {
+                CustomButtonView(buttonTitle: "Дальше", action: {
                     switch changer.startViewChanger {
                     case .info:
                         changer.startViewChanger = .login
