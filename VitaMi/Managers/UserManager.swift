@@ -19,7 +19,7 @@ final class User: ObservableObject {
             UserDefaults.standard.set(gender, forKey: "Gender")
         }
     }
-    @Published var age: String {
+    @Published var age: Int {
         didSet {
             UserDefaults.standard.set(age, forKey: "Age")
         }
@@ -39,7 +39,7 @@ final class User: ObservableObject {
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? "Укажите пол"
-        self.age = UserDefaults.standard.object(forKey: "Age") as? String ?? ""
+        self.age = UserDefaults.standard.object(forKey: "Age") as? Int ?? 0
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
     }
