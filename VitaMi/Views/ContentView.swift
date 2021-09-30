@@ -45,9 +45,6 @@ struct ContentView: View {
                     .zIndex(5)
             }
         }
-        .onTapGesture {
-            UIApplication.shared.endEditing()
-        }
     }
 }
 

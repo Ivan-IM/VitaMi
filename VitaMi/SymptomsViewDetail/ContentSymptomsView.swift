@@ -29,6 +29,7 @@ struct ContentSymptomsView: View {
             
             Text(Symtom.getSymptomsList()[index].ruName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .multilineTextAlignment(.center)
             
             Spacer()
             

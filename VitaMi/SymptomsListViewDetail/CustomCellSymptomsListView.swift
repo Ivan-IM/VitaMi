@@ -24,7 +24,7 @@ struct CustomCellSymptomsListView: View {
                         .foregroundColor(Color(.systemGray))
                 }
             }
-            .font(.system(size: 20, weight: .semibold, design: .rounded))
+            .font(.system(size: 16, weight: .semibold, design: .rounded))
             .padding(10.0)
         }
         .frame(height: 40)
