@@ -32,6 +32,7 @@
 		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
 		CFA42A3126C272C600B855E8 /* CustomCellSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */; };
+		CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB34BFB270C59E000A527EF /* HealthyImageView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
 		CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6D26C26C4200155191 /* LoginView.swift */; };
@@ -65,6 +66,7 @@
 		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSymptomsListView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSymptomsListView.swift; sourceTree = "<group>"; };
+		CFB34BFB270C59E000A527EF /* HealthyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyImageView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CFC93F6D26C26C4200155191 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				CFA364EE26C6735F00958920 /* ScrollViewResultView.swift */,
 				CFA364F026C67A5200958920 /* ElementDetailView.swift */,
+				CFB34BFB270C59E000A527EF /* HealthyImageView.swift */,
 			);
 			path = ResultTestingViewDetail;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
 				CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */,
+				CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */,
 				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,

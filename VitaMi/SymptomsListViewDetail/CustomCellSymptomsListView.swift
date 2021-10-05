@@ -17,11 +17,11 @@ struct CustomCellSymptomsListView: View {
         Button(action: self.action) {
             HStack {
                 Text(self.title)
-                    .foregroundColor(Color(.systemGray))
+                    .foregroundColor(Color.black)
                 Spacer()
                 if self.isSelected {
                     Image(systemName: "checkmark")
-                        .foregroundColor(Color(.systemGray))
+                        .foregroundColor(Color.blue)
                 }
             }
             .font(.system(size: 16, weight: .semibold, design: .rounded))

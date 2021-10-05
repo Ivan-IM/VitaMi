@@ -20,11 +20,10 @@ struct ElementDetailView: View {
                 Text(element.elementInfo)
                     .padding(8)
             }
+            
+            Text("Продукты питания с высоким содержанием:")
+                .font(.system(size: 20, weight: .semibold, design: .rounded))
             List {
-                Text("Продукты питания с высоким содержанием:")
-                    .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets())
                 ForEach(element.ruProductInfo, id: \.self) { prod in
                     Text(prod)
                 }
