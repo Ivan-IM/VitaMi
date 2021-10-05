@@ -25,6 +25,7 @@ struct ScrollViewSymptomsListView: View {
                 .padding(.vertical, 3.0)
                 .padding(.horizontal, 10.0)
             }
+            .padding(.vertical, 6.0)
         }
         .padding(.vertical, 2)
         .padding(.horizontal, 8)
