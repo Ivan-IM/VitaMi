@@ -66,7 +66,7 @@ struct ContentSymptomsView: View {
                 }
             }
         }
-        .padding(48)
+        .padding(32)
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Начать тестирование?"), message: Text("Если вы начнете тестирование список симптомов очистится"), primaryButton: .destructive(Text("Ok"), action: {
                 user.symptomsList.removeAll()

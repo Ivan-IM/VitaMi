@@ -20,17 +20,18 @@ struct ElementDetailView: View {
                 Text(element.elementInfo)
                     .padding(8)
             }
-            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 2))
-            .padding(2)
-            Form {
-                Section(header: Text("продукты питания")){
-                    ForEach(element.ruProductInfo, id: \.self) { prod in
-                        Text(prod)
-                    }
+            List {
+                Text("Продукты питания с высоким содержанием:")
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
+                ForEach(element.ruProductInfo, id: \.self) { prod in
+                    Text(prod)
                 }
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
             }
-            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 2))
-            .padding(2)
+            
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
@@ -43,7 +44,7 @@ struct ElementDetailView: View {
             })
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9019607843, green: 0.9294117647, blue: 0.9882352941, alpha: 1.0)), Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(Color("backgroundColorSet"))
         .navigationBarHidden(true)
         .onAppear() {
             UITableView.appearance().backgroundColor = .clear

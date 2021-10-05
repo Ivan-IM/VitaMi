@@ -15,9 +15,13 @@ struct ResultTestingView: View {
     var body: some View {
         VStack {
             ZStack {
-                ContentCardView()
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color.clear)
+                    .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
+                    .padding()
                 ScrollViewResultView()
-                    .padding(30)
+                    .padding(26)
                     .opacity(user.lowElementsList.isEmpty ? 0:1)
             }
             CustomButtonView(buttonTitle: "Назад", action: {

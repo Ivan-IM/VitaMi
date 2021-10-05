@@ -15,7 +15,13 @@ struct SymptomsView: View {
         VStack {
             ZStack {
                 ContentSymptomsView()
-                    .background(ContentCardView())
+                    .background(
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(Color.clear)
+                            .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
+                    )
+                    .padding()
             }
             CustomButtonView(buttonTitle: "Назад", action: {
                 changer.mainViewChanger = .mainView
