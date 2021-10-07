@@ -16,7 +16,7 @@ struct SymptomsListView: View {
     var body: some View {
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 15).stroke(Color(.gray).opacity(0.5))
+                RoundedRectangle(cornerRadius: 15).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
                     .padding(.horizontal, 16)
                 Text("Список симптомов")
@@ -25,13 +25,12 @@ struct SymptomsListView: View {
                     .padding()
             }
             ZStack {
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color.clear)
+                    .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
+                    .padding()
                 ScrollViewSymptomsListView()
-                    .background(
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(Color.clear)
-                            .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
-                    )
                     .padding()
             }
             HStack {

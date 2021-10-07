@@ -53,6 +53,6 @@ struct ElementDetailView: View {
 
 struct ElementDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ElementDetailView(element: Element(symbol: "Fe", enName: "Iron", ruName: "Железо", type: "", elementInfo: "bla bla bla bla bla", ruProductInfo: ["bla", "bla"], normalValue: [:], helper: [], blocker: []))
+        ElementDetailView(element: Element(symbol: "Fe", enName: "Iron", ruName: "Железо", type: "", elementInfo: "bla bla bla bla bla", ruProductInfo: ["bla", "bla"], normalValue: [], helper: [], blocker: []))
     }
 }

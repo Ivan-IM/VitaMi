@@ -14,7 +14,7 @@ struct DesignTestView: View {
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
-                ForEach(Element.getElementsList()) { element in
+                ForEach(user.elements) { element in
                     if user.lowElementsList.contains(element.symbol) {
                         Button(action: {
                             showingDetail.toggle()

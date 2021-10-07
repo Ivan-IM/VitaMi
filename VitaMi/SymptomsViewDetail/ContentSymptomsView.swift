@@ -22,12 +22,12 @@ struct ContentSymptomsView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 25, weight: .semibold, design: .rounded))
             
-            ProgressView("Симптом \(index+1)/\(Symtom.getSymptomsList().count)", value: Float(index)+1, total: Float(Symtom.getSymptomsList().count))
+            ProgressView("Симптом \(index+1)/\(user.symptoms.count)", value: Float(index)+1, total: Float(user.symptoms.count))
                 .padding()
             
             Spacer()
             
-            Text(Symtom.getSymptomsList()[index].ruName)
+            Text(user.symptoms[index].ruName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .multilineTextAlignment(.center)
             
@@ -39,12 +39,12 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        user.symptomsList.append(Symtom.getSymptomsList()[index].enName)
-                        if index < Symtom.getSymptomsList().count-1 {
+                        user.symptomsList.append(user.symptoms[index].enName)
+                        if index < user.symptoms.count-1 {
                             index += 1
                         }
                         else {
-                            index = Symtom.getSymptomsList().count-1
+                            index = user.symptoms.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }
@@ -55,11 +55,11 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        if index < Symtom.getSymptomsList().count-1 {
+                        if index < user.symptoms.count-1 {
                             index += 1
                         }
                         else {
-                            index = Symtom.getSymptomsList().count-1
+                            index = user.symptoms.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }

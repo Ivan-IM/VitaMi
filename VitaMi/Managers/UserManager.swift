@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+import CoreMIDI
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class User: ObservableObject {
+    private let symptomsPath = "Symptoms"
+    private let elementsPath = "Elements"
+    private let store = Firestore.firestore()
+    
+    @Published var symptoms: [Symptom] = []
+    @Published var elements: [Element] = []
     
     @Published var name: String {
         didSet {
@@ -42,7 +51,40 @@ final class User: ObservableObject {
         self.age = UserDefaults.standard.object(forKey: "Age") as? Int ?? 0
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
+        getBase()
     }
+    
+    func getBase() {
+        store.collection(symptomsPath).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.symptoms = snapshot?.documents.compactMap {
+                try? $0.data(as: Symptom.self)
+            } ?? []
+        }
+        store.collection(elementsPath).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.elements = snapshot?.documents.compactMap {
+                try? $0.data(as: Element.self)
+            } ?? []
+        }
+    }
+    
+//    func add() {
+//        for i in Element.getElementsList() {
+//            do {
+//                _ = try store.collection(elementsPath).addDocument(from: i)
+//            }
+//            catch {
+//                fatalError("Add")
+//            }
+//        }
+//    }
     
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
@@ -56,14 +98,14 @@ final class User: ObservableObject {
         else {
             lowElementsList.removeAll()
             
-            Symtom.getSymptomsList().forEach { symptom in
+            symptoms.forEach { symptom in
                 if symptomsList.contains(symptom.enName) {
                     elementsList.append(contentsOf: symptom.elements)
                     elementsList.append(contentsOf: symptom.elements)
                 }
                 else { return }
             }
-            //print("All elements \(elementsList)")
+            print("All elements \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 2 {
@@ -71,17 +113,17 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            //print("Double filtration \(firstFilterList)")
+            print("Double filtration \(firstFilterList)")
             
-            Element.getElementsList().forEach { element in
+            elements.forEach { element in
                 if firstFilterList.contains(element.symbol) {
                     blockList.append(contentsOf: element.blocker)
                     helperList.append(contentsOf: element.helper)
                 }
                 else { return }
             }
-            //print("Block list \(blockList)")
-            //print("Help list \(helperList)")
+            print("Block list \(blockList)")
+            print("Help list \(helperList)")
             
             blockList.forEach() { element in
                 if elementsList.contains(element) {
@@ -89,10 +131,10 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            //print("Remove block \(elementsList)")
+            print("Remove block \(elementsList)")
             
             elementsList.append(contentsOf: helperList)
-            //print("Add help \(elementsList)")
+            print("Add help \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 3 {
@@ -105,7 +147,7 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            //print("Result \(lowElementsList)")
+            print("Result \(lowElementsList)")
         }
     }
     

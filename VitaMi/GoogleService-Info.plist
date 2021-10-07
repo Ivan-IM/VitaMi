@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>656467494938-o39gdncjth095hv2e6lkh224bn5j71aq.apps.googleusercontent.com</string>
+	<string>879856995715-sokvtsg4k3f8e7ggg37n5121kc4kk171.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.656467494938-o39gdncjth095hv2e6lkh224bn5j71aq</string>
+	<string>com.googleusercontent.apps.879856995715-sokvtsg4k3f8e7ggg37n5121kc4kk171</string>
 	<key>API_KEY</key>
-	<string>AIzaSyALyjcGlXxDpaySzK2xnVA29X9ffmoarYA</string>
+	<string>AIzaSyDoj4sZYngZWw2X3zG3UBwVtlh00l4sQbc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>656467494938</string>
+	<string>879856995715</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>ru.imarishin.VitaMi</string>
 	<key>PROJECT_ID</key>
-	<string>vitami-ba487</string>
+	<string>vitami-77d59</string>
 	<key>STORAGE_BUCKET</key>
-	<string>vitami-ba487.appspot.com</string>
+	<string>vitami-77d59.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:656467494938:ios:2a1d70f82b7ab7f09629a3</string>
+	<string>1:879856995715:ios:4f7265eb315cc446fffab6</string>
 </dict>
 </plist>

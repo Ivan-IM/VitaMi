@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB6626882CE18F1DBB259997 /* Pods_VitaMi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4784EE330D5798B7D6D979 /* Pods_VitaMi.framework */; };
+		CF0D660A270EC59D006FBF8F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D6609270EC59D006FBF8F /* FirebaseAuth */; };
+		CF0D660C270EC59D006FBF8F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D660B270EC59D006FBF8F /* FirebaseFirestore */; };
+		CF0D660E270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D660D270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta */; };
+		CF0D6612270ED1F0006FBF8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */; };
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
@@ -34,16 +37,13 @@
 		CFA42A3126C272C600B855E8 /* CustomCellSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */; };
 		CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB34BFB270C59E000A527EF /* HealthyImageView.swift */; };
-		CFB34BFE270D7EBB00A527EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFB34BFD270D7EBB00A527EF /* GoogleService-Info.plist */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
 		CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6D26C26C4200155191 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3BB839E1224C4D24422C4550 /* Pods-VitaMi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaMi.release.xcconfig"; path = "Target Support Files/Pods-VitaMi/Pods-VitaMi.release.xcconfig"; sourceTree = "<group>"; };
-		7E4784EE330D5798B7D6D979 /* Pods_VitaMi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VitaMi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85CC71F5A4A068C6313282E9 /* Pods-VitaMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitaMi.debug.xcconfig"; path = "Target Support Files/Pods-VitaMi/Pods-VitaMi.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSymptomsListView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSymptomsListView.swift; sourceTree = "<group>"; };
 		CFB34BFB270C59E000A527EF /* HealthyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyImageView.swift; sourceTree = "<group>"; };
-		CFB34BFD270D7EBB00A527EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CFC93F6D26C26C4200155191 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -83,30 +82,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6626882CE18F1DBB259997 /* Pods_VitaMi.framework in Frameworks */,
+				CF0D660E270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				CF0D660A270EC59D006FBF8F /* FirebaseAuth in Frameworks */,
+				CF0D660C270EC59D006FBF8F /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A68393A7ED244D76568D408A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7E4784EE330D5798B7D6D979 /* Pods_VitaMi.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C804FD09AC786D31E2A9E5F0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				85CC71F5A4A068C6313282E9 /* Pods-VitaMi.debug.xcconfig */,
-				3BB839E1224C4D24422C4550 /* Pods-VitaMi.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		CF1B39E826BC3E0E00D45DD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +118,6 @@
 			children = (
 				CF2BF987269096FB00842794 /* VitaMi */,
 				CF2BF986269096FB00842794 /* Products */,
-				C804FD09AC786D31E2A9E5F0 /* Pods */,
-				A68393A7ED244D76568D408A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,7 +144,7 @@
 				CF2BF988269096FB00842794 /* VitaMiApp.swift */,
 				CF2BF98C269096FC00842794 /* Assets.xcassets */,
 				CF2BF991269096FC00842794 /* Info.plist */,
-				CFB34BFD270D7EBB00A527EF /* GoogleService-Info.plist */,
+				CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */,
 				CF2BF98E269096FC00842794 /* Preview Content */,
 			);
 			path = VitaMi;
@@ -250,17 +232,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2BF994269096FC00842794 /* Build configuration list for PBXNativeTarget "VitaMi" */;
 			buildPhases = (
-				3EA6876C8C2DE686331DFB08 /* [CP] Check Pods Manifest.lock */,
 				CF2BF981269096FB00842794 /* Sources */,
 				CF2BF982269096FB00842794 /* Frameworks */,
 				CF2BF983269096FB00842794 /* Resources */,
-				EF8BBB7CB19E9D220D6A62CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = VitaMi;
+			packageProductDependencies = (
+				CF0D6609270EC59D006FBF8F /* FirebaseAuth */,
+				CF0D660B270EC59D006FBF8F /* FirebaseFirestore */,
+				CF0D660D270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = VitaMi;
 			productReference = CF2BF985269096FB00842794 /* VitaMi.app */;
 			productType = "com.apple.product-type.application";
@@ -288,6 +273,9 @@
 				Base,
 			);
 			mainGroup = CF2BF97C269096FB00842794;
+			packageReferences = (
+				CF0D6608270EC59D006FBF8F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CF2BF986269096FB00842794 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,53 +292,11 @@
 			files = (
 				CF2BF990269096FC00842794 /* Preview Assets.xcassets in Resources */,
 				CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */,
-				CFB34BFE270D7EBB00A527EF /* GoogleService-Info.plist in Resources */,
+				CF0D6612270ED1F0006FBF8F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3EA6876C8C2DE686331DFB08 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VitaMi-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF8BBB7CB19E9D220D6A62CB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VitaMi/Pods-VitaMi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VitaMi/Pods-VitaMi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VitaMi/Pods-VitaMi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF2BF981269096FB00842794 /* Sources */ = {
@@ -510,7 +456,6 @@
 		};
 		CF2BF995269096FC00842794 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85CC71F5A4A068C6313282E9 /* Pods-VitaMi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -535,7 +480,6 @@
 		};
 		CF2BF996269096FC00842794 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BB839E1224C4D24422C4550 /* Pods-VitaMi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -580,6 +524,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF0D6608270EC59D006FBF8F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF0D6609270EC59D006FBF8F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF0D6608270EC59D006FBF8F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CF0D660B270EC59D006FBF8F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF0D6608270EC59D006FBF8F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CF0D660D270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF0D6608270EC59D006FBF8F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF2BF97D269096FB00842794 /* Project object */;
 }
