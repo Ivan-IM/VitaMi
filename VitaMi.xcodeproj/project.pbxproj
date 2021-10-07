@@ -11,6 +11,7 @@
 		CF0D660C270EC59D006FBF8F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D660B270EC59D006FBF8F /* FirebaseFirestore */; };
 		CF0D660E270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D660D270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta */; };
 		CF0D6612270ED1F0006FBF8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */; };
+		CF0D6614270EFA57006FBF8F /* ConnectBaseErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */; };
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectBaseErrorView.swift; sourceTree = "<group>"; };
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				CFA364E326C6617300958920 /* ContentCardView.swift */,
 				CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */,
 				CFA364F626C820E400958920 /* CustomCircleButtonView.swift */,
+				CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				CFA42A3126C272C600B855E8 /* CustomCellSymptomsListView.swift in Sources */,
 				CFA364F126C67A5200958920 /* ElementDetailView.swift in Sources */,
 				CFC93F6C26C26AC000155191 /* StartView.swift in Sources */,
+				CF0D6614270EFA57006FBF8F /* ConnectBaseErrorView.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,

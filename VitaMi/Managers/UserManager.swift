@@ -49,7 +49,7 @@ final class User: ObservableObject {
         }
     }
     
-    //MARK: SignIn
+    //MARK: SignIn Anonymous
     @Published var isAnonymous = false
     @Published var uid = ""
     
@@ -132,7 +132,7 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            print("All elements \(elementsList)")
+            //print("All elements \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 2 {
@@ -140,7 +140,7 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Double filtration \(firstFilterList)")
+            //print("Double filtration \(firstFilterList)")
             
             elements.forEach { element in
                 if firstFilterList.contains(element.symbol) {
@@ -149,8 +149,8 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Block list \(blockList)")
-            print("Help list \(helperList)")
+            //print("Block list \(blockList)")
+            //print("Help list \(helperList)")
             
             blockList.forEach() { element in
                 if elementsList.contains(element) {
@@ -158,10 +158,10 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Remove block \(elementsList)")
+            //print("Remove block \(elementsList)")
             
             elementsList.append(contentsOf: helperList)
-            print("Add help \(elementsList)")
+            //print("Add help \(elementsList)")
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 3 {
@@ -174,7 +174,7 @@ final class User: ObservableObject {
                 }
                 else { return }
             }
-            print("Result \(lowElementsList)")
+            //print("Result \(lowElementsList)")
         }
     }
     

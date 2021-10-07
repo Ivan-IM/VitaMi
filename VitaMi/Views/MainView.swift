@@ -16,15 +16,16 @@ struct MainView: View {
         VStack {
             UserFormView()
             VStack(spacing: 25) {
-            CustomButtonView(buttonTitle: "Начать тестирование", action: {
-                changer.mainViewChanger = .symptomsView
-            }, width: 300, height: 60)
-            CustomButtonView(buttonTitle: "Список симптомов", action: {
-                changer.mainViewChanger = .symptomsListView
-            }, width: 300, height: 60)
-            CustomButtonView(buttonTitle: "Результаты", action: {
-                changer.mainViewChanger = .resultTestingView
-            }, width: 300, height: 60)
+                CustomButtonView(buttonTitle: "Начать тестирование", action: {
+                    changer.mainViewChanger = .symptomsView
+                }, width: 300, height: 60)
+                    .disabled(user.symptoms.isEmpty ? true:false)
+                CustomButtonView(buttonTitle: "Список симптомов", action: {
+                    changer.mainViewChanger = .symptomsListView
+                }, width: 300, height: 60)
+                CustomButtonView(buttonTitle: "Результаты", action: {
+                    changer.mainViewChanger = .resultTestingView
+                }, width: 300, height: 60)
             }
             Spacer()
         }

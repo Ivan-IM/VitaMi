@@ -30,8 +30,11 @@ struct SymptomsListView: View {
                     .foregroundColor(Color.clear)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
                     .padding()
+                ConnectBaseErrorView()
+                    .opacity(user.symptoms.isEmpty ? 0.7:0)
                 ScrollViewSymptomsListView()
                     .padding()
+                    .opacity(user.symptoms.isEmpty ? 0:1)
             }
             HStack {
                 CustomButtonView(buttonTitle: "Назад", action: {

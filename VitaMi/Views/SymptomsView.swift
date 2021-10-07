@@ -10,17 +10,17 @@ import SwiftUI
 struct SymptomsView: View {
     
     @EnvironmentObject var changer: ViewChanger
+    @EnvironmentObject var user: User
     
     var body: some View {
         VStack {
             ZStack {
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color.clear)
+                    .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
+                    .padding()
                 ContentSymptomsView()
-                    .background(
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(Color.clear)
-                            .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
-                    )
                     .padding()
             }
             CustomButtonView(buttonTitle: "Назад", action: {

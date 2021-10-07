@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) var isEnabled
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.system(size: 20, weight: .semibold, design: .rounded))
+            .foregroundColor(isEnabled ? .black:.gray)
             .background(
                 Group {
                     if configuration.isPressed {
@@ -55,6 +57,5 @@ struct CustomButtonStyle: ButtonStyle {
                     }
                 }
             )
-        
     }
 }
