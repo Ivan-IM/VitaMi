@@ -7,10 +7,12 @@
 
 import SwiftUI
 import CoreMIDI
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 final class User: ObservableObject {
+    //MARK: Base
     private let symptomsPath = "Symptoms"
     private let elementsPath = "Elements"
     private let store = Firestore.firestore()
@@ -18,6 +20,7 @@ final class User: ObservableObject {
     @Published var symptoms: [Symptom] = []
     @Published var elements: [Element] = []
     
+    //MARK: User info
     @Published var name: String {
         didSet {
             UserDefaults.standard.set(name, forKey: "Name")
@@ -34,6 +37,7 @@ final class User: ObservableObject {
         }
     }
     
+    //MARK: User simptoms info
     @Published var symptomsList: [String] {
         didSet {
             UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
@@ -45,12 +49,46 @@ final class User: ObservableObject {
         }
     }
     
+    //MARK: SignIn
+    @Published var isAnonymous = false
+    @Published var uid = ""
+    
+    func anonymSignIn() {
+        Auth.auth().signInAnonymously { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let user = result?.user else { return }
+            self.isAnonymous = user.isAnonymous
+            self.uid = user.uid
+            
+            print("Anonimous sign in FireBase")
+            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+            print(self.uid)
+        }
+    }
+    
+    func anonymSignOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            self.uid = ""
+            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+            print("UserID is \(uid.description)")
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    //MARK: init class
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? "Укажите пол"
         self.age = UserDefaults.standard.object(forKey: "Age") as? Int ?? 0
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
+        anonymSignIn()
         getBase()
     }
     
@@ -74,17 +112,6 @@ final class User: ObservableObject {
             } ?? []
         }
     }
-    
-//    func add() {
-//        for i in Element.getElementsList() {
-//            do {
-//                _ = try store.collection(elementsPath).addDocument(from: i)
-//            }
-//            catch {
-//                fatalError("Add")
-//            }
-//        }
-//    }
     
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
