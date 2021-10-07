@@ -51,33 +51,9 @@ final class User: ObservableObject {
     
     //MARK: SignIn Anonymous
     @Published var isAnonymous = false
-    @Published var uid = ""
-    
-    func anonymSignIn() {
-        Auth.auth().signInAnonymously { result, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let user = result?.user else { return }
-            self.isAnonymous = user.isAnonymous
-            self.uid = user.uid
-            
-            print("Anonimous sign in FireBase")
-            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
-            print(self.uid)
-        }
-    }
-    
-    func anonymSignOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-          try firebaseAuth.signOut()
-            self.uid = ""
-            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
-            print("UserID is \(uid.description)")
-        } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
+    @Published var uid: String {
+        didSet {
+            UserDefaults.standard.set(uid, forKey: "UID")
         }
     }
     
@@ -88,7 +64,10 @@ final class User: ObservableObject {
         self.age = UserDefaults.standard.object(forKey: "Age") as? Int ?? 0
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
+        self.uid = UserDefaults.standard.object(forKey: "UID") as? String ?? ""
+        
         anonymSignIn()
+        
         getBase()
     }
     
@@ -178,4 +157,31 @@ final class User: ObservableObject {
         }
     }
     
+    func anonymSignIn() {
+        Auth.auth().signInAnonymously { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let user = result?.user else { return }
+            self.isAnonymous = user.isAnonymous
+            self.uid = user.uid
+            
+            print("Anonimous sign in FireBase")
+            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+            print(self.uid)
+        }
+    }
+    
+    func anonymSignOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.uid = ""
+            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+            print("UserID is \(uid.description)")
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
 }
