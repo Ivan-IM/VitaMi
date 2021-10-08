@@ -30,7 +30,7 @@ struct MainView: View {
             Spacer()
         }
         .onTapGesture {
-            UIApplication.shared.endEditing()
+            //UIApplication.shared.endEditing()
         }
     }
 }

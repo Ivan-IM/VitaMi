@@ -11,7 +11,7 @@ struct ResultTestingView: View {
     
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var user: User
-    var titleElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата рекомендуем сдать анализ по указанным позициям."
+    var titleElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата рекомендуем пройти обследование."
     var titleHealthy: String = "Ваше состояние не указывает на дефицит или сниженное потребление каких-либо микроэлементов и витаминов."
     
     var body: some View {

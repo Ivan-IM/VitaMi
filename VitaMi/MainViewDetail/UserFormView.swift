@@ -16,8 +16,9 @@ struct UserFormView: View {
         ZStack {
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                 .frame(height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(Color("backgroundColorSet").opacity(0.5))
-                .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color(.white), lineWidth: 2))
+                .foregroundColor(Color.clear)
+                .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color(.gray).opacity(0.5)))
+            
             VStack(spacing: 15) {
                 TextField("Введите имя", text: $user.name)
                     .padding(10)

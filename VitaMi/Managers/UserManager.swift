@@ -66,7 +66,7 @@ final class User: ObservableObject {
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.uid = UserDefaults.standard.object(forKey: "UID") as? String ?? ""
         
-        anonymSignIn()
+        //anonymSignIn()
         
         getBase()
     }
