@@ -66,7 +66,7 @@ final class User: ObservableObject {
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.uid = UserDefaults.standard.object(forKey: "UID") as? String ?? ""
         
-        //anonymSignIn()
+        anonymSignIn()
         
         getBase()
     }
@@ -158,17 +158,23 @@ final class User: ObservableObject {
     }
     
     func anonymSignIn() {
-        Auth.auth().signInAnonymously { result, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+        if self.uid.isEmpty {
+            Auth.auth().signInAnonymously { result, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                guard let user = result?.user else { return }
+                self.isAnonymous = user.isAnonymous
+                self.uid = user.uid
+                
+                print("Anonymous sign in FireBase")
+                print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+                print(self.uid)
             }
-            guard let user = result?.user else { return }
-            self.isAnonymous = user.isAnonymous
-            self.uid = user.uid
-            
-            print("Anonimous sign in FireBase")
-            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+        }
+        else {
+            print("Anonymous is already sign in FireBase")
             print(self.uid)
         }
     }
@@ -178,7 +184,7 @@ final class User: ObservableObject {
         do {
             try firebaseAuth.signOut()
             self.uid = ""
-            print("!!!Anonimous sign is \(self.isAnonymous)!!!")
+            print("!!!Anonymous sign is \(self.isAnonymous)!!!")
             print("UserID is \(uid.description)")
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)

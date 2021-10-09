@@ -17,7 +17,7 @@ struct CustomCellSymptomsListView: View {
         Button(action: self.action) {
             HStack {
                 Text(self.title)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color("text"))
                 Spacer()
                 if self.isSelected {
                     Image(systemName: "checkmark")

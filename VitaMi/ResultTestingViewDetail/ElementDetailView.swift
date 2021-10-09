@@ -16,16 +16,20 @@ struct ElementDetailView: View {
         VStack {
             Text(element.ruName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .foregroundColor(Color("text"))
             ScrollView {
                 Text(element.elementInfo)
+                    .foregroundColor(Color("text"))
                     .padding(8)
             }
             
             Text("Продукты питания с высоким содержанием:")
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .foregroundColor(Color("text"))
             List {
                 ForEach(element.ruProductInfo, id: \.self) { prod in
                     Text(prod)
+                        .foregroundColor(Color("text"))
                 }
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets())
@@ -39,11 +43,12 @@ struct ElementDetailView: View {
                         .font(.title2)
                     Text("Результаты")
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .foregroundColor(Color("text"))
                 }
             })
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-        .background(Color("backgroundColorSet"))
+        .background(Color("background"))
         .navigationBarHidden(true)
         .onAppear() {
             UITableView.appearance().backgroundColor = .clear

@@ -16,12 +16,13 @@ struct SymptomsListView: View {
     var body: some View {
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 15).stroke(Color.gray.opacity(0.5))
+                RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
                     .padding(.horizontal, 16)
                 Text("Список симптомов")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
+                    .foregroundColor(Color("text"))
                     .padding()
             }
             ZStack {

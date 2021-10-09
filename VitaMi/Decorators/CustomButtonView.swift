@@ -19,6 +19,6 @@ struct CustomButtonView: View {
             Text(buttonTitle)
                 .frame(width: width, height: height)
         })
-        .buttonStyle(CustomButtonStyle())
+        .buttonStyle(CustomMinButtonStyle())
     }
 }

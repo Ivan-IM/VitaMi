@@ -12,6 +12,7 @@
 		CF0D660E270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CF0D660D270EC59D006FBF8F /* FirebaseFirestoreSwift-Beta */; };
 		CF0D6612270ED1F0006FBF8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */; };
 		CF0D6614270EFA57006FBF8F /* ConnectBaseErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */; };
+		CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661727116AB6006FBF8F /* CustomMinButtonStyle.swift */; };
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectBaseErrorView.swift; sourceTree = "<group>"; };
+		CF0D661727116AB6006FBF8F /* CustomMinButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMinButtonStyle.swift; sourceTree = "<group>"; };
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */,
 				CFA364F626C820E400958920 /* CustomCircleButtonView.swift */,
 				CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */,
+				CF0D661727116AB6006FBF8F /* CustomMinButtonStyle.swift */,
 			);
 			path = Decorators;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
 				CFA364E426C6617300958920 /* ContentCardView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
+				CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
 				CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */,

@@ -12,35 +12,15 @@ struct DesignTestView: View {
     @State private var showingDetail = false
     
     var body: some View {
-        NavigationView {
-            ScrollView(showsIndicators: false) {
-                ForEach(user.elements) { element in
-                    if user.lowElementsList.contains(element.symbol) {
-                        Button(action: {
-                            showingDetail.toggle()
-                        }, label: {
-                            HStack {
-                                Text(element.ruName)
-                                    .foregroundColor(Color(.systemGray))
-                                Spacer()
-                                Image(systemName: "questionmark.circle")
-                            }
-                            .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .padding(10)
-                        })
-                        .sheet(isPresented: $showingDetail, content: {
-                        })
-                        .frame(height: 40)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
-                        .padding(.vertical, 2.0)
-                        .padding(.horizontal, 10.0)
-                    }
-                }
-                .padding(.vertical, 25)
-                .padding(.horizontal, 15)
-            }
-            .navigationBarHidden(true)
-            .background(ContentCardView())
+        ZStack {
+            Color("background")
+            Button(action: {
+                
+            }, label: {
+                Text("Button")
+                    .frame(width: 150, height: 50)
+            })
+                .buttonStyle(CustomMinButtonStyle())
         }
     }
 }

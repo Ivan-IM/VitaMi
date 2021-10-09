@@ -12,7 +12,7 @@ struct CustomButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.system(size: 20, weight: .semibold, design: .rounded))
-            .foregroundColor(isEnabled ? .black:.gray)
+            .foregroundColor(isEnabled ? Color("text"):.gray)
             .background(
                 Group {
                     if configuration.isPressed {

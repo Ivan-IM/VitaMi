@@ -21,8 +21,10 @@ struct ContentSymptomsView: View {
             Text("Выберете симптомы, которые беспокоят Вас регулярно в последнее время")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 25, weight: .semibold, design: .rounded))
+                .foregroundColor(Color("text"))
             
             ProgressView("Симптом \(index+1)/\(user.symptoms.count)", value: Float(index)+1, total: Float(user.symptoms.count))
+                .foregroundColor(Color("text"))
                 .padding()
             
             Spacer()
@@ -30,6 +32,7 @@ struct ContentSymptomsView: View {
             Text(user.symptoms[index].ruName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color("text"))
             
             Spacer()
             
