@@ -18,13 +18,14 @@ struct CustomCircleButtonStyle: ButtonStyle {
                 Group {
                     ZStack {
                         Circle()
-                            .shadow(color: .white.opacity(0.5), radius: configuration.isPressed ? 3: 8, x: configuration.isPressed ? -5: -8, y: configuration.isPressed ? -5: -8)
-                            .shadow(color: .black.opacity(0.5), radius: configuration.isPressed ? 3: 8, x: configuration.isPressed ? 5: 8, y: configuration.isPressed ? 5: 8)
+                            .shadow(color: .white.opacity(0.9), radius: configuration.isPressed ? 3: 8, x: configuration.isPressed ? -1: -5, y: configuration.isPressed ? -1: -5)
+                            .shadow(color: .black.opacity(1), radius: configuration.isPressed ? 3: 8, x: configuration.isPressed ? 1: 5, y: configuration.isPressed ? 1: 5)
                             .blendMode(.overlay)
                         Circle()
                             .fill(Color("background"))
                     }
                 }
             )
+            .animation(.spring())
     }
 }

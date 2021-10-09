@@ -14,13 +14,9 @@ struct DesignTestView: View {
     var body: some View {
         ZStack {
             Color("background")
-            Button(action: {
+            CustomButtonMainView(buttonTitle: "Button adsdasdasd", imageName: "leaf.circle", imageColor: Color.blue, action: {
                 
-            }, label: {
-                Text("Button")
-                    .frame(width: 150, height: 50)
-            })
-                .buttonStyle(CustomMinButtonStyle())
+            }, width: 150, height: 150)
         }
     }
 }
@@ -28,6 +24,7 @@ struct DesignTestView: View {
 struct DesignTestView_Previews: PreviewProvider {
     static var previews: some View {
         DesignTestView()
+            .preferredColorScheme(.light)
             .environmentObject(ViewChanger())
             .environmentObject(User())
     }
