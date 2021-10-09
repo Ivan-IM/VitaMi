@@ -15,6 +15,8 @@
 		CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661727116AB6006FBF8F /* CustomMinButtonStyle.swift */; };
 		CF0D661A271185B2006FBF8F /* CustomButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6619271185B2006FBF8F /* CustomButtonMainView.swift */; };
 		CF0D661C27119282006FBF8F /* GreatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661B27119282006FBF8F /* GreatingView.swift */; };
+		CF0D661E27120CE3006FBF8F /* SigninWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661D27120CE3006FBF8F /* SigninWithAppleButton.swift */; };
+		CF0D66202712123B006FBF8F /* SigninWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */; };
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
@@ -49,6 +51,8 @@
 		CF0D661727116AB6006FBF8F /* CustomMinButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMinButtonStyle.swift; sourceTree = "<group>"; };
 		CF0D6619271185B2006FBF8F /* CustomButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonMainView.swift; sourceTree = "<group>"; };
 		CF0D661B27119282006FBF8F /* GreatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatingView.swift; sourceTree = "<group>"; };
+		CF0D661D27120CE3006FBF8F /* SigninWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleButton.swift; sourceTree = "<group>"; };
+		CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				CFC93F6926C268E400155191 /* ViewChangeManager.swift */,
 				CF2BF9A6269173BF00842794 /* UserManager.swift */,
 				CF1B39DF26BC3C4900D45DD6 /* Extension.swift */,
+				CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				CFA364DD26C3C1FF00958920 /* InfoView.swift */,
 				CFC93F6D26C26C4200155191 /* LoginView.swift */,
+				CF0D661D27120CE3006FBF8F /* SigninWithAppleButton.swift */,
 			);
 			path = StartViewDetail;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 				CFA364F126C67A5200958920 /* ElementDetailView.swift in Sources */,
 				CFC93F6C26C26AC000155191 /* StartView.swift in Sources */,
 				CF0D6614270EFA57006FBF8F /* ConnectBaseErrorView.swift in Sources */,
+				CF0D661E27120CE3006FBF8F /* SigninWithAppleButton.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
 				CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */,
+				CF0D66202712123B006FBF8F /* SigninWithAppleCoordinator.swift in Sources */,
 				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,

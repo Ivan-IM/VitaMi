@@ -10,15 +10,17 @@ import AuthenticationServices
 
 struct LoginView: View {
     
+    @EnvironmentObject var user: User
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack(spacing: 50) {
-            SignInWithAppleButton { (request) in
-                
-            } onCompletion: { (request) in
-            }
-            .signInWithAppleButtonStyle(.black)
+            SigninWithAppleButton()
             .frame(height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .clipShape(Capsule())
+            .onTapGesture {
+                self.presentationMode.wrappedValue.dismiss()
+            }
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                 Text("Terms & Privacy")
@@ -32,5 +34,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(User())
     }
 }
