@@ -25,11 +25,8 @@
 		CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsView.swift */; };
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
-		CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364D926C376EB00958920 /* CustomButtonStyle.swift */; };
 		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
 		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
-		CFA364E026C625D200958920 /* UserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DF26C625D200958920 /* UserFormView.swift */; };
-		CFA364E426C6617300958920 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E326C6617300958920 /* ContentCardView.swift */; };
 		CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E526C6623100958920 /* ContentSymptomsView.swift */; };
 		CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E926C6657400958920 /* SymptomsListView.swift */; };
 		CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364EC26C66F8A00958920 /* CustomButtonView.swift */; };
@@ -64,11 +61,8 @@
 		CF758F8E26988EEA004E73EE /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
-		CFA364D926C376EB00958920 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		CFA364DF26C625D200958920 /* UserFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormView.swift; sourceTree = "<group>"; };
-		CFA364E326C6617300958920 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
 		CFA364E526C6623100958920 /* ContentSymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSymptomsView.swift; sourceTree = "<group>"; };
 		CFA364E926C6657400958920 /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
 		CFA364EC26C66F8A00958920 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
@@ -179,11 +173,9 @@
 		CFA364D826C376C200958920 /* Decorators */ = {
 			isa = PBXGroup;
 			children = (
-				CFA364D926C376EB00958920 /* CustomButtonStyle.swift */,
 				CFA364DB26C3889400958920 /* DesignTestView.swift */,
 				CFA364EC26C66F8A00958920 /* CustomButtonView.swift */,
 				CF0D6619271185B2006FBF8F /* CustomButtonMainView.swift */,
-				CFA364E326C6617300958920 /* ContentCardView.swift */,
 				CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */,
 				CFA364F626C820E400958920 /* CustomCircleButtonView.swift */,
 				CF0D6613270EFA57006FBF8F /* ConnectBaseErrorView.swift */,
@@ -213,7 +205,6 @@
 		CFA42A2E26C26F8000B855E8 /* MainViewDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CFA364DF26C625D200958920 /* UserFormView.swift */,
 				CF0D661B27119282006FBF8F /* GreatingView.swift */,
 			);
 			path = MainViewDetail;
@@ -323,13 +314,11 @@
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
 				CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */,
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
-				CFA364DA26C376EB00958920 /* CustomButtonStyle.swift in Sources */,
 				CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */,
 				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
-				CFA364E426C6617300958920 /* ContentCardView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
 				CF0D661A271185B2006FBF8F /* CustomButtonMainView.swift in Sources */,
 				CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */,
@@ -341,7 +330,6 @@
 				CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,
 				CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */,
-				CFA364E026C625D200958920 /* UserFormView.swift in Sources */,
 				CF0D661C27119282006FBF8F /* GreatingView.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,

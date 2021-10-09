@@ -17,7 +17,9 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            UserFormView()
+            Spacer()
+            GreatingView(userName: user.name, width: width, height: height/4)
+            Spacer()
             VStack(spacing: 0) {
                 HStack(alignment: .center) {
                     CustomButtonMainView(buttonTitle: "Начать тестирование", imageName: "hand.tap", imageColor: .blue, action: {
@@ -43,9 +45,6 @@ struct MainView: View {
                 }
             }
             Spacer()
-        }
-        .onTapGesture {
-            //UIApplication.shared.endEditing()
         }
     }
 }

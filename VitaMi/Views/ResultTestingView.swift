@@ -11,7 +11,8 @@ struct ResultTestingView: View {
     
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var user: User
-    var titleElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата рекомендуем пройти обследование."
+    @State private var showingAlert = false
+    var titleElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата необходимо сдать анализ крови в любой клининке."
     var titleHealthy: String = "Ваше состояние не указывает на дефицит или сниженное потребление каких-либо микроэлементов и витаминов."
     
     var body: some View {
@@ -42,6 +43,12 @@ struct ResultTestingView: View {
         .onAppear() {
             user.lowElementsList.removeAll()
             user.elementsFilterAlgorithm()
+            if user.symptomsList.count > 9 {
+                showingAlert.toggle()
+            }
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Внимание!"), message: Text("Большое число симптомов! Перепроверьте выбор симптомов. В противном случае рекомендуем обратиться к врачу для исключения заболевания."), dismissButton: .cancel())
         }
     }
 }

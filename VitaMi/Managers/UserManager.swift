@@ -26,16 +26,6 @@ final class User: ObservableObject {
             UserDefaults.standard.set(name, forKey: "Name")
         }
     }
-    @Published var gender: String {
-        didSet {
-            UserDefaults.standard.set(gender, forKey: "Gender")
-        }
-    }
-    @Published var age: Int {
-        didSet {
-            UserDefaults.standard.set(age, forKey: "Age")
-        }
-    }
     
     //MARK: User simptoms info
     @Published var symptomsList: [String] {
@@ -59,9 +49,7 @@ final class User: ObservableObject {
     
     //MARK: init class
     init() {
-        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
-        self.gender = UserDefaults.standard.object(forKey: "Gender") as? String ?? "Укажите пол"
-        self.age = UserDefaults.standard.object(forKey: "Age") as? Int ?? 0
+        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? "Нео"
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.uid = UserDefaults.standard.object(forKey: "UID") as? String ?? ""

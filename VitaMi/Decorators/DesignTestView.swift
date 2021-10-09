@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DesignTestView: View {
+    
     @EnvironmentObject var user: User
     @State private var showingDetail = false
     

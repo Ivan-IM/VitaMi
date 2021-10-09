@@ -22,10 +22,9 @@ struct CustomCircleButtonStyle: ButtonStyle {
                             .shadow(color: .black.opacity(1), radius: configuration.isPressed ? 3: 8, x: configuration.isPressed ? 1: 5, y: configuration.isPressed ? 1: 5)
                             .blendMode(.overlay)
                         Circle()
-                            .fill(Color("background"))
+                            .fill(Color("background").opacity(0.8))
                     }
                 }
             )
-            .animation(.spring())
     }
 }

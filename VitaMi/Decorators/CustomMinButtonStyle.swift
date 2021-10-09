@@ -25,6 +25,5 @@ struct CustomMinButtonStyle: ButtonStyle {
                     }
                 }
             )
-            .animation(.spring())
     }
 }
