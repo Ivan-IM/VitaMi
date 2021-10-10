@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ScrollViewAnalysisView: View {
+    
     @EnvironmentObject var user: User
+    
+    private let colums = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    private let width = UIScreen.main.bounds.size.width
+    private let height = UIScreen.main.bounds.size.height
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.symptoms) { symptom in
-                CustomCellSymptomsListView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
-                    if user.symptomsList.contains(symptom.enName) {
-                        user.symptomsList.removeAll(where: { $0 == symptom.enName })
-                    }
-                    else {
-                        user.symptomsList.append(symptom.enName)
-                    }
+            LazyVGrid(columns: colums) {
+                ForEach(user.elementsAnalysis) { element in
+                    CustomCellAnalysisView(title: element.symbol)
                 }
-                .padding(.vertical, 3.0)
-                .padding(.horizontal, 10.0)
             }
-            .padding(.vertical, 6.0)
         }
         .padding(.vertical, 2)
         .padding(.horizontal, 8)
@@ -34,5 +34,6 @@ struct ScrollViewAnalysisView: View {
 struct ScrollViewAnalysisView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollViewAnalysisView()
+            .environmentObject(User())
     }
 }

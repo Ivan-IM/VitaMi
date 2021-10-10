@@ -35,8 +35,6 @@ struct MainView: View {
                 HStack(alignment: .center) {
                     CustomButtonMainView(buttonTitle: "Анализ", imageName: "eyedropper.halffull", imageColor: .green, action: {
                         changer.mainViewChanger = .analysisView
-                        user.getElementsAnalysis()
-                        print("\(user.elementsAnalysis)")
                     }, width: width*0.41, height: width*0.41)
                         .padding()
                     CustomButtonMainView(buttonTitle: "Результаты", imageName: "heart.text.square", imageColor: .green, action: {

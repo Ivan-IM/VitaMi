@@ -18,7 +18,7 @@ struct AnalysisView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
-                Text("Список симптомов")
+                Text("Результат лабораторного анализа")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -31,11 +31,11 @@ struct AnalysisView: View {
                     .foregroundColor(Color.clear)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
                     .padding()
-                ConnectBaseErrorView()
-                    .opacity(user.symptoms.isEmpty ? 0.7:0)
-                ScrollViewSymptomsListView()
+                HealthyImageView()
+                    .opacity(user.elementsAnalysis.isEmpty ? 0.7:0)
+                ScrollViewAnalysisView()
                     .padding()
-                    .opacity(user.symptoms.isEmpty ? 0:1)
+                    .opacity(user.elementsAnalysis.isEmpty ? 0:1)
             }
             HStack {
                 CustomButtonView(buttonTitle: "Назад", action: {
@@ -48,10 +48,13 @@ struct AnalysisView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список симптомов?"), primaryButton: .destructive(Text("Ok"), action: {
-                    user.symptomsList.removeAll()
-                    user.lowElementsList.removeAll()
+                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список?"), primaryButton: .destructive(Text("Ok"), action: {
+                    user.elementsAnalysis.removeAll()
                 }), secondaryButton: .cancel())
+            }
+            .onAppear {
+                user.getElementsAnalysis()
+                print("\(user.elementsAnalysis.count)")
             }
         }
         .padding(.bottom, 16)

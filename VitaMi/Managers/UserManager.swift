@@ -18,7 +18,7 @@ final class User: ObservableObject {
     
     @Published var symptoms: [Symptom] = []
     @Published var elements: [Element] = []
-    @Published var elementsAnalysis: [ElementAnalysis] = []
+    @Published var elementsAnalysis: [Element] = []
     
     //MARK: User info
     @Published var name: String {
@@ -163,8 +163,10 @@ final class User: ObservableObject {
     //MARK: analysis
     func getElementsAnalysis() {
         if self.elementsAnalysis.isEmpty {
-            for symbol in lowElementsList {
-                self.elementsAnalysis.insert(ElementAnalysis(symbol: symbol, value: 0), at: elementsAnalysis.count)
+            for element in elements {
+                if lowElementsList.contains(element.symbol) {
+                    self.elementsAnalysis.insert(element, at: self.elementsAnalysis.count)
+                }
             }
         }
         else {

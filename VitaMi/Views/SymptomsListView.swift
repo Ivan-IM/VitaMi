@@ -18,7 +18,7 @@ struct SymptomsListView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
-                Text("Результат лабораторного анализа")
+                Text("Список симптомов")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -31,11 +31,11 @@ struct SymptomsListView: View {
                     .foregroundColor(Color.clear)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
                     .padding()
-                HealthyImageView()
-                    .opacity(user.elementsAnalysis.isEmpty ? 0.7:0)
+                ConnectBaseErrorView()
+                    .opacity(user.symptoms.isEmpty ? 0.7:0)
                 ScrollViewSymptomsListView()
                     .padding()
-                    .opacity(user.elementsAnalysis.isEmpty ? 0:1)
+                    .opacity(user.symptoms.isEmpty ? 0:1)
             }
             HStack {
                 CustomButtonView(buttonTitle: "Назад", action: {
@@ -48,8 +48,9 @@ struct SymptomsListView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список?"), primaryButton: .destructive(Text("Ok"), action: {
-                    user.elementsAnalysis.removeAll()
+                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список симптомов?"), primaryButton: .destructive(Text("Ok"), action: {
+                    user.symptomsList.removeAll()
+                    user.lowElementsList.removeAll()
                 }), secondaryButton: .cancel())
             }
         }
