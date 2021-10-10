@@ -9,6 +9,7 @@ import SwiftUI
 import CoreMIDI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import AVFoundation
 
 final class User: ObservableObject {
     //MARK: Base
@@ -18,7 +19,6 @@ final class User: ObservableObject {
     
     @Published var symptoms: [Symptom] = []
     @Published var elements: [Element] = []
-    @Published var elementsAnalysis: [Element] = []
     
     //MARK: User info
     @Published var name: String {
@@ -36,23 +36,32 @@ final class User: ObservableObject {
             UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
         }
     }
-    @Published var lowElementsList: [String] {
+    
+    @Published var lowElementsList: [Element] = []
+    @Published var elementsAnalysis = [ElementAnalysis]() {
         didSet {
-            UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(elementsAnalysis) {
+                UserDefaults.standard.set(encoded, forKey: "ElementsAnalysis")
+            }
         }
     }
-    
-    //MARK: SignIn Anonymous
-    @Published var isAnonymous = false
-    @Published var uid = ""
     
     //MARK: init class
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
-        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         
         getBase()
+        
+        if let elementsAn = UserDefaults.standard.data(forKey: "ElementsAnalysis") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([ElementAnalysis].self, from: elementsAn) {
+                self.elementsAnalysis = decoded
+                return
+            }
+        }
+        self.elementsAnalysis = []
     }
     
     //MARK: getBase method
@@ -83,6 +92,7 @@ final class User: ObservableObject {
         var blockList: [String] = []
         var helperList: [String] = []
         var firstFilterList: [String] = []
+        var secondFilterList: [String] = []
         
         if symptomsList.isEmpty {
             return
@@ -130,16 +140,23 @@ final class User: ObservableObject {
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 3 {
-                    if lowElementsList.contains(element) {
+                    if secondFilterList.contains(element) {
                         return
                     }
                     else {
-                        lowElementsList.append(element)
+                        secondFilterList.append(element)
                     }
                 }
                 else { return }
             }
-            //print("Result \(lowElementsList)")
+            //print("Result \(secondFilterList)")
+            
+            for element in elements {
+                if secondFilterList.contains(element.symbol) {
+                    self.lowElementsList.insert(element, at: self.lowElementsList.count)
+                }
+                
+            }
         }
     }
     
@@ -160,18 +177,9 @@ final class User: ObservableObject {
         }
     }
     
-    //MARK: analysis
-    func getElementsAnalysis() {
-        if self.elementsAnalysis.isEmpty {
-            for element in elements {
-                if lowElementsList.contains(element.symbol) {
-                    self.elementsAnalysis.insert(element, at: self.elementsAnalysis.count)
-                }
-            }
-        }
-        else {
-            print("List is not empty")
-            return
+    func getElementsFromAnalysis() {
+        for element in lowElementsList {
+            self.elementsAnalysis.insert(ElementAnalysis(symbol: element.symbol, value: 0.0), at: self.elementsAnalysis.count)
         }
     }
 }

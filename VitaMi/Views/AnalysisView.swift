@@ -48,13 +48,14 @@ struct AnalysisView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список?"), primaryButton: .destructive(Text("Ok"), action: {
+                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных"), primaryButton: .destructive(Text("Ok"), action: {
                     user.elementsAnalysis.removeAll()
                 }), secondaryButton: .cancel())
             }
             .onAppear {
-                user.getElementsAnalysis()
-                print("\(user.elementsAnalysis.count)")
+                if user.elementsAnalysis.isEmpty {
+                    user.getElementsFromAnalysis()
+                }
             }
         }
         .padding(.bottom, 16)
