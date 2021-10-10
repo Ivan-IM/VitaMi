@@ -13,14 +13,14 @@ final class ViewChanger: ObservableObject {
     @Published var mainViewChanger: MainViewChanger = .startView
     
     init() {
-        if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger-") {
+        if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger") {
             self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .startView
         }
     }
 }
 
 enum StartViewChanger {
-    case info, login
+    case info, welcom
 }
 
 enum MainViewChanger: String, Codable {

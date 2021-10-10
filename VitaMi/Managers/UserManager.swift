@@ -27,6 +27,9 @@ final class User: ObservableObject {
         }
     }
     
+    @Published var symbols: Int = 0
+    @Published var showButtonView: Bool = false
+    
     //MARK: User simptoms info
     @Published var symptomsList: [String] {
         didSet {
@@ -41,24 +44,18 @@ final class User: ObservableObject {
     
     //MARK: SignIn Anonymous
     @Published var isAnonymous = false
-    @Published var uid: String {
-        didSet {
-            UserDefaults.standard.set(uid, forKey: "UID")
-        }
-    }
+    @Published var uid = ""
     
     //MARK: init class
     init() {
-        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? "Нео"
+        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
-        self.uid = UserDefaults.standard.object(forKey: "UID") as? String ?? ""
-        
-        anonymSignIn()
         
         getBase()
     }
     
+    //MARK: getBase method
     func getBase() {
         store.collection(symptomsPath).addSnapshotListener { snapshot, error in
             if let error = error {
@@ -80,6 +77,7 @@ final class User: ObservableObject {
         }
     }
     
+    //MARK: main Algorithm method
     func elementsFilterAlgorithm() {
         var elementsList: [String] = []
         var blockList: [String] = []
@@ -145,6 +143,7 @@ final class User: ObservableObject {
         }
     }
     
+    //MARK: sign in anonymously method
     func anonymSignIn() {
         if self.uid.isEmpty {
             Auth.auth().signInAnonymously { result, error in
@@ -176,6 +175,23 @@ final class User: ObservableObject {
             print("UserID is \(uid.description)")
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    //MARK: name validator method
+    func validator(_ value: String) -> String {
+        name = value
+        symbols = name.count
+        showButton()
+        return name
+    }
+    
+    func showButton() {
+        if symbols < 1 {
+            showButtonView = true
+        }
+        else {
+            showButtonView = false
         }
     }
 }

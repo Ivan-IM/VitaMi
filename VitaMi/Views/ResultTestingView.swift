@@ -17,12 +17,16 @@ struct ResultTestingView: View {
     
     var body: some View {
         VStack {
-            Text(user.lowElementsList.isEmpty ? titleHealthy:titleElementsDeficit)
-                .multilineTextAlignment(.center)
-                .font(.system(size: 16, weight: .semibold, design: .rounded))
-                .foregroundColor(Color("text"))
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color(.gray).opacity(0.5)))
+            ZStack {
+                RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
+                    .frame(height: 110)
+                Text(user.lowElementsList.isEmpty ? titleHealthy:titleElementsDeficit)
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 16, weight: .semibold, design: .rounded))
+                    .foregroundColor(Color("text"))
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
             ZStack {
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                     .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

@@ -10,6 +10,7 @@ import SwiftUI
 struct StartView: View {
     
     @EnvironmentObject var changer: ViewChanger
+    @EnvironmentObject var user: User
     
     var body: some View {
         ZStack {
@@ -24,8 +25,8 @@ struct StartView: View {
                         .transition(.slide)
                         .animation(.default)
                         .zIndex(1)
-                case .login:
-                    LoginView()
+                case .welcom:
+                    WelcomView()
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                         .transition(.slide)
                         .animation(.default)
@@ -35,12 +36,13 @@ struct StartView: View {
                 CustomButtonView(buttonTitle: "Дальше", action: {
                     switch changer.startViewChanger {
                     case .info:
-                        changer.startViewChanger = .login
-                    case .login:
+                        changer.startViewChanger = .welcom
+                    case .welcom:
                         changer.mainViewChanger = .mainView
                         UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
                     }
                 }, width: 200, height: 50)
+                    .disabled(user.showButtonView)
             }
             .padding()
         }
@@ -50,5 +52,6 @@ struct StartView: View {
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
         StartView().environmentObject(ViewChanger())
+            .environmentObject(User())
     }
 }
