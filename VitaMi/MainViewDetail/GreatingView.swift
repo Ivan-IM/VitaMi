@@ -5,19 +5,22 @@
 //  Created by Иван Маришин on 09.10.2021.
 //
 
+import Firebase
 import SwiftUI
 
 struct GreatingView: View {
     
     @State var userName: String
+    @State var showSignIn = false
     @State private var animateColor: Double = 0.4
+    @State private var buttonDisabled = false
     let width: CGFloat
     let height: CGFloat
     
     var body: some View {
         HStack {
             Image(systemName: "brain.head.profile")
-                .font(.system(size: width/4, weight: .light))
+                .font(.system(size: width/3.5, weight: .light))
                 .imageScale(.large)
                 .foregroundColor(Color("text").opacity(0.8))
                 .shadow(color: Color.blue.opacity(animateColor), radius: 15, x: 0, y: 0)
@@ -32,6 +35,13 @@ struct GreatingView: View {
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                 .padding()
+                CustomButtonView(buttonTitle: "Sign In", action: {
+                    showSignIn.toggle()
+                }, width: width/5, height: width/9)
+
+            }
+            .sheet(isPresented: $showSignIn) {
+                LoginView()
             }
         }
         .padding()
