@@ -43,6 +43,11 @@ struct ContentView: View {
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
                     .zIndex(5)
+            case .analysisView:
+                ResultTestingView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(6)
             }
         }
     }

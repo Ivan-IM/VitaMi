@@ -18,6 +18,9 @@
 		CF0D661E27120CE3006FBF8F /* SigninWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661D27120CE3006FBF8F /* SigninWithAppleButton.swift */; };
 		CF0D66202712123B006FBF8F /* SigninWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */; };
 		CF0D66232712DEFD006FBF8F /* WelcomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D66222712DEFD006FBF8F /* WelcomView.swift */; };
+		CF0D6625271317CE006FBF8F /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6624271317CE006FBF8F /* AnalysisView.swift */; };
+		CF0D6628271319BB006FBF8F /* ScrollViewAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6627271319BB006FBF8F /* ScrollViewAnalysisView.swift */; };
+		CF0D662A271319EB006FBF8F /* CustomCellAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D6629271319EA006FBF8F /* CustomCellAnalysisView.swift */; };
 		CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B39DF26BC3C4900D45DD6 /* Extension.swift */; };
 		CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF988269096FB00842794 /* VitaMiApp.swift */; };
 		CF2BF98B269096FB00842794 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF98A269096FB00842794 /* ContentView.swift */; };
@@ -56,6 +59,9 @@
 		CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		CF0D66212712C656006FBF8F /* VitaMi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VitaMi.entitlements; sourceTree = "<group>"; };
 		CF0D66222712DEFD006FBF8F /* WelcomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomView.swift; sourceTree = "<group>"; };
+		CF0D6624271317CE006FBF8F /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		CF0D6627271319BB006FBF8F /* ScrollViewAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewAnalysisView.swift; sourceTree = "<group>"; };
+		CF0D6629271319EA006FBF8F /* CustomCellAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellAnalysisView.swift; sourceTree = "<group>"; };
 		CF1B39DF26BC3C4900D45DD6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CF2BF985269096FB00842794 /* VitaMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2BF988269096FB00842794 /* VitaMiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaMiApp.swift; sourceTree = "<group>"; };
@@ -100,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF0D662627131952006FBF8F /* AnalysisViewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CF0D6627271319BB006FBF8F /* ScrollViewAnalysisView.swift */,
+				CF0D6629271319EA006FBF8F /* CustomCellAnalysisView.swift */,
+			);
+			path = AnalysisViewDetail;
+			sourceTree = "<group>";
+		};
 		CF1B39E826BC3E0E00D45DD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +133,7 @@
 				CF758F8E26988EEA004E73EE /* SymptomsView.swift */,
 				CFA364E926C6657400958920 /* SymptomsListView.swift */,
 				CF758F9026989348004E73EE /* ResultTestingView.swift */,
+				CF0D6624271317CE006FBF8F /* AnalysisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +165,7 @@
 				CFA42A2F26C2727B00B855E8 /* SymptomsViewDetail */,
 				CFA364EB26C665C300958920 /* SymptomsListViewDetail */,
 				CFA42A3226C275CD00B855E8 /* ResultTestingViewDetail */,
+				CF0D662627131952006FBF8F /* AnalysisViewDetail */,
 				CF2BF99A2690AD5C00842794 /* Managers */,
 				CF1B39E826BC3E0E00D45DD6 /* Model */,
 				CFA364D826C376C200958920 /* Decorators */,
@@ -329,13 +346,16 @@
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
 				CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */,
 				CF0D66202712123B006FBF8F /* SigninWithAppleCoordinator.swift in Sources */,
+				CF0D6625271317CE006FBF8F /* AnalysisView.swift in Sources */,
 				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,
+				CF0D662A271319EB006FBF8F /* CustomCellAnalysisView.swift in Sources */,
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
 				CF0D661A271185B2006FBF8F /* CustomButtonMainView.swift in Sources */,
 				CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */,
+				CF0D6628271319BB006FBF8F /* ScrollViewAnalysisView.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
 				CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */,

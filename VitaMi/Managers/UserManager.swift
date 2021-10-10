@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreMIDI
-import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -19,6 +18,7 @@ final class User: ObservableObject {
     
     @Published var symptoms: [Symptom] = []
     @Published var elements: [Element] = []
+    @Published var elementsAnalysis: [ElementAnalysis] = []
     
     //MARK: User info
     @Published var name: String {
@@ -143,41 +143,6 @@ final class User: ObservableObject {
         }
     }
     
-    //MARK: sign in anonymously method
-    func anonymSignIn() {
-        if self.uid.isEmpty {
-            Auth.auth().signInAnonymously { result, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                guard let user = result?.user else { return }
-                self.isAnonymous = user.isAnonymous
-                self.uid = user.uid
-                
-                print("Anonymous sign in FireBase")
-                print("!!!Anonimous sign is \(self.isAnonymous)!!!")
-                print(self.uid)
-            }
-        }
-        else {
-            print("Anonymous is already sign in FireBase")
-            print(self.uid)
-        }
-    }
-    
-    func anonymSignOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            self.uid = ""
-            print("!!!Anonymous sign is \(self.isAnonymous)!!!")
-            print("UserID is \(uid.description)")
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
-    
     //MARK: name validator method
     func validator(_ value: String) -> String {
         name = value
@@ -192,6 +157,19 @@ final class User: ObservableObject {
         }
         else {
             showButtonView = false
+        }
+    }
+    
+    //MARK: analysis
+    func getElementsAnalysis() {
+        if self.elementsAnalysis.isEmpty {
+            for symbol in lowElementsList {
+                self.elementsAnalysis.insert(ElementAnalysis(symbol: symbol, value: 0), at: elementsAnalysis.count)
+            }
+        }
+        else {
+            print("List is not empty")
+            return
         }
     }
 }

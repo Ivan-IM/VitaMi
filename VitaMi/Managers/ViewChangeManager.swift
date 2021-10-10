@@ -24,6 +24,6 @@ enum StartViewChanger {
 }
 
 enum MainViewChanger: String, Codable {
-    case startView, mainView, symptomsView, symptomsListView, resultTestingView
+    case startView, mainView, symptomsView, symptomsListView, resultTestingView, analysisView
 }
 
