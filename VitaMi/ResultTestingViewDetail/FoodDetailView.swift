@@ -28,8 +28,8 @@ struct FoodDetailView: View {
     }
 }
 
-struct FoodDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetailView(element: Element(symbol: "Fe", enName: "Iron", ruName: "Железо", type: "", elementInfo: "bla bla bla bla bla", ruProductInfo: ["bla", "bla"], normalValue: [], helper: [], blocker: []))
-    }
-}
+//struct FoodDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FoodDetailView(element: Element(symbol: "Fe", enName: "Iron", ruName: "Железо", type: "", elementInfo: "bla bla bla bla bla", ruProductInfo: ["bla", "bla"], normalValue: [], helper: [], blocker: []))
+//    }
+//}

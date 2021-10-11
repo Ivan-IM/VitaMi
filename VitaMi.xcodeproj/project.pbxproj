@@ -32,6 +32,8 @@
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
 		CF8710C72714029F00111B0B /* CustomCellResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710C62714029F00111B0B /* CustomCellResultTestingView.swift */; };
 		CF8710C92714085400111B0B /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710C82714085400111B0B /* FoodDetailView.swift */; };
+		CF8710CC2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8710CA2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld */; };
+		CF8710CE27149C2000111B0B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710CD27149C2000111B0B /* CoreDataManager.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
 		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
 		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
@@ -77,6 +79,8 @@
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
 		CF8710C62714029F00111B0B /* CustomCellResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellResultTestingView.swift; sourceTree = "<group>"; };
 		CF8710C82714085400111B0B /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
+		CF8710CB2714965D00111B0B /* ElementCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ElementCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CF8710CD27149C2000111B0B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				CF2BF9972690974A00842794 /* Symtoms.swift */,
 				CF87F5832692067600ED6710 /* Elements.swift */,
+				CF8710CA2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				CF2BF9A6269173BF00842794 /* UserManager.swift */,
 				CF1B39DF26BC3C4900D45DD6 /* Extension.swift */,
 				CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */,
+				CF8710CD27149C2000111B0B /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				CFC93F6C26C26AC000155191 /* StartView.swift in Sources */,
 				CF0D66232712DEFD006FBF8F /* WelcomView.swift in Sources */,
 				CF0D6614270EFA57006FBF8F /* ConnectBaseErrorView.swift in Sources */,
+				CF8710CC2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld in Sources */,
 				CF0D661E27120CE3006FBF8F /* SigninWithAppleButton.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
@@ -361,6 +368,7 @@
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
 				CF0D661A271185B2006FBF8F /* CustomButtonMainView.swift in Sources */,
 				CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */,
+				CF8710CE27149C2000111B0B /* CoreDataManager.swift in Sources */,
 				CF0D6628271319BB006FBF8F /* ScrollViewAnalysisView.swift in Sources */,
 				CF2BF9982690974A00842794 /* Symtoms.swift in Sources */,
 				CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */,
@@ -601,6 +609,19 @@
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CF8710CA2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF8710CB2714965D00111B0B /* ElementCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = CF8710CB2714965D00111B0B /* ElementCoreDataModel.xcdatamodel */;
+			path = ElementCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CF2BF97D269096FB00842794 /* Project object */;
 }

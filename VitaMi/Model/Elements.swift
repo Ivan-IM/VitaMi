@@ -17,6 +17,8 @@ struct Element: Identifiable, Codable {
     let elementInfo: String
     let ruProductInfo: Array<String>
     let normalValue: Array<Double>
+    let value: Double?
+    let measure: String?
     let helper: Array<String>
     let blocker: Array<String>
 }
