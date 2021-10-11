@@ -30,6 +30,8 @@
 		CF2BF9A7269173BF00842794 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2BF9A6269173BF00842794 /* UserManager.swift */; };
 		CF758F8F26988EEA004E73EE /* SymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F8E26988EEA004E73EE /* SymptomsView.swift */; };
 		CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF758F9026989348004E73EE /* ResultTestingView.swift */; };
+		CF8710C72714029F00111B0B /* CustomCellResultTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710C62714029F00111B0B /* CustomCellResultTestingView.swift */; };
+		CF8710C92714085400111B0B /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710C82714085400111B0B /* FoodDetailView.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
 		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
 		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
@@ -73,6 +75,8 @@
 		CF2BF9A6269173BF00842794 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		CF758F8E26988EEA004E73EE /* SymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsView.swift; sourceTree = "<group>"; };
 		CF758F9026989348004E73EE /* ResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTestingView.swift; sourceTree = "<group>"; };
+		CF8710C62714029F00111B0B /* CustomCellResultTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellResultTestingView.swift; sourceTree = "<group>"; };
+		CF8710C82714085400111B0B /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -250,8 +254,10 @@
 			isa = PBXGroup;
 			children = (
 				CFA364EE26C6735F00958920 /* ScrollViewResultView.swift */,
-				CFA364F026C67A5200958920 /* ElementDetailView.swift */,
 				CFB34BFB270C59E000A527EF /* HealthyImageView.swift */,
+				CF8710C62714029F00111B0B /* CustomCellResultTestingView.swift */,
+				CFA364F026C67A5200958920 /* ElementDetailView.swift */,
+				CF8710C82714085400111B0B /* FoodDetailView.swift */,
 			);
 			path = ResultTestingViewDetail;
 			sourceTree = "<group>";
@@ -363,9 +369,11 @@
 				CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */,
 				CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */,
 				CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */,
+				CF8710C92714085400111B0B /* FoodDetailView.swift in Sources */,
 				CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */,
 				CF0D661C27119282006FBF8F /* GreatingView.swift in Sources */,
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
+				CF8710C72714029F00111B0B /* CustomCellResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
 			);

@@ -13,45 +13,21 @@ struct ElementDetailView: View {
     let element: Element
     
     var body: some View {
-        VStack {
-            Text(element.ruName)
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                .foregroundColor(Color("text"))
-            ScrollView {
-                Text(element.elementInfo)
+        ZStack {
+            Color("background")
+                .ignoresSafeArea()
+            VStack {
+                Text(element.ruName)
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
-                    .padding(8)
-            }
-            
-            Text("Продукты питания с высоким содержанием:")
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
-                .foregroundColor(Color("text"))
-            List {
-                ForEach(element.ruProductInfo, id: \.self) { prod in
-                    Text(prod)
+                    .padding()
+                ScrollView {
+                    Text(element.elementInfo)
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(Color("text"))
                 }
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
+                .padding()
             }
-            
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                HStack {
-                    Image(systemName: "chevron.left.circle")
-                        .font(.title2)
-                    Text("Результаты")
-                        .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .foregroundColor(Color("text"))
-                }
-            })
-        }
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-        .background(Color("background"))
-        .navigationBarHidden(true)
-        .onAppear() {
-            UITableView.appearance().backgroundColor = .clear
         }
     }
 }

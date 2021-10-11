@@ -9,12 +9,18 @@ import SwiftUI
 
 struct CustomCellAnalysisView: View {
     
-    var title: String
+    let title: String
     
     var body: some View {
-        VStack {
+        HStack {
+            Text(title)
+            Spacer()
             Text(title)
         }
+        .font(.system(size: 16, weight: .semibold, design: .rounded))
+        .padding(10.0)
+        .frame(height: 40)
+        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
     }
 }
 

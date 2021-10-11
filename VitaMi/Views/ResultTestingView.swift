@@ -36,7 +36,7 @@ struct ResultTestingView: View {
                 HealthyImageView()
                     .opacity(user.lowElementsList.isEmpty ? 0.7:0)
                 ScrollViewResultView()
-                    .padding(26)
+                    .padding()
                     .opacity(user.lowElementsList.isEmpty ? 0:1)
             }
             CustomButtonView(buttonTitle: "Назад", action: {

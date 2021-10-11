@@ -11,20 +11,14 @@ struct ScrollViewAnalysisView: View {
     
     @EnvironmentObject var user: User
     
-    private let colums = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-    private let width = UIScreen.main.bounds.size.width
-    private let height = UIScreen.main.bounds.size.height
-    
     var body: some View {
         ScrollView(showsIndicators: false) {
-            LazyVGrid(columns: colums) {
-                ForEach(user.elementsAnalysis) { element in
-                    CustomCellAnalysisView(title: element.symbol)
-                }
+            ForEach(user.elementsAnalysis) { element in
+                CustomCellAnalysisView(title: element.symbol)
+                    .padding(.vertical, 3.0)
+                    .padding(.horizontal, 10.0)
             }
+            .padding(.vertical, 6.0)
         }
         .padding(.vertical, 2)
         .padding(.horizontal, 8)
