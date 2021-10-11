@@ -21,8 +21,13 @@ struct Element: Identifiable, Codable {
     let blocker: Array<String>
 }
 
-struct ElementAnalysis: Identifiable, Codable {
+class ElementAnalysis: Identifiable, Codable {
     var id = UUID()
     let symbol: String
-    let value: Double
+    var value: Double
+    
+    init(symbol: String, value: Double) {
+        self.symbol = symbol
+        self.value = value
+    }
 }

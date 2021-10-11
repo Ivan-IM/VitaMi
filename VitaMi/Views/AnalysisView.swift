@@ -43,6 +43,7 @@ struct AnalysisView: View {
                 }, width: 160, height: 50)
                 Spacer()
                 CustomButtonView(buttonTitle: "Очистить", action: {
+                    print(user.elementsAnalysis)
                     showingClearAlert.toggle()
                 }, width: 160, height: 50)
             }

@@ -9,15 +9,33 @@ import SwiftUI
 
 struct CustomCellAnalysisView: View {
     
-    let title: String
+    var element: ElementAnalysis
+    @State private var value: Double = 0.0
+    
+    let formatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }()
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(element.symbol)
             Spacer()
-            Text(title)
+            Button {
+                self.element.value = value
+                print("\(element.value)")
+            } label: {
+                Image(systemName: "arrow.triangle.2.circlepath")
+            }
+
+            TextField("0.0", value: $value, formatter: formatter)
+                .frame(width: 50)
+                .multilineTextAlignment(.trailing)
+            Text("\(element.value)")
         }
         .font(.system(size: 16, weight: .semibold, design: .rounded))
+        .foregroundColor(Color("text"))
         .padding(10.0)
         .frame(height: 40)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
@@ -26,6 +44,6 @@ struct CustomCellAnalysisView: View {
 
 struct CustomCellAnalysisView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomCellAnalysisView(title: "Na")
+        CustomCellAnalysisView(element: ElementAnalysis(symbol: "Na", value: 0))
     }
 }
