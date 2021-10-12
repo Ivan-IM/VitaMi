@@ -51,6 +51,7 @@ struct AnalysisView: View {
             .alert(isPresented: $showingClearAlert) {
                 Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных"), primaryButton: .destructive(Text("Ok"), action: {
                     user.elementsAnalysis.removeAll()
+                    user.clearCDElemantValue()
                 }), secondaryButton: .cancel())
             }
             .onAppear {

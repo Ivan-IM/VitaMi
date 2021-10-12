@@ -17,9 +17,15 @@ struct CustomCellAnalysisView: View {
             showEditor.toggle()
         } label: {
             HStack {
-                Text(element.ruName ?? "")
+                Text(element.symbol ?? "")
                 Spacer()
-                Text("\(element.value)")
+                if element.value == 0 {
+                    Image(systemName: "questionmark.circle")
+                        .foregroundColor(.blue)
+                }
+                else {
+                    Text(String(format: "%.2f", element.value))
+                }
                 Text(element.measure ?? "")
             }
         }
@@ -29,8 +35,8 @@ struct CustomCellAnalysisView: View {
         .frame(height: 40)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
         .sheet(isPresented: $showEditor) {
-            
+            ValueEditorView(element: element)
         }
-
+        
     }
 }

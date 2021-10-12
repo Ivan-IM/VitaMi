@@ -11,9 +11,14 @@ struct ValueEditorView: View {
     
     @EnvironmentObject var user: User
     @Environment(\.presentationMode) var presentationMode
-    let element: ElementCD
-    @State private var valueEl: String = ""
+    var element: ElementCD
+    @State private var valueEl: Double = 0
     
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     var body: some View {
         ZStack {
@@ -28,10 +33,13 @@ struct ValueEditorView: View {
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding()
-                TextField("\(element.value)", text: $valueEl)
-                .padding()
+                TextField("\(element.value)", value: $valueEl, formatter: formatter)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
                 Button {
-                    <#code#>
+                    element.value = valueEl
+                    user.coreDM.updateCD()
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     HStack {
                         Text("Обновить")
@@ -39,8 +47,9 @@ struct ValueEditorView: View {
                     }
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                 }
-
+                
             }
         }
     }
+    
 }

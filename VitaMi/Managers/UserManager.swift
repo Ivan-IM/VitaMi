@@ -187,4 +187,12 @@ final class User: ObservableObject {
             showButtonView = false
         }
     }
+    
+    //MARK: CoreData method
+    func clearCDElemantValue() {
+        for element in elementsCD {
+            element.value = 0
+        }
+        coreDM.updateCD()
+    }
 }
