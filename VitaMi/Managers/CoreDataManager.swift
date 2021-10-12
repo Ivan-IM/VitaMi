@@ -24,7 +24,7 @@ class CoreDataManager {
         }
     }
     
-    func updateElements() {
+    func updateCD() {
         
         do {
             try persistentContainer.viewContext.save()
@@ -46,9 +46,32 @@ class CoreDataManager {
         }
     }
     
+    func deleteSymptoms(symptom: SymptomCD) {
+        
+        persistentContainer.viewContext.delete(symptom)
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            print("Failed to save \(error)")
+        }
+    }
+    
     func getElements() -> [ElementCD] {
         
         let fetchRequest: NSFetchRequest<ElementCD> = ElementCD.fetchRequest()
+        
+        do {
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            return []
+        }
+    }
+    
+    func getSymptoms() -> [SymptomCD] {
+        
+        let fetchRequest: NSFetchRequest<SymptomCD> = SymptomCD.fetchRequest()
         
         do {
             return try persistentContainer.viewContext.fetch(fetchRequest)
@@ -82,9 +105,11 @@ class CoreDataManager {
     
     func saveSymptom(symptom: Symptom) {
         
-        //let elementCD = ElementCD(context: persistentContainer.viewContext)
-        //let symptomCD = SymptomCD()
+        let symptomCD = SymptomCD(context: persistentContainer.viewContext)
         
+        symptomCD.enName = symptom.enName
+        symptomCD.ruName = symptom.ruName
+        symptomCD.elements = symptom.elements
         
         do {
             try persistentContainer.viewContext.save()
