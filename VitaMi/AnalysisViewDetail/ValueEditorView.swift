@@ -25,11 +25,11 @@ struct ValueEditorView: View {
             Color("background")
                 .ignoresSafeArea()
             VStack {
-                Text(element.ruName ?? "")
+                Text("\(element.ruName ?? "")(\(element.symbol ?? ""))")
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding()
-                Text("Введите данные исследования крови на дефицит данного элемента:")
+                Text("Введите данные исследования крови на дефицит указанного элемента:")
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding()

@@ -17,7 +17,7 @@ struct ElementDetailView: View {
             Color("background")
                 .ignoresSafeArea()
             VStack {
-                Text(element.ruName ?? "")
+                Text("\(element.ruName ?? "")(\(element.symbol ?? ""))")
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding()
