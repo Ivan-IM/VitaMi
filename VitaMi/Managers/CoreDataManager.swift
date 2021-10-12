@@ -71,7 +71,20 @@ class CoreDataManager {
         elementCD.helper = element.helper
         elementCD.type = element.type
         elementCD.measure = element.measure
-        //elementCD.value = element.value ?? 0.0
+        elementCD.value = element.value ?? 0.0
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("Failed to save \(error)")
+        }
+    }
+    
+    func saveSymptom(symptom: Symptom) {
+        
+        //let elementCD = ElementCD(context: persistentContainer.viewContext)
+        //let symptomCD = SymptomCD()
+        
         
         do {
             try persistentContainer.viewContext.save()
