@@ -17,19 +17,8 @@ struct Element: Identifiable, Codable {
     let elementInfo: String
     let ruProductInfo: Array<String>
     let normalValue: Array<Double>
-    let value: Double?
-    let measure: String?
+    let value: Double
+    let measure: String
     let helper: Array<String>
     let blocker: Array<String>
-}
-
-class ElementAnalysis: Identifiable, Codable {
-    var id = UUID()
-    let symbol: String
-    var value: Double
-    
-    init(symbol: String, value: Double) {
-        self.symbol = symbol
-        self.value = value
-    }
 }

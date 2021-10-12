@@ -55,7 +55,7 @@ struct AnalysisView: View {
             }
             .onAppear {
                 if user.elementsAnalysis.isEmpty {
-                    user.getElementsFromAnalysis()
+                    user.elementsAnalysis = user.lowElementsList
                 }
             }
         }

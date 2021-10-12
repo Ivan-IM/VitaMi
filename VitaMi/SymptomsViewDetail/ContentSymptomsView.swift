@@ -23,13 +23,13 @@ struct ContentSymptomsView: View {
                 .font(.system(size: 25, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
             
-            ProgressView("Симптом \(index+1)/\(user.symptoms.count)", value: Float(index)+1, total: Float(user.symptoms.count))
+            ProgressView("Симптом \(index+1)/\(user.symptomsCD.count)", value: Float(index)+1, total: Float(user.symptomsCD.count))
                 .foregroundColor(Color("text"))
                 .padding()
             
             Spacer()
             
-            Text(user.symptoms[index].ruName)
+            Text(user.symptomsCD[index].ruName ?? "")
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color("text"))
@@ -42,12 +42,12 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        user.symptomsList.append(user.symptoms[index].enName)
+                        user.symptomsList.append(user.symptomsCD[index].enName ?? "")
                         if index < user.symptoms.count-1 {
                             index += 1
                         }
                         else {
-                            index = user.symptoms.count-1
+                            index = user.symptomsCD.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }
@@ -58,11 +58,11 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        if index < user.symptoms.count-1 {
+                        if index < user.symptomsCD.count-1 {
                             index += 1
                         }
                         else {
-                            index = user.symptoms.count-1
+                            index = user.symptomsCD.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }

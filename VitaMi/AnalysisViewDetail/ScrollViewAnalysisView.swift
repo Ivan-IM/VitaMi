@@ -13,10 +13,12 @@ struct ScrollViewAnalysisView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.elementsAnalysis) { element in
-                CustomCellAnalysisView(element: element)
-                    .padding(.vertical, 3.0)
-                    .padding(.horizontal, 10.0)
+            ForEach(user.elementsCD) { element in
+                if user.elementsAnalysis.contains(element.symbol ?? "") {
+                    CustomCellAnalysisView(element: element)
+                        .padding(.vertical, 3.0)
+                        .padding(.horizontal, 10.0)
+                }
             }
             .padding(.vertical, 6.0)
         }

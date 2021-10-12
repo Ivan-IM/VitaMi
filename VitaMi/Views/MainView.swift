@@ -25,7 +25,7 @@ struct MainView: View {
                     CustomButtonMainView(buttonTitle: "Начать тестирование", imageName: "hand.tap", imageColor: .blue, action: {
                         changer.mainViewChanger = .symptomsView
                     }, width: width*0.41, height: width*0.41)
-                        .disabled(user.symptoms.isEmpty ? true:false)
+                        .disabled(user.symptomsCD.isEmpty ? true:false)
                         .padding()
                     CustomButtonMainView(buttonTitle: "Список симптомов", imageName: "doc.text.magnifyingglass", imageColor: .blue, action: {
                         changer.mainViewChanger = .symptomsListView
@@ -36,6 +36,7 @@ struct MainView: View {
                     CustomButtonMainView(buttonTitle: "Анализ", imageName: "eyedropper.halffull", imageColor: .green, action: {
                         changer.mainViewChanger = .analysisView
                     }, width: width*0.41, height: width*0.41)
+                        .disabled(user.lowElementsList.isEmpty ? true:false)
                         .padding()
                     CustomButtonMainView(buttonTitle: "Результаты", imageName: "heart.text.square", imageColor: .green, action: {
                         changer.mainViewChanger = .resultTestingView

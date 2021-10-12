@@ -13,13 +13,13 @@ struct ScrollViewSymptomsListView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.symptoms) { symptom in
-                CustomCellSymptomsListView(title: symptom.ruName, isSelected: user.symptomsList.contains(symptom.enName)) {
-                    if user.symptomsList.contains(symptom.enName) {
+            ForEach(user.symptomsCD) { symptom in
+                CustomCellSymptomsListView(title: symptom.ruName ?? "", isSelected: user.symptomsList.contains(symptom.enName ?? "")) {
+                    if user.symptomsList.contains(symptom.enName ?? "") {
                         user.symptomsList.removeAll(where: { $0 == symptom.enName })
                     }
                     else {
-                        user.symptomsList.append(symptom.enName)
+                        user.symptomsList.append(symptom.enName ?? "")
                     }
                 }
                 .padding(.vertical, 3.0)

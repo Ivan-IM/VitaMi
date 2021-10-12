@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CustomCellResultTestingView: View {
     
-    let element: Element
+    let element: ElementCD
     @State private var showInfo = false
     @State private var showList = false
     
     var body: some View {
         HStack {
-            Text(self.element.ruName)
+            Text(self.element.ruName ?? "")
                 .foregroundColor(Color("text"))
             Spacer()
             Button {

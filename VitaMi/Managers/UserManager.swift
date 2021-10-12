@@ -17,8 +17,8 @@ final class User: ObservableObject {
     private let elementsPath = "Elements"
     private let store = Firestore.firestore()
     
-    @Published var symptoms: [Symptom] = []
-    @Published var elements: [Element] = []
+    @Published var symptoms = [Symptom]()
+    @Published var elements = [Element]()
     
     //MARK: User info
     @Published var name: String {
@@ -36,53 +36,72 @@ final class User: ObservableObject {
             UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
         }
     }
-    
-    @Published var lowElementsList: [Element] = []
-    @Published var elementsAnalysis = [ElementAnalysis]() {
+    @Published var lowElementsList: [String] {
         didSet {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(elementsAnalysis) {
-                UserDefaults.standard.set(encoded, forKey: "ElementsAnalysis")
-            }
+            UserDefaults.standard.set(lowElementsList, forKey: "LowElementsList")
         }
     }
+    
+    @Published var elementsAnalysis: [String] {
+        didSet {
+            UserDefaults.standard.set(elementsAnalysis, forKey: "ElementsAnalysis")
+        }
+    }
+    
+    //MARK: CoreData base
+    let coreDM: CoreDataManager = CoreDataManager()
+    
+    @Published var symptomsCD: [SymptomCD] = [SymptomCD]()
+    @Published var elementsCD: [ElementCD] = [ElementCD]()
     
     //MARK: init class
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
+        self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
+        self.elementsAnalysis = UserDefaults.standard.object(forKey: "ElementsAnalysis") as? [String] ?? []
+        
+        self.symptomsCD = coreDM.getSymptoms()
+        self.elementsCD = coreDM.getElements()
         
         getBase()
-        
-        if let elementsAn = UserDefaults.standard.data(forKey: "ElementsAnalysis") {
-            let decoder = JSONDecoder()
-            if let decoded = try? decoder.decode([ElementAnalysis].self, from: elementsAn) {
-                self.elementsAnalysis = decoded
-                return
-            }
-        }
-        self.elementsAnalysis = []
     }
     
     //MARK: getBase method
     func getBase() {
-        store.collection(symptomsPath).addSnapshotListener { snapshot, error in
-            if let error = error {
-                print(error)
-                return
+        if self.symptomsCD.isEmpty {
+            store.collection(symptomsPath).addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.symptoms = snapshot?.documents.compactMap {
+                    try? $0.data(as: Symptom.self)
+                } ?? []
+                for symptom in self.symptoms {
+                    self.coreDM.saveSymptom(symptom: symptom)
+                    self.symptomsCD = self.coreDM.getSymptoms()
+                }
             }
-            self.symptoms = snapshot?.documents.compactMap {
-                try? $0.data(as: Symptom.self)
-            } ?? []
         }
-        store.collection(elementsPath).addSnapshotListener { snapshot, error in
-            if let error = error {
-                print(error)
-                return
+        if self.elementsCD.isEmpty {
+            store.collection(elementsPath).addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.elements = snapshot?.documents.compactMap {
+                    try? $0.data(as: Element.self)
+                } ?? []
+                for element in self.elements {
+                    self.coreDM.saveElement(element: element)
+                    self.elementsCD = self.coreDM.getElements()
+                }
             }
-            self.elements = snapshot?.documents.compactMap {
-                try? $0.data(as: Element.self)
-            } ?? []
+        }
+        else {
+            print("CoreData load")
+            return
         }
     }
     
@@ -92,7 +111,6 @@ final class User: ObservableObject {
         var blockList: [String] = []
         var helperList: [String] = []
         var firstFilterList: [String] = []
-        var secondFilterList: [String] = []
         
         if symptomsList.isEmpty {
             return
@@ -100,10 +118,10 @@ final class User: ObservableObject {
         else {
             lowElementsList.removeAll()
             
-            symptoms.forEach { symptom in
-                if symptomsList.contains(symptom.enName) {
-                    elementsList.append(contentsOf: symptom.elements)
-                    elementsList.append(contentsOf: symptom.elements)
+            symptomsCD.forEach { symptom in
+                if symptomsList.contains(symptom.enName ?? "") {
+                    elementsList.append(contentsOf: symptom.elements ?? [])
+                    elementsList.append(contentsOf: symptom.elements ?? [])
                 }
                 else { return }
             }
@@ -117,10 +135,10 @@ final class User: ObservableObject {
             }
             //print("Double filtration \(firstFilterList)")
             
-            elements.forEach { element in
-                if firstFilterList.contains(element.symbol) {
-                    blockList.append(contentsOf: element.blocker)
-                    helperList.append(contentsOf: element.helper)
+            elementsCD.forEach { element in
+                if firstFilterList.contains(element.symbol ?? "") {
+                    blockList.append(contentsOf: element.blocker ?? [])
+                    helperList.append(contentsOf: element.helper ?? [])
                 }
                 else { return }
             }
@@ -140,23 +158,16 @@ final class User: ObservableObject {
             
             elementsList.forEach { element in
                 if elementsList.filter({$0 == element}).count > 3 {
-                    if secondFilterList.contains(element) {
+                    if lowElementsList.contains(element) {
                         return
                     }
                     else {
-                        secondFilterList.append(element)
+                        lowElementsList.append(element)
                     }
                 }
                 else { return }
             }
-            //print("Result \(secondFilterList)")
-            
-            for element in elements {
-                if secondFilterList.contains(element.symbol) {
-                    self.lowElementsList.insert(element, at: self.lowElementsList.count)
-                }
-                
-            }
+            //print("Result \(lowElementsList)")
         }
     }
     
@@ -174,12 +185,6 @@ final class User: ObservableObject {
         }
         else {
             showButtonView = false
-        }
-    }
-    
-    func getElementsFromAnalysis() {
-        for element in lowElementsList {
-            self.elementsAnalysis.insert(ElementAnalysis(symbol: element.symbol, value: 0.0), at: self.elementsAnalysis.count)
         }
     }
 }
