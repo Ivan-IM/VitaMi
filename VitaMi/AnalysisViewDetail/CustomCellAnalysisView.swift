@@ -9,34 +9,32 @@ import SwiftUI
 
 struct CustomCellAnalysisView: View {
     
+    @EnvironmentObject var user: User
     var element: ElementCD
-    @State private var showEditor = false
+    @State private var valueEl: Double?
+    
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
     
     var body: some View {
-        Button {
-            showEditor.toggle()
-        } label: {
-            HStack {
-                Text(element.symbol ?? "")
-                Spacer()
-                if element.value == 0 {
-                    Image(systemName: "questionmark.circle")
-                        .foregroundColor(.blue)
-                }
-                else {
-                    Text(String(format: "%.2f", element.value))
-                }
-                Text(element.measure ?? "")
-            }
+        HStack {
+            Text(element.symbol ?? "")
+            Spacer()
+            TextField("\(element.value)", value: $valueEl, formatter: formatter, onCommit: {
+                element.value = valueEl ?? element.value
+                user.coreDM.updateCD()
+            })
+                .multilineTextAlignment(.trailing)
+                .frame(width: 80)
+            Text(element.measure ?? "")
         }
         .font(.system(size: 16, weight: .semibold, design: .rounded))
         .foregroundColor(Color("text"))
         .padding(10.0)
         .frame(height: 40)
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray)))
-        .sheet(isPresented: $showEditor) {
-            ValueEditorView(element: element)
-        }
-        
     }
 }

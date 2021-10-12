@@ -84,6 +84,9 @@ final class User: ObservableObject {
                 }
             }
         }
+        else {
+            print("CoreData load symptoms")
+        }
         if self.elementsCD.isEmpty {
             store.collection(elementsPath).addSnapshotListener { snapshot, error in
                 if let error = error {
@@ -100,8 +103,7 @@ final class User: ObservableObject {
             }
         }
         else {
-            print("CoreData load")
-            return
+            print("CoreData load elements")
         }
     }
     
