@@ -43,7 +43,7 @@ struct ContentSymptomsView: View {
                     }
                     else {
                         user.symptomsList.append(user.symptomsCD[index].enName ?? "")
-                        if index < user.symptoms.count-1 {
+                        if index < user.symptomsCD.count-1 {
                             index += 1
                         }
                         else {

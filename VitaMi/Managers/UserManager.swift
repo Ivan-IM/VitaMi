@@ -64,11 +64,12 @@ final class User: ObservableObject {
         self.symptomsCD = coreDM.getSymptoms()
         self.elementsCD = coreDM.getElements()
         
-        getBase()
+        getFBSymptoms()
+        getFBElements()
     }
     
     //MARK: getBase method
-    func getBase() {
+    func getFBSymptoms() {
         if self.symptomsCD.isEmpty {
             store.collection(symptomsPath).addSnapshotListener { snapshot, error in
                 if let error = error {
@@ -78,15 +79,16 @@ final class User: ObservableObject {
                 self.symptoms = snapshot?.documents.compactMap {
                     try? $0.data(as: Symptom.self)
                 } ?? []
-                for symptom in self.symptoms {
-                    self.coreDM.saveSymptom(symptom: symptom)
-                    self.symptomsCD = self.coreDM.getSymptoms()
-                }
+                self.loadFireBaseSymptomsToCoreData()
             }
         }
         else {
-            print("CoreData load symptoms")
+            print("FireBase not load symptoms")
+            self.loadFireBaseSymptomsToCoreData()
         }
+    }
+    
+    func getFBElements() {
         if self.elementsCD.isEmpty {
             store.collection(elementsPath).addSnapshotListener { snapshot, error in
                 if let error = error {
@@ -96,16 +98,15 @@ final class User: ObservableObject {
                 self.elements = snapshot?.documents.compactMap {
                     try? $0.data(as: Element.self)
                 } ?? []
-                for element in self.elements {
-                    self.coreDM.saveElement(element: element)
-                    self.elementsCD = self.coreDM.getElements()
-                }
+                self.loadFireBaseElementsToCoreData()
             }
         }
         else {
-            print("CoreData load elements")
+            print("FireBase not load elements")
+            self.loadFireBaseElementsToCoreData()
         }
     }
+    
     
     //MARK: main Algorithm method
     func elementsFilterAlgorithm() {
@@ -191,9 +192,45 @@ final class User: ObservableObject {
     }
     
     //MARK: CoreData method
+    func loadFireBaseSymptomsToCoreData() {
+        self.symptomsCD = coreDM.getSymptoms()
+        
+        if self.symptomsCD.isEmpty {
+            for symptom in self.symptoms {
+                self.coreDM.saveSymptom(symptom: symptom)
+                self.symptomsCD = self.coreDM.getSymptoms()}
+        }
+        if self.symptomsCD.count == 28 {
+            print("CoreData load symptoms \(self.symptomsCD.count)/28")
+        }
+        else {
+            for symptom in symptomsCD {
+                coreDM.deleteSymptoms(symptom: symptom)
+            }
+        }
+    }
+    
+    func loadFireBaseElementsToCoreData() {
+        self.elementsCD = coreDM.getElements()
+        
+        if self.elementsCD.isEmpty {
+            for element in self.elements {
+                self.coreDM.saveElement(element: element)
+                self.elementsCD = self.coreDM.getElements()}
+        }
+        if self.elementsCD.count == 21 {
+            print("CoreData load elements \(self.elementsCD.count)/21")
+        }
+        else {
+            for element in elementsCD {
+                coreDM.deleteElements(element: element)
+            }
+        }
+    }
+    
     func clearCDElemantValue() {
         for element in elementsCD {
-            element.value = 0
+            element.elValue = 0
         }
         coreDM.updateCD()
     }

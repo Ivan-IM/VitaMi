@@ -23,8 +23,8 @@ struct CustomCellAnalysisView: View {
         HStack {
             Text(element.symbol ?? "")
             Spacer()
-            TextField("\(element.value)", value: $valueEl, formatter: formatter, onCommit: {
-                element.value = valueEl ?? element.value
+            TextField("\(element.elValue)", value: $valueEl, formatter: formatter, onCommit: {
+                element.elValue = valueEl ?? element.elValue
                 user.coreDM.updateCD()
             })
                 .multilineTextAlignment(.trailing)

@@ -94,7 +94,7 @@ class CoreDataManager {
         elementCD.helper = element.helper
         elementCD.type = element.type
         elementCD.measure = element.measure
-        elementCD.value = element.value
+        elementCD.elValue = element.value
         
         do {
             try persistentContainer.viewContext.save()

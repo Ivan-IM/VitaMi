@@ -11,7 +11,7 @@ import SwiftUI
 struct GreatingView: View {
     
     @State var userName: String
-    @State var showSignIn = false
+    @State private var showSignIn = false
     @State private var animateColor: Double = 0.4
     @State private var buttonDisabled = false
     let width: CGFloat
@@ -37,11 +37,11 @@ struct GreatingView: View {
                 .padding()
                 CustomButtonView(buttonTitle: "Sign In", action: {
                     showSignIn.toggle()
-                }, width: width/5, height: width/9)
+                }, width: width/4.5, height: width/9)
 
             }
             .sheet(isPresented: $showSignIn) {
-                LoginView()
+                LoginView(showSignIn: $showSignIn)
             }
         }
         .padding()

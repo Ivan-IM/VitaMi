@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ElementCD" representedClassName="ElementCD" syncable="YES" codeGenerationType="class">
-        <attribute name="blocker" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="blocker" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="elementInfo" attributeType="String"/>
+        <attribute name="elValue" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="enName" attributeType="String"/>
-        <attribute name="helper" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
-        <attribute name="measure" optional="YES" attributeType="String"/>
-        <attribute name="normalValue" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Double]"/>
+        <attribute name="helper" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="measure" attributeType="String"/>
+        <attribute name="normalValue" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Double]"/>
         <attribute name="ruName" attributeType="String"/>
         <attribute name="ruProductInfo" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="symbol" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
-        <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="SymptomCD" representedClassName="SymptomCD" syncable="YES" codeGenerationType="class">
         <attribute name="elements" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>

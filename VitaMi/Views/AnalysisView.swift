@@ -12,6 +12,10 @@ struct AnalysisView: View {
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var user: User
     @State private var showingClearAlert = false
+    @State private var showingAlert: Bool = false
+    
+    private let width = UIScreen.main.bounds.size.width
+    private let height = UIScreen.main.bounds.size.height
     
     var body: some View {
         VStack {
@@ -36,6 +40,23 @@ struct AnalysisView: View {
                 ScrollViewAnalysisView()
                     .padding()
                     .opacity(user.elementsAnalysis.isEmpty ? 0:1)
+                Button {
+                    showingAlert.toggle()
+                } label: {
+                    Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
+                        .font(.system(size: 30, weight: .regular))
+                        .imageScale(.large)
+                        .foregroundColor(Color.orange)
+                }
+                .disabled(user.elementsAnalysis == user.lowElementsList ? true:false)
+                .opacity(user.elementsAnalysis == user.lowElementsList ? 0:0.8)
+                .position(x: width*0.8, y: height*0.65)
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Внимание"), message: Text("Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?"), primaryButton: .destructive(Text("Ok"), action: {
+                        user.elementsAnalysis.removeAll()
+                        user.elementsAnalysis = user.lowElementsList
+                    }), secondaryButton: .cancel())
+                }
             }
             HStack {
                 CustomButtonView(buttonTitle: "Назад", action: {
@@ -43,7 +64,6 @@ struct AnalysisView: View {
                 }, width: 160, height: 50)
                 Spacer()
                 CustomButtonView(buttonTitle: "Очистить", action: {
-                    print(user.elementsAnalysis)
                     showingClearAlert.toggle()
                 }, width: 160, height: 50)
             }

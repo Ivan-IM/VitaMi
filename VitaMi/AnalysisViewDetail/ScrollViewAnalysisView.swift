@@ -11,6 +11,7 @@ struct ScrollViewAnalysisView: View {
     
     @EnvironmentObject var user: User
     
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             ForEach(user.elementsCD) { element in

@@ -13,6 +13,7 @@ struct LoginView: View {
     @EnvironmentObject var changer: ViewChanger
     @Environment(\.presentationMode) var presentationMode
     @State var coordinator: SigninWithAppleCoordinator?
+    @Binding var showSignIn: Bool
     
     var body: some View {
         ZStack {
@@ -27,7 +28,7 @@ struct LoginView: View {
                         if let coordinator = self.coordinator {
                             coordinator.startSignInWithAppleFlow {
                                 print("Sign in with Apple")
-                                self.presentationMode.wrappedValue.dismiss()
+                                showSignIn = false
                             }
                         }
                     }
@@ -39,6 +40,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(showSignIn: .constant(true))
     }
 }
