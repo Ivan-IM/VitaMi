@@ -51,6 +51,7 @@ struct SymptomsListView: View {
                 Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список симптомов?"), primaryButton: .destructive(Text("Ok"), action: {
                     user.symptomsList.removeAll()
                     user.lowElementsList.removeAll()
+                    user.showFinalResult = false
                 }), secondaryButton: .cancel())
             }
         }

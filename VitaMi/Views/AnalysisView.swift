@@ -12,7 +12,8 @@ struct AnalysisView: View {
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var user: User
     @State private var showingClearAlert = false
-    @State private var showingAlert: Bool = false
+    @State private var showingUpdateAlert: Bool = false
+    @State private var showingResultAlert: Bool = false
     
     private let width = UIScreen.main.bounds.size.width
     private let height = UIScreen.main.bounds.size.height
@@ -41,7 +42,22 @@ struct AnalysisView: View {
                     .padding()
                     .opacity(user.elementsAnalysis.isEmpty ? 0:1)
                 Button {
-                    showingAlert.toggle()
+                    showingResultAlert.toggle()
+                } label: {
+                    Image(systemName: "checkmark.circle")
+                        .font(.system(size: 30, weight: .regular))
+                        .imageScale(.large)
+                        .foregroundColor(Color.green)
+                }
+                .position(x: width*0.2, y: height*0.65)
+                .alert(isPresented: $showingResultAlert) {
+                    Alert(title: Text("Результат"), message: Text("Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?"), primaryButton: .destructive(Text("Ok"), action: {
+                        user.showFinalResult = true
+                        changer.mainViewChanger = .resultTestingView
+                    }), secondaryButton: .cancel())
+                }
+                Button {
+                    showingUpdateAlert.toggle()
                 } label: {
                     Image(systemName: "checkmark.circle.trianglebadge.exclamationmark")
                         .font(.system(size: 30, weight: .regular))
@@ -51,7 +67,7 @@ struct AnalysisView: View {
                 .disabled(user.elementsAnalysis == user.lowElementsList ? true:false)
                 .opacity(user.elementsAnalysis == user.lowElementsList ? 0:0.8)
                 .position(x: width*0.8, y: height*0.65)
-                .alert(isPresented: $showingAlert) {
+                .alert(isPresented: $showingUpdateAlert) {
                     Alert(title: Text("Внимание"), message: Text("Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?"), primaryButton: .destructive(Text("Ok"), action: {
                         user.elementsAnalysis.removeAll()
                         user.elementsAnalysis = user.lowElementsList
@@ -71,11 +87,13 @@ struct AnalysisView: View {
             .alert(isPresented: $showingClearAlert) {
                 Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных"), primaryButton: .destructive(Text("Ok"), action: {
                     user.elementsAnalysis.removeAll()
+                    user.showFinalResult = false
                     user.clearCDElemantValue()
                 }), secondaryButton: .cancel())
             }
             .onAppear {
                 if user.elementsAnalysis.isEmpty {
+                    user.showFinalResult = false
                     user.elementsAnalysis = user.lowElementsList
                 }
             }

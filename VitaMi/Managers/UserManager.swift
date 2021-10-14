@@ -31,6 +31,12 @@ final class User: ObservableObject {
     @Published var showButtonView: Bool = false
     
     //MARK: User simptoms info
+    @Published var showHealthy: Bool = false
+    @Published var showFinalResult: Bool {
+        didSet {
+            UserDefaults.standard.set(showFinalResult, forKey: "ShowFinalResult")
+        }
+    }
     @Published var symptomsList: [String] {
         didSet {
             UserDefaults.standard.set(symptomsList, forKey: "SymptomsList")
@@ -57,6 +63,7 @@ final class User: ObservableObject {
     //MARK: init class
     init() {
         self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
+        self.showFinalResult = UserDefaults.standard.object(forKey: "ShowFinalResult") as? Bool ?? false
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsAnalysis = UserDefaults.standard.object(forKey: "ElementsAnalysis") as? [String] ?? []
@@ -85,6 +92,7 @@ final class User: ObservableObject {
         else {
             print("FireBase not load symptoms")
             self.loadFireBaseSymptomsToCoreData()
+            return
         }
     }
     
@@ -104,6 +112,7 @@ final class User: ObservableObject {
         else {
             print("FireBase not load elements")
             self.loadFireBaseElementsToCoreData()
+            return
         }
     }
     
@@ -207,6 +216,7 @@ final class User: ObservableObject {
             for symptom in symptomsCD {
                 coreDM.deleteSymptoms(symptom: symptom)
             }
+            return
         }
     }
     
@@ -218,13 +228,14 @@ final class User: ObservableObject {
                 self.coreDM.saveElement(element: element)
                 self.elementsCD = self.coreDM.getElements()}
         }
-        if self.elementsCD.count == 21 {
-            print("CoreData load elements \(self.elementsCD.count)/21")
+        if self.elementsCD.count == 20 {
+            print("CoreData load elements \(self.elementsCD.count)/20")
         }
         else {
             for element in elementsCD {
                 coreDM.deleteElements(element: element)
             }
+            return
         }
     }
     
@@ -233,5 +244,23 @@ final class User: ObservableObject {
             element.elValue = 0
         }
         coreDM.updateCD()
+    }
+    
+    //MARK: update status
+    func showHealthyStatus() {
+        var resultIndex = 0
+        for element in elementsCD {
+            if self.elementsAnalysis.contains(element.symbol ?? "") && (element.elValue > element.normalValue?[1] ?? 1) {
+                resultIndex += 1
+            }
+        }
+        print(resultIndex)
+        print(self.elementsAnalysis.count)
+        if resultIndex == self.elementsAnalysis.count {
+            self.showHealthy = true
+        }
+        else {
+            self.showHealthy = false
+        }
     }
 }

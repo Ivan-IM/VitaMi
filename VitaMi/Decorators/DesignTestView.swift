@@ -20,8 +20,8 @@ struct DesignTestView: View {
             Color("background")
             VStack {
                 Button {
-                    coreDM.saveElement(element: element)
-                    //coreDM.deleteElements(element: elements.last!)
+                    //coreDM.saveElement(element: element)
+                    coreDM.deleteElements(element: elements.last!)
                 } label: {
                     Text("Save")
                 }

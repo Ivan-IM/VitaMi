@@ -12,11 +12,12 @@ struct CustomCellResultTestingView: View {
     let element: ElementCD
     @State private var showInfo = false
     @State private var showList = false
+    let textColor: Color
     
     var body: some View {
         HStack {
             Text(self.element.ruName ?? "")
-                .foregroundColor(Color("text"))
+                .foregroundColor(textColor)
             Spacer()
             Button {
                 showList.toggle()
