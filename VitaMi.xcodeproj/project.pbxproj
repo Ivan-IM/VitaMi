@@ -241,6 +241,7 @@
 				CFA364DD26C3C1FF00958920 /* InfoView.swift */,
 				CF0D661D27120CE3006FBF8F /* SigninWithAppleButton.swift */,
 				CF0D66222712DEFD006FBF8F /* WelcomView.swift */,
+				CFC93F6D26C26C4200155191 /* LoginView.swift */,
 			);
 			path = StartViewDetail;
 			sourceTree = "<group>";
@@ -249,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				CF0D661B27119282006FBF8F /* GreatingView.swift */,
-				CFC93F6D26C26C4200155191 /* LoginView.swift */,
 			);
 			path = MainViewDetail;
 			sourceTree = "<group>";

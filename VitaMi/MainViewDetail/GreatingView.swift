@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GreatingView: View {
     
+    @EnvironmentObject var changer: ViewChanger
     @State var userName: String
     @State private var showSignIn = false
     @State private var animateColor: Double = 0.4
@@ -25,23 +26,29 @@ struct GreatingView: View {
                 .foregroundColor(Color("text").opacity(0.8))
                 .shadow(color: Color.blue.opacity(animateColor), radius: 15, x: 0, y: 0)
             VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        changer.mainViewChanger = .startView
+                        changer.startViewChanger = .welcom
+                    } label: {
+                        Image(systemName: "multiply.circle")
+                            .font(.system(size: 16, weight: .regular, design: .rounded))
+                            .foregroundColor(Color("text"))
+                    }
+                    .padding(.trailing, 8)
+                }
                 Text("Привет \(userName)!")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .bold, design: .rounded))
                     .foregroundColor(Color("text"))
-                .padding()
+                    .padding(.bottom, 16)
                 Text("Лаборатория VitaMi готова к диагностике.")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
-                .padding()
-                CustomButtonView(buttonTitle: "Sign In", action: {
-                    showSignIn.toggle()
-                }, width: width/4.5, height: width/9)
-
-            }
-            .sheet(isPresented: $showSignIn) {
-                LoginView(showSignIn: $showSignIn)
+                    .padding()
+                
             }
         }
         .padding()

@@ -45,13 +45,16 @@ struct AnalysisView: View {
                     showingResultAlert.toggle()
                 } label: {
                     Image(systemName: "checkmark.circle")
-                        .font(.system(size: 30, weight: .regular))
+                        .font(.system(size: 30, weight: .bold))
                         .imageScale(.large)
                         .foregroundColor(Color.green)
                 }
+                .shadow(color: .gray, radius: 15, x: 10, y: 10)
+                .disabled(user.elementsAnalysis.isEmpty ? true:false)
+                .opacity(user.elementsAnalysis.isEmpty ? 0:0.8)
                 .position(x: width*0.2, y: height*0.65)
                 .alert(isPresented: $showingResultAlert) {
-                    Alert(title: Text("Результат"), message: Text("Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?"), primaryButton: .destructive(Text("Ok"), action: {
+                    Alert(title: Text("Получение результата"), message: Text("Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?"), primaryButton: .destructive(Text("Ok"), action: {
                         user.showFinalResult = true
                         changer.mainViewChanger = .resultTestingView
                     }), secondaryButton: .cancel())
@@ -64,11 +67,12 @@ struct AnalysisView: View {
                         .imageScale(.large)
                         .foregroundColor(Color.orange)
                 }
+                .shadow(color: .gray, radius: 15, x: 10, y: 10)
                 .disabled(user.elementsAnalysis == user.lowElementsList ? true:false)
                 .opacity(user.elementsAnalysis == user.lowElementsList ? 0:0.8)
                 .position(x: width*0.8, y: height*0.65)
                 .alert(isPresented: $showingUpdateAlert) {
-                    Alert(title: Text("Внимание"), message: Text("Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?"), primaryButton: .destructive(Text("Ok"), action: {
+                    Alert(title: Text("Внимание!"), message: Text("Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?"), primaryButton: .destructive(Text("Ok"), action: {
                         user.elementsAnalysis.removeAll()
                         user.elementsAnalysis = user.lowElementsList
                     }), secondaryButton: .cancel())
@@ -85,7 +89,7 @@ struct AnalysisView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных"), primaryButton: .destructive(Text("Ok"), action: {
+                Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных лабораторного анализа"), primaryButton: .destructive(Text("Ok"), action: {
                     user.elementsAnalysis.removeAll()
                     user.showFinalResult = false
                     user.clearCDElemantValue()
