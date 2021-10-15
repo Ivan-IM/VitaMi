@@ -12,6 +12,8 @@ struct SignUpView: View {
     @EnvironmentObject var userInfo: UserInfo
     @State var user: UserViewModel = UserViewModel()
     @Environment(\.presentationMode) var presentationMode
+    @State private var showError: Bool = false
+    @State private var errorString = ""
 
     var body: some View {
         NavigationView {
@@ -45,8 +47,17 @@ struct SignUpView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 VStack(spacing: 20 ) {
                     Button(action: {
-                        // Signup
-                        
+                        FBAuth.createUser(withEmail: self.user.email,
+                                          name: self.user.fullname,
+                                          password: self.user.password) { result in
+                            switch result {
+                            case .failure(let error):
+                                self.errorString = error.localizedDescription
+                                self.showError = true
+                            case .success(_):
+                                print("Account creation successful")
+                            }
+                        }
                     }) {
                         Text("Register")
                             .frame(width: 200)
@@ -60,6 +71,9 @@ struct SignUpView: View {
                     Spacer()
                 }.padding()
             }.padding(.top)
+                .alert(isPresented: $showError) {
+                    Alert(title: Text("Ошибка создания аккаунта"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
+                }
                 .navigationBarTitle("Sign Up", displayMode: .inline)
                 .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
