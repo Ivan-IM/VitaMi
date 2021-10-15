@@ -10,7 +10,8 @@ import SwiftUI
 struct StartView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userInfo: UserInfo
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         ZStack {
@@ -42,7 +43,7 @@ struct StartView: View {
                         UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
                     }
                 }, width: 200, height: 50)
-                    .disabled(user.showButtonView)
+                    .disabled(userManager.showButtonView)
             }
             .padding()
         }
@@ -51,7 +52,9 @@ struct StartView: View {
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView().environmentObject(ViewChanger())
-            .environmentObject(User())
+        StartView()
+            .environmentObject(ViewChanger())
+            .environmentObject(UserManager())
+            .environmentObject(UserInfo())
     }
 }

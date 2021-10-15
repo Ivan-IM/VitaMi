@@ -10,7 +10,7 @@ import SwiftUI
 struct SymptomsListView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     @State private var showingClearAlert = false
     
     var body: some View {
@@ -32,10 +32,10 @@ struct SymptomsListView: View {
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
                     .padding()
                 ConnectBaseErrorView()
-                    .opacity(user.symptomsCD.isEmpty ? 0.7:0)
+                    .opacity(userManager.symptomsCD.isEmpty ? 0.7:0)
                 ScrollViewSymptomsListView()
                     .padding()
-                    .opacity(user.symptomsCD.isEmpty ? 0:1)
+                    .opacity(userManager.symptomsCD.isEmpty ? 0:1)
             }
             HStack {
                 CustomButtonView(buttonTitle: "Назад", action: {
@@ -49,9 +49,9 @@ struct SymptomsListView: View {
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
                 Alert(title: Text("Очистка"), message: Text("Вы действительно хотите очистить список симптомов?"), primaryButton: .destructive(Text("Ok"), action: {
-                    user.symptomsList.removeAll()
-                    user.lowElementsList.removeAll()
-                    user.showFinalResult = false
+                    userManager.symptomsList.removeAll()
+                    userManager.lowElementsList.removeAll()
+                    userManager.showFinalResult = false
                 }), secondaryButton: .cancel())
             }
         }
@@ -63,6 +63,6 @@ struct SymptomsListView_Previews: PreviewProvider {
     static var previews: some View {
         SymptomsListView()
             .environmentObject(ViewChanger())
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

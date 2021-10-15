@@ -21,8 +21,9 @@ struct VitaMiApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(User())
+                .environmentObject(UserManager())
                 .environmentObject(ViewChanger())
+                .environmentObject(UserInfo())
         }
     }
 }

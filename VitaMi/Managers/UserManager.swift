@@ -11,7 +11,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import AVFoundation
 
-final class User: ObservableObject {
+final class UserManager: ObservableObject {
+    
     //MARK: Base
     private let symptomsPath = "Symptoms"
     private let elementsPath = "Elements"
@@ -30,7 +31,7 @@ final class User: ObservableObject {
     @Published var symbols: Int = 0
     @Published var showButtonView: Bool = false
     
-    //MARK: User simptoms info
+    //MARK: User change system info
     @Published var showHealthy: Bool = false
     @Published var showFinalResult: Bool {
         didSet {
@@ -254,8 +255,6 @@ final class User: ObservableObject {
                 resultIndex += 1
             }
         }
-        print(resultIndex)
-        print(self.elementsAnalysis.count)
         if resultIndex == self.elementsAnalysis.count {
             self.showHealthy = true
         }

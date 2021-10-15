@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentSymptomsView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     @State private var index = 0
     @State private var downloadAmount = 0.0
     @State private var showingAlert = false
@@ -23,13 +23,13 @@ struct ContentSymptomsView: View {
                 .font(.system(size: 25, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
             
-            ProgressView("Симптом \(index+1)/\(user.symptomsCD.count)", value: Float(index)+1, total: Float(user.symptomsCD.count))
+            ProgressView("Симптом \(index+1)/\(userManager.symptomsCD.count)", value: Float(index)+1, total: Float(userManager.symptomsCD.count))
                 .foregroundColor(Color("text"))
                 .padding()
             
             Spacer()
             
-            Text(user.symptomsCD[index].ruName ?? "")
+            Text(userManager.symptomsCD[index].ruName ?? "")
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color("text"))
@@ -42,12 +42,12 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        user.symptomsList.append(user.symptomsCD[index].enName ?? "")
-                        if index < user.symptomsCD.count-1 {
+                        userManager.symptomsList.append(userManager.symptomsCD[index].enName ?? "")
+                        if index < userManager.symptomsCD.count-1 {
                             index += 1
                         }
                         else {
-                            index = user.symptomsCD.count-1
+                            index = userManager.symptomsCD.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }
@@ -58,11 +58,11 @@ struct ContentSymptomsView: View {
                         showingAlert = true
                     }
                     else {
-                        if index < user.symptomsCD.count-1 {
+                        if index < userManager.symptomsCD.count-1 {
                             index += 1
                         }
                         else {
-                            index = user.symptomsCD.count-1
+                            index = userManager.symptomsCD.count-1
                             changer.mainViewChanger = .resultTestingView
                         }
                     }
@@ -72,13 +72,13 @@ struct ContentSymptomsView: View {
         .padding(32)
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Начать тестирование?"), message: Text("Если вы начнете тестирование список симптомов очистится"), primaryButton: .destructive(Text("Ok"), action: {
-                user.symptomsList.removeAll()
-                user.lowElementsList.removeAll()
+                userManager.symptomsList.removeAll()
+                userManager.lowElementsList.removeAll()
                 startTesting = true
             }), secondaryButton: .cancel())
         }
         .onAppear() {
-            if user.symptomsList.isEmpty {
+            if userManager.symptomsList.isEmpty {
                 startTesting = true
             }
             else { return }
@@ -89,6 +89,6 @@ struct ContentSymptomsView: View {
 struct ContentSymptomsView_Previews: PreviewProvider {
     static var previews: some View {
         ContentSymptomsView()
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

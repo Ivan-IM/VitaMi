@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     private let width = UIScreen.main.bounds.size.width
     private let height = UIScreen.main.bounds.size.height
@@ -18,14 +18,14 @@ struct MainView: View {
     var body: some View {
         VStack {
             Spacer()
-            GreatingView(userName: user.name, width: width, height: height/4)
+            GreatingView(userName: userManager.name, width: width, height: height/4)
             Spacer()
             VStack(spacing: 0) {
                 HStack(alignment: .center) {
                     CustomButtonMainView(buttonTitle: "Начать тестирование", imageName: "hand.tap", imageColor: .blue, action: {
                         changer.mainViewChanger = .symptomsView
                     }, width: width*0.41, height: width*0.41)
-                        .disabled(user.symptomsCD.isEmpty ? true:false)
+                        .disabled(userManager.symptomsCD.isEmpty ? true:false)
                         .padding()
                     CustomButtonMainView(buttonTitle: "Список симптомов", imageName: "doc.text.magnifyingglass", imageColor: .blue, action: {
                         changer.mainViewChanger = .symptomsListView
@@ -52,6 +52,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(ViewChanger())
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

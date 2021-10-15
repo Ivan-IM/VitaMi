@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ScrollAnalysisResultView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.elementsCD) { element in
-                if user.elementsAnalysis.contains(element.symbol ?? "") && (element.elValue >= element.normalValue?[0] ?? 0) && (element.elValue <= element.normalValue?[1] ?? 1) {
+            ForEach(userManager.elementsCD) { element in
+                if userManager.elementsAnalysis.contains(element.symbol ?? "") && (element.elValue >= element.normalValue?[0] ?? 0) && (element.elValue <= element.normalValue?[1] ?? 1) {
                     CustomCellResultTestingView(element: element, textColor: .orange)
                         .padding(.vertical, 3.0)
                         .padding(.horizontal, 10.0)
                 }
-                if user.elementsAnalysis.contains(element.symbol ?? "") && (element.elValue <= element.normalValue?[0] ?? 0.1) {
+                else if userManager.elementsAnalysis.contains(element.symbol ?? "") && (element.elValue <= element.normalValue?[0] ?? 0.1) {
                     CustomCellResultTestingView(element: element, textColor: .red)
                         .padding(.vertical, 3.0)
                         .padding(.horizontal, 10.0)
@@ -29,7 +29,7 @@ struct ScrollAnalysisResultView: View {
         .padding(.vertical, 6)
         .padding(.horizontal, 8)
         .onAppear {
-            user.showHealthyStatus()
+            userManager.showHealthyStatus()
         }
     }
 }

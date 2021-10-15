@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultTestingView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     @State private var showingAlert = false
     
     var body: some View {
@@ -33,13 +33,13 @@ struct ResultTestingView: View {
         }
         .padding(.bottom, 16)
         .onAppear() {
-            user.lowElementsList.removeAll()
-            user.elementsFilterAlgorithm()
-            if user.symptomsList.count > 9 {
+            userManager.lowElementsList.removeAll()
+            userManager.elementsFilterAlgorithm()
+            if userManager.symptomsList.count > 9 {
                 showingAlert.toggle()
             }
-            if user.elementsAnalysis.isEmpty {
-                user.showFinalResult = false
+            if userManager.elementsAnalysis.isEmpty {
+                userManager.showFinalResult = false
             }
         }
         .alert(isPresented: $showingAlert) {
@@ -50,6 +50,6 @@ struct ResultTestingView: View {
 
 struct ResultTestingView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultTestingView().environmentObject(User()).environmentObject(ViewChanger())
+        ResultTestingView().environmentObject(UserManager()).environmentObject(ViewChanger())
     }
 }

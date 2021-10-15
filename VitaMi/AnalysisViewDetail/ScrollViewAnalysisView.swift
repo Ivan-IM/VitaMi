@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ScrollViewAnalysisView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.elementsCD) { element in
-                if user.elementsAnalysis.contains(element.symbol ?? "") {
+            ForEach(userManager.elementsCD) { element in
+                if userManager.elementsAnalysis.contains(element.symbol ?? "") {
                     CustomCellAnalysisView(element: element)
                         .padding(.vertical, 3.0)
                         .padding(.horizontal, 10.0)
@@ -31,6 +31,6 @@ struct ScrollViewAnalysisView: View {
 struct ScrollViewAnalysisView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollViewAnalysisView()
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

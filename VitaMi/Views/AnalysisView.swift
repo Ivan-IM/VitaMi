@@ -10,7 +10,7 @@ import SwiftUI
 struct AnalysisView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     @State private var showingClearAlert = false
     @State private var showingUpdateAlert: Bool = false
     @State private var showingResultAlert: Bool = false
@@ -37,10 +37,10 @@ struct AnalysisView: View {
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
                     .padding()
                 HealthyImageView()
-                    .opacity(user.elementsAnalysis.isEmpty ? 0.7:0)
+                    .opacity(userManager.elementsAnalysis.isEmpty ? 0.7:0)
                 ScrollViewAnalysisView()
                     .padding()
-                    .opacity(user.elementsAnalysis.isEmpty ? 0:1)
+                    .opacity(userManager.elementsAnalysis.isEmpty ? 0:1)
                 Button {
                     showingResultAlert.toggle()
                 } label: {
@@ -50,12 +50,12 @@ struct AnalysisView: View {
                         .foregroundColor(Color.green)
                 }
                 .shadow(color: .gray, radius: 15, x: 10, y: 10)
-                .disabled(user.elementsAnalysis.isEmpty ? true:false)
-                .opacity(user.elementsAnalysis.isEmpty ? 0:0.8)
+                .disabled(userManager.elementsAnalysis.isEmpty ? true:false)
+                .opacity(userManager.elementsAnalysis.isEmpty ? 0:0.8)
                 .position(x: width*0.2, y: height*0.65)
                 .alert(isPresented: $showingResultAlert) {
                     Alert(title: Text("Получение результата"), message: Text("Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?"), primaryButton: .destructive(Text("Ok"), action: {
-                        user.showFinalResult = true
+                        userManager.showFinalResult = true
                         changer.mainViewChanger = .resultTestingView
                     }), secondaryButton: .cancel())
                 }
@@ -68,13 +68,13 @@ struct AnalysisView: View {
                         .foregroundColor(Color.orange)
                 }
                 .shadow(color: .gray, radius: 15, x: 10, y: 10)
-                .disabled(user.elementsAnalysis == user.lowElementsList ? true:false)
-                .opacity(user.elementsAnalysis == user.lowElementsList ? 0:0.8)
+                .disabled(userManager.elementsAnalysis == userManager.lowElementsList ? true:false)
+                .opacity(userManager.elementsAnalysis == userManager.lowElementsList ? 0:0.8)
                 .position(x: width*0.8, y: height*0.65)
                 .alert(isPresented: $showingUpdateAlert) {
                     Alert(title: Text("Внимание!"), message: Text("Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?"), primaryButton: .destructive(Text("Ok"), action: {
-                        user.elementsAnalysis.removeAll()
-                        user.elementsAnalysis = user.lowElementsList
+                        userManager.elementsAnalysis.removeAll()
+                        userManager.elementsAnalysis = userManager.lowElementsList
                     }), secondaryButton: .cancel())
                 }
             }
@@ -90,15 +90,15 @@ struct AnalysisView: View {
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
                 Alert(title: Text("Очистка"), message: Text("Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных лабораторного анализа"), primaryButton: .destructive(Text("Ok"), action: {
-                    user.elementsAnalysis.removeAll()
-                    user.showFinalResult = false
-                    user.clearCDElemantValue()
+                    userManager.elementsAnalysis.removeAll()
+                    userManager.showFinalResult = false
+                    userManager.clearCDElemantValue()
                 }), secondaryButton: .cancel())
             }
             .onAppear {
-                if user.elementsAnalysis.isEmpty {
-                    user.showFinalResult = false
-                    user.elementsAnalysis = user.lowElementsList
+                if userManager.elementsAnalysis.isEmpty {
+                    userManager.showFinalResult = false
+                    userManager.elementsAnalysis = userManager.lowElementsList
                 }
             }
         }
@@ -110,6 +110,6 @@ struct AnalysisView_Previews: PreviewProvider {
     static var previews: some View {
         AnalysisView()
             .environmentObject(ViewChanger())
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

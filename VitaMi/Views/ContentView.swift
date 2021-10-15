@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         ZStack {
@@ -58,6 +58,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(ViewChanger())
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

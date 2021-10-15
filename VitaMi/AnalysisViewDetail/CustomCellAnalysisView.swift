@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomCellAnalysisView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var user: UserManager
     var element: ElementCD
     @State private var valueEl: Double?
     

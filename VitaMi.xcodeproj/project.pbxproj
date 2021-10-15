@@ -50,6 +50,7 @@
 		CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A2C26C26ED900B855E8 /* MainView.swift */; };
 		CFA42A3126C272C600B855E8 /* CustomCellSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */; };
 		CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */; };
+		CFB19FA42719560D0051BB56 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FA32719560D0051BB56 /* UserInfo.swift */; };
 		CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB34BFB270C59E000A527EF /* HealthyImageView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
@@ -100,6 +101,7 @@
 		CFA42A2C26C26ED900B855E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CFA42A3026C272C600B855E8 /* CustomCellSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellSymptomsListView.swift; sourceTree = "<group>"; };
 		CFA42A3326C27ABD00B855E8 /* ScrollViewSymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSymptomsListView.swift; sourceTree = "<group>"; };
+		CFB19FA32719560D0051BB56 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		CFB34BFB270C59E000A527EF /* HealthyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyImageView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				CF1B39DF26BC3C4900D45DD6 /* Extension.swift */,
 				CF0D661F2712123B006FBF8F /* SigninWithAppleCoordinator.swift */,
 				CF8710CD27149C2000111B0B /* CoreDataManager.swift */,
+				CFB19FA32719560D0051BB56 /* UserInfo.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				CF758F9126989348004E73EE /* ResultTestingView.swift in Sources */,
 				CF8710C72714029F00111B0B /* CustomCellResultTestingView.swift in Sources */,
 				CF2BF98B269096FB00842794 /* ContentView.swift in Sources */,
+				CFB19FA42719560D0051BB56 /* UserInfo.swift in Sources */,
 				CF2BF989269096FB00842794 /* VitaMiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

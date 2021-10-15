@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TitleResultView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var user: UserManager
     let titleResultElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата необходимо сдать анализ крови в любой клининке."
     let titleHealthy: String = "Ваше состояние не указывает на дефицит или сниженное потребление каких-либо микроэлементов и витаминов."
     let titleAnalysisElementsDeficit0: String = "Результаты анализа характерны для"

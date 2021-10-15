@@ -10,7 +10,7 @@ import SwiftUI
 struct DesignTestView: View {
     
     let coreDM: CoreDataManager = CoreDataManager()
-    @EnvironmentObject var user: User
+    @EnvironmentObject var user: UserManager
     @State private var showingDetail = false
     @State private var elements: [ElementCD] = [ElementCD]()
     
@@ -43,6 +43,6 @@ struct DesignTestView_Previews: PreviewProvider {
         DesignTestView()
             .preferredColorScheme(.light)
             .environmentObject(ViewChanger())
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

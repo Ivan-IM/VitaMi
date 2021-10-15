@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     @State private var showSignIn = false
     
     private let width = UIScreen.main.bounds.size.width
@@ -19,26 +19,26 @@ struct WelcomView: View {
         VStack {
             HStack {
                 let validation = Binding<String>(
-                    get: { self.user.name },
-                    set: { self.user.name = self.user.validator($0)}
+                    get: { self.userManager.name },
+                    set: { self.userManager.name = self.userManager.validator($0)}
                 )
                 
                 TextField("Введите имя", text: validation, onCommit: {
-                    user.showButton()
+                    userManager.showButton()
                 })
                     .multilineTextAlignment(.center)
                     .frame(width: 250)
                     .offset(x: 25)
                 
                 ZStack {
-                    Text("\(user.symbols)")
+                    Text("\(userManager.symbols)")
                         .foregroundColor(Color.red)
                         .multilineTextAlignment(.center)
-                        .opacity(user.showButtonView ? 1:0)
+                        .opacity(userManager.showButtonView ? 1:0)
                     
                     Image(systemName: "checkmark.circle")
                         .foregroundColor(Color(.systemBlue))
-                        .opacity(user.showButtonView ? 0:1)
+                        .opacity(userManager.showButtonView ? 0:1)
                     
                     
                 }.frame(width: 50)
@@ -46,8 +46,8 @@ struct WelcomView: View {
             .frame(width: width*0.8, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).stroke(Color.white, lineWidth: 2))
             .onAppear {
-                if user.name.isEmpty {
-                    user.showButtonView = true
+                if userManager.name.isEmpty {
+                    userManager.showButtonView = true
                 }
             }
             CustomButtonView(buttonTitle: "Sign In", action: {
@@ -64,6 +64,6 @@ struct WelcomView: View {
 struct WelcomView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomView()
-            .environmentObject(User())
+            .environmentObject(UserManager())
     }
 }

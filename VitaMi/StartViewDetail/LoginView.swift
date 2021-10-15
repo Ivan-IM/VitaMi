@@ -6,10 +6,12 @@
 //
 
 import AuthenticationServices
+import Firebase
 import SwiftUI
 
 struct LoginView: View {
     
+    @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var changer: ViewChanger
     @Environment(\.presentationMode) var presentationMode
     @State var coordinator: SigninWithAppleCoordinator?
@@ -28,6 +30,7 @@ struct LoginView: View {
                         if let coordinator = self.coordinator {
                             coordinator.startSignInWithAppleFlow {
                                 print("Sign in with Apple")
+                                
                                 showSignIn = false
                             }
                         }

@@ -10,7 +10,7 @@ import SwiftUI
 struct SymptomsView: View {
     
     @EnvironmentObject var changer: ViewChanger
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         VStack {
@@ -34,7 +34,7 @@ struct SymptomsView: View {
 struct SymptomsView_Previews: PreviewProvider {
     static var previews: some View {
         SymptomsView()
-            .environmentObject(User())
+            .environmentObject(UserManager())
             .environmentObject(ViewChanger())
     }
 }

@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ScrollViewSymptomsListView: View {
     
-    @EnvironmentObject var user: User
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(user.symptomsCD) { symptom in
-                CustomCellSymptomsListView(title: symptom.ruName ?? "", isSelected: user.symptomsList.contains(symptom.enName ?? "")) {
-                    if user.symptomsList.contains(symptom.enName ?? "") {
-                        user.symptomsList.removeAll(where: { $0 == symptom.enName })
+            ForEach(userManager.symptomsCD) { symptom in
+                CustomCellSymptomsListView(title: symptom.ruName ?? "", isSelected: userManager.symptomsList.contains(symptom.enName ?? "")) {
+                    if userManager.symptomsList.contains(symptom.enName ?? "") {
+                        userManager.symptomsList.removeAll(where: { $0 == symptom.enName })
                     }
                     else {
-                        user.symptomsList.append(symptom.enName ?? "")
+                        userManager.symptomsList.append(symptom.enName ?? "")
                     }
                 }
                 .padding(.vertical, 3.0)
