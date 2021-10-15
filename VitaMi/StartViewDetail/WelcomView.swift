@@ -55,9 +55,9 @@ struct WelcomView: View {
             }, width: 200, height: 50)
                 .padding()
         }
-        .sheet(isPresented: $showSignIn) {
-            LoginView(showSignIn: $showSignIn)
-        }
+//        .sheet(isPresented: $showSignIn) {
+//            LoginView(showSignIn: $showSignIn)
+//        }
     }
 }
 
