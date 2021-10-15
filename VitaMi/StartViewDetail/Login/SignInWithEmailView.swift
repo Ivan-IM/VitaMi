@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct SignInWithEmailView: View {
+    
     @EnvironmentObject var userInfo: UserInfo
     @State var user: UserViewModel = UserViewModel()
     @Binding var showSheet: Bool
-    @Binding var action:LoginView.Action?
+    @Binding var action: LoginView.Action?
+    @State private var showError: Bool = false
+    @State private var errorString = ""
+    
     var body: some View {
         VStack {
             TextField("Email Address",
@@ -31,7 +35,17 @@ struct SignInWithEmailView: View {
             }.padding(.bottom)
             VStack(spacing: 10) {
                 Button(action: {
-                    // Sign In Action
+                    FBAuth.createUser(withEmail: self.user.email,
+                                      name: self.user.fullname,
+                                      password: self.user.password) { result in
+                        switch result {
+                        case .failure(let error):
+                            self.errorString = error.localizedDescription
+                            self.showError = true
+                        case .success(_):
+                            print("Account creation successful")
+                        }
+                    }
                 }) {
                     Text("Login")
                         .padding(.vertical, 15)
@@ -53,6 +67,9 @@ struct SignInWithEmailView: View {
                         .foregroundColor(.white)
                 }
             }
+        }
+        .alert(isPresented: $showError) {
+            Alert(title: Text("Ошибка создания аккаунта"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
         }
         .padding(.top, 100)
         .frame(width: 300)

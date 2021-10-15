@@ -12,6 +12,7 @@ struct LoginView: View {
     enum Action {
         case signUp, resetPW
     }
+    
     @State private var showSheet = false
     @State private var action: Action?
     

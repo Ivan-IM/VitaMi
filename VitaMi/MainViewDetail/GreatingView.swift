@@ -11,6 +11,7 @@ import SwiftUI
 struct GreatingView: View {
     
     @EnvironmentObject var changer: ViewChanger
+    @EnvironmentObject var userInfo: UserInfo
     @State var userName: String
     @State private var showSignIn = false
     @State private var animateColor: Double = 0.4
@@ -29,8 +30,9 @@ struct GreatingView: View {
                 HStack {
                     Spacer()
                     Button {
-                        changer.mainViewChanger = .startView
-                        changer.startViewChanger = .welcom
+                        FBAuth.logout { result in
+                            print("Logged out")
+                        }
                     } label: {
                         Image(systemName: "multiply.circle")
                             .font(.system(size: 16, weight: .regular, design: .rounded))
@@ -38,7 +40,7 @@ struct GreatingView: View {
                     }
                     .padding(.trailing, 8)
                 }
-                Text("Привет \(userName)!")
+                Text("Привет \(userInfo.user.name)!")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .bold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -55,6 +57,15 @@ struct GreatingView: View {
         .onAppear {
             withAnimation(.easeOut(duration: 2).repeatForever(autoreverses: true)) {
                 self.animateColor = 1.0
+            }
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            FBFirestore.retrieveFBUser(uid: uid) { result in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let user):
+                    self.userInfo.user = user
+                }
             }
         }
     }

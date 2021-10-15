@@ -13,14 +13,6 @@ import AVFoundation
 
 final class UserManager: ObservableObject {
     
-    //MARK: Base
-    private let symptomsPath = "Symptoms"
-    private let elementsPath = "Elements"
-    private let store = Firestore.firestore()
-    
-    @Published var symptoms = [Symptom]()
-    @Published var elements = [Element]()
-    
     //MARK: User info
     @Published var name: String {
         didSet {
@@ -55,7 +47,15 @@ final class UserManager: ObservableObject {
         }
     }
     
-    //MARK: CoreData base
+    //MARK: FireBase system base
+    private let symptomsPath = "Symptoms"
+    private let elementsPath = "Elements"
+    private let store = Firestore.firestore()
+    
+    @Published var symptoms = [Symptom]()
+    @Published var elements = [Element]()
+    
+    //MARK: CoreData system base
     let coreDM: CoreDataManager = CoreDataManager()
     
     @Published var symptomsCD: [SymptomCD] = [SymptomCD]()
@@ -72,50 +72,10 @@ final class UserManager: ObservableObject {
         self.symptomsCD = coreDM.getSymptoms()
         self.elementsCD = coreDM.getElements()
         
-        getFBSymptoms()
-        getFBElements()
+//        getFBSymptoms()
+//        getFBElements()
     }
     
-    //MARK: getBase method
-    func getFBSymptoms() {
-        if self.symptomsCD.isEmpty {
-            store.collection(symptomsPath).addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.symptoms = snapshot?.documents.compactMap {
-                    try? $0.data(as: Symptom.self)
-                } ?? []
-                self.loadFireBaseSymptomsToCoreData()
-            }
-        }
-        else {
-            print("FireBase not load symptoms")
-            self.loadFireBaseSymptomsToCoreData()
-            return
-        }
-    }
-    
-    func getFBElements() {
-        if self.elementsCD.isEmpty {
-            store.collection(elementsPath).addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.elements = snapshot?.documents.compactMap {
-                    try? $0.data(as: Element.self)
-                } ?? []
-                self.loadFireBaseElementsToCoreData()
-            }
-        }
-        else {
-            print("FireBase not load elements")
-            self.loadFireBaseElementsToCoreData()
-            return
-        }
-    }
     
     
     //MARK: main Algorithm method
@@ -184,6 +144,47 @@ final class UserManager: ObservableObject {
         }
     }
     
+    //MARK: FireBase get base method
+    func getFBSymptoms() {
+        if self.symptomsCD.isEmpty {
+            store.collection(symptomsPath).addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.symptoms = snapshot?.documents.compactMap {
+                    try? $0.data(as: Symptom.self)
+                } ?? []
+                self.loadFireBaseSymptomsToCoreData()
+            }
+        }
+        else {
+            print("FireBase not load symptoms")
+            self.loadFireBaseSymptomsToCoreData()
+            return
+        }
+    }
+    
+    func getFBElements() {
+        if self.elementsCD.isEmpty {
+            store.collection(elementsPath).addSnapshotListener { snapshot, error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.elements = snapshot?.documents.compactMap {
+                    try? $0.data(as: Element.self)
+                } ?? []
+                self.loadFireBaseElementsToCoreData()
+            }
+        }
+        else {
+            print("FireBase not load elements")
+            self.loadFireBaseElementsToCoreData()
+            return
+        }
+    }
+    
     //MARK: name validator method
     func validator(_ value: String) -> String {
         name = value
@@ -201,7 +202,7 @@ final class UserManager: ObservableObject {
         }
     }
     
-    //MARK: CoreData method
+    //MARK: CoreData get base method
     func loadFireBaseSymptomsToCoreData() {
         self.symptomsCD = coreDM.getSymptoms()
         
