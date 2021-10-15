@@ -13,16 +13,6 @@ import AVFoundation
 
 final class UserManager: ObservableObject {
     
-    //MARK: User info
-    @Published var name: String {
-        didSet {
-            UserDefaults.standard.set(name, forKey: "Name")
-        }
-    }
-    
-    @Published var symbols: Int = 0
-    @Published var showButtonView: Bool = false
-    
     //MARK: User change system info
     @Published var showHealthy: Bool = false
     @Published var showFinalResult: Bool {
@@ -63,7 +53,6 @@ final class UserManager: ObservableObject {
     
     //MARK: init class
     init() {
-        self.name = UserDefaults.standard.object(forKey: "Name") as? String ?? ""
         self.showFinalResult = UserDefaults.standard.object(forKey: "ShowFinalResult") as? Bool ?? false
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
@@ -182,23 +171,6 @@ final class UserManager: ObservableObject {
             print("FireBase not load elements")
             self.loadFireBaseElementsToCoreData()
             return
-        }
-    }
-    
-    //MARK: name validator method
-    func validator(_ value: String) -> String {
-        name = value
-        symbols = name.count
-        showButton()
-        return name
-    }
-    
-    func showButton() {
-        if symbols < 1 {
-            showButtonView = true
-        }
-        else {
-            showButtonView = false
         }
     }
     

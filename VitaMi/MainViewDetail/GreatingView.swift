@@ -12,10 +12,8 @@ struct GreatingView: View {
     
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var userInfo: UserInfo
-    @State var userName: String
-    @State private var showSignIn = false
     @State private var animateColor: Double = 0.4
-    @State private var buttonDisabled = false
+    
     let width: CGFloat
     let height: CGFloat
     
@@ -73,6 +71,6 @@ struct GreatingView: View {
 
 struct GreatingView_Previews: PreviewProvider {
     static var previews: some View {
-        GreatingView(userName: "Neo", width: 200, height: 200)
+        GreatingView(width: 200, height: 200)
     }
 }

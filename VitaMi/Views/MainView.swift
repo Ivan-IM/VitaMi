@@ -18,7 +18,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             Spacer()
-            GreatingView(userName: userManager.name, width: width, height: height/4)
+            GreatingView(width: width, height: height/4)
             Spacer()
             VStack(spacing: 0) {
                 HStack(alignment: .center) {
