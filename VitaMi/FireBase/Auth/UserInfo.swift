@@ -20,19 +20,19 @@ class UserInfo: ObservableObject {
     
     func configureFBStateDidChange() {
         authStateDidChangeListenerHandle = Auth.auth().addStateDidChangeListener({ _, user in
-            guard let user = user else {
+            guard let _ = user else {
                 self.isUserAuthenticated = .signedOut
                 return
             }
             self.isUserAuthenticated = .sigenIn
-            FBFirestore.retrieveFBUser(uid: user.uid) { result in
-                switch result {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                case .success(let user):
-                    self.user = user
-                }
-            }
+//            FBFirestore.retrieveFBUser(uid: user.uid) { result in
+//                switch result {
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                case .success(let user):
+//                    self.user = user
+//                }
+//            }
         })
     }
 }

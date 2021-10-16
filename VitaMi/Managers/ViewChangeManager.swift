@@ -9,18 +9,14 @@ import Foundation
 
 final class ViewChanger: ObservableObject {
     
-    @Published var startViewChanger: StartViewChanger = .info
     @Published var mainViewChanger: MainViewChanger = .startView
+    //UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
     
     init() {
         if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger-") {
             self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .startView
         }
     }
-}
-
-enum StartViewChanger {
-    case info, welcom
 }
 
 enum MainViewChanger: String, Codable {

@@ -57,12 +57,6 @@ final class UserManager: ObservableObject {
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsAnalysis = UserDefaults.standard.object(forKey: "ElementsAnalysis") as? [String] ?? []
-        
-        self.symptomsCD = coreDM.getSymptoms()
-        self.elementsCD = coreDM.getElements()
-        
-        getFBSymptoms()
-        getFBElements()
     }
     
     

@@ -62,11 +62,9 @@ struct SignUpView: View {
                         Text("Регистрация")
                             .frame(width: 200)
                             .padding(.vertical, 15)
-                            .background(Color.green)
-                            .cornerRadius(8)
-                            .foregroundColor(.white)
                             .opacity(user.isSignInComplete ? 1 : 0.75)
                     }
+                    .buttonStyle(CustomMinButtonStyle())
                     .disabled(!user.isSignInComplete)
                     Spacer()
                 }.padding()

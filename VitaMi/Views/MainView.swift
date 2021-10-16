@@ -11,6 +11,7 @@ struct MainView: View {
     
     @EnvironmentObject var changer: ViewChanger
     @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var userInfo: UserInfo
     
     private let width = UIScreen.main.bounds.size.width
     private let height = UIScreen.main.bounds.size.height
