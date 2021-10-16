@@ -17,38 +17,10 @@ struct ContentView: View {
             Color("background")
                 .ignoresSafeArea()
             
-            Spacer()
-            switch changer.mainViewChanger {
-            case .startView:
+            if changer.infoViewDismiss {
+                InfoView()
+            } else {
                 StartView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(1)
-            case .mainView:
-                MainView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(2)
-            case .symptomsView:
-                SymptomsView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(3)
-            case .symptomsListView:
-                SymptomsListView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(4)
-            case .resultTestingView:
-                ResultTestingView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(5)
-            case .analysisView:
-                AnalysisView()
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
-                    .zIndex(6)
             }
         }
     }

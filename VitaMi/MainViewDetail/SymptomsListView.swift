@@ -56,6 +56,10 @@ struct SymptomsListView: View {
             }
         }
         .padding(.bottom, 16)
+        .onDisappear {
+            userManager.lowElementsList.removeAll()
+            userManager.elementsFilterAlgorithm()
+        }
     }
 }
 

@@ -59,6 +59,7 @@
 		CFB19FBD271982DE0051BB56 /* FBFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FB9271982DE0051BB56 /* FBFireStore.swift */; };
 		CFB19FBE271982DE0051BB56 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FBA271982DE0051BB56 /* FBUser.swift */; };
 		CFB19FC1271AC81E0051BB56 /* SignInWithAppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC0271AC81E0051BB56 /* SignInWithAppleButtonView.swift */; };
+		CFB19FC5271B11230051BB56 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC4271B11230051BB56 /* MainScreenView.swift */; };
 		CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB34BFB270C59E000A527EF /* HealthyImageView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
@@ -118,6 +119,7 @@
 		CFB19FB9271982DE0051BB56 /* FBFireStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFireStore.swift; sourceTree = "<group>"; };
 		CFB19FBA271982DE0051BB56 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		CFB19FC0271AC81E0051BB56 /* SignInWithAppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonView.swift; sourceTree = "<group>"; };
+		CFB19FC4271B11230051BB56 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		CFB34BFB270C59E000A527EF /* HealthyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyImageView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -153,10 +155,6 @@
 				CF2BF98A269096FB00842794 /* ContentView.swift */,
 				CFC93F6B26C26AC000155191 /* StartView.swift */,
 				CFA42A2C26C26ED900B855E8 /* MainView.swift */,
-				CF758F8E26988EEA004E73EE /* SymptomsView.swift */,
-				CFA364E926C6657400958920 /* SymptomsListView.swift */,
-				CF758F9026989348004E73EE /* ResultTestingView.swift */,
-				CF0D6624271317CE006FBF8F /* AnalysisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +254,11 @@
 			isa = PBXGroup;
 			children = (
 				CF0D661B27119282006FBF8F /* GreatingView.swift */,
+				CFB19FC4271B11230051BB56 /* MainScreenView.swift */,
+				CF758F8E26988EEA004E73EE /* SymptomsView.swift */,
+				CFA364E926C6657400958920 /* SymptomsListView.swift */,
+				CF758F9026989348004E73EE /* ResultTestingView.swift */,
+				CF0D6624271317CE006FBF8F /* AnalysisView.swift */,
 			);
 			path = MainViewDetail;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				CFA364EF26C6735F00958920 /* ScrollViewResultView.swift in Sources */,
 				CFA42A2D26C26ED900B855E8 /* MainView.swift in Sources */,
 				CF1B39E026BC3C4900D45DD6 /* Extension.swift in Sources */,
+				CFB19FC5271B11230051BB56 /* MainScreenView.swift in Sources */,
 				CF0D661A271185B2006FBF8F /* CustomButtonMainView.swift in Sources */,
 				CF0D661827116AB6006FBF8F /* CustomMinButtonStyle.swift in Sources */,
 				CF8710CE27149C2000111B0B /* CoreDataManager.swift in Sources */,

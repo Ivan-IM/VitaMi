@@ -9,17 +9,28 @@ import Foundation
 
 final class ViewChanger: ObservableObject {
     
-    @Published var mainViewChanger: MainViewChanger = .startView
+    @Published var startViewChanger: StartViewChanger = .infoView
+    @Published var infoViewDismiss: Bool {
+        didSet {
+            UserDefaults.standard.set(infoViewDismiss, forKey: "InfoViewDismiss")
+        }
+    }
+    @Published var mainViewChanger: MainViewChanger = .mainView
     //UserDefaults.standard.setValue(changer.mainViewChanger.rawValue, forKey: "MainViewChanger")
     
     init() {
-        if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger-") {
-            self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .startView
-        }
+        self.infoViewDismiss = UserDefaults.standard.object(forKey: "InfoViewDismiss") as? Bool ?? false
+//        if let rawValue = UserDefaults.standard.string(forKey: "MainViewChanger-") {
+//            self.mainViewChanger = MainViewChanger(rawValue: rawValue) ?? .mainView
+//        }
     }
 }
 
+enum StartViewChanger: String, Codable {
+    case infoView, startView
+}
+
 enum MainViewChanger: String, Codable {
-    case startView, mainView, symptomsView, symptomsListView, resultTestingView, analysisView
+    case mainView, symptomsView, symptomsListView, resultTestingView, analysisView
 }
 

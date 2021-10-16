@@ -13,38 +13,39 @@ struct MainView: View {
     @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var userInfo: UserInfo
     
-    private let width = UIScreen.main.bounds.size.width
-    private let height = UIScreen.main.bounds.size.height
-    
     var body: some View {
-        VStack {
+        ZStack {
+            Color("background")
+                .ignoresSafeArea()
+            
             Spacer()
-            GreatingView(width: width, height: height/4)
-            Spacer()
-            VStack(spacing: 0) {
-                HStack(alignment: .center) {
-                    CustomButtonMainView(buttonTitle: "Начать тестирование", imageName: "hand.tap", imageColor: .blue, action: {
-                        changer.mainViewChanger = .symptomsView
-                    }, width: width*0.41, height: width*0.41)
-                        .disabled(userManager.symptomsCD.isEmpty ? true:false)
-                        .padding()
-                    CustomButtonMainView(buttonTitle: "Список симптомов", imageName: "doc.text.magnifyingglass", imageColor: .blue, action: {
-                        changer.mainViewChanger = .symptomsListView
-                    }, width: width*0.41, height: width*0.41)
-                        .padding()
-                }
-                HStack(alignment: .center) {
-                    CustomButtonMainView(buttonTitle: "Анализ", imageName: "eyedropper.halffull", imageColor: .green, action: {
-                        changer.mainViewChanger = .analysisView
-                    }, width: width*0.41, height: width*0.41)
-                        .padding()
-                    CustomButtonMainView(buttonTitle: "Результаты", imageName: "heart.text.square", imageColor: .green, action: {
-                        changer.mainViewChanger = .resultTestingView
-                    }, width: width*0.41, height: width*0.41)
-                        .padding()
-                }
+            switch changer.mainViewChanger {
+            case .mainView:
+                MainScreenView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(1)
+            case .symptomsView:
+                SymptomsView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(2)
+            case .symptomsListView:
+                SymptomsListView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(3)
+            case .resultTestingView:
+                ResultTestingView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(4)
+            case .analysisView:
+                AnalysisView()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .transition(AnyTransition.opacity.combined(with: .slide).animation(.default))
+                    .zIndex(5)
             }
-            Spacer()
         }
     }
 }
@@ -54,5 +55,6 @@ struct MainView_Previews: PreviewProvider {
         MainView()
             .environmentObject(ViewChanger())
             .environmentObject(UserManager())
+            .environmentObject(UserInfo())
     }
 }
