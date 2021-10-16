@@ -61,8 +61,8 @@ final class UserManager: ObservableObject {
         self.symptomsCD = coreDM.getSymptoms()
         self.elementsCD = coreDM.getElements()
         
-//        getFBSymptoms()
-//        getFBElements()
+        getFBSymptoms()
+        getFBElements()
     }
     
     
@@ -180,8 +180,8 @@ final class UserManager: ObservableObject {
         
         if self.symptomsCD.isEmpty {
             for symptom in self.symptoms {
-                self.coreDM.saveSymptom(symptom: symptom)
-                self.symptomsCD = self.coreDM.getSymptoms()}
+                self.coreDM.saveSymptom(symptom: symptom)}
+            self.symptomsCD = self.coreDM.getSymptoms()
         }
         if self.symptomsCD.count == 28 {
             print("CoreData load symptoms \(self.symptomsCD.count)/28")
@@ -199,8 +199,8 @@ final class UserManager: ObservableObject {
         
         if self.elementsCD.isEmpty {
             for element in self.elements {
-                self.coreDM.saveElement(element: element)
-                self.elementsCD = self.coreDM.getElements()}
+                self.coreDM.saveElement(element: element)}
+            self.elementsCD = self.coreDM.getElements()
         }
         if self.elementsCD.count == 20 {
             print("CoreData load elements \(self.elementsCD.count)/20")
