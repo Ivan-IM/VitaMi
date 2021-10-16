@@ -1,5 +1,5 @@
 //
-//  SecondManualView.swift
+//  FifthManualView.swift
 //  VitaMi
 //
 //  Created by Иван Маришин on 16.10.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondManualView: View {
+struct FifthManualView: View {
     
     private let width = UIScreen.main.bounds.size.width
     private let height = UIScreen.main.bounds.size.height
@@ -17,7 +17,7 @@ struct SecondManualView: View {
     var body: some View {
         VStack {
             ZStack {
-                Image("testing")
+                Image("analysis")
                     .resizable()
                     .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
                     .frame(width: width*0.6, height: height*0.6)
@@ -28,11 +28,19 @@ struct SecondManualView: View {
                     .opacity(self.animate ? 0.8 : 0.2)
                     .scaleEffect(self.animate ? 1 : 1.05)
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                    .frame(width: width*0.53, height: height*0.09)
-                    .position(x: width/2.18, y: height/1.92)
+                    .frame(width: width*0.53, height: height*0.16)
+                    .position(x: width/2.18, y: height/4.05)
+                Circle()
+                    .fill(.clear)
+                    .overlay(Circle().stroke(Color.blue, lineWidth: 3))
+                    .opacity(self.animate ? 0.8 : 0.2)
+                    .scaleEffect(self.animate ? 1 : 1.2)
+                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                    .frame(width: width*0.11)
+                    .position(x: width/3.57, y: height/1.83)
             }
             .padding()
-            Text("Во время тестирования выберете симптомы, которые как Вы считаете появились в последнее время и не связаны с каким-либо заболеванием на момент прохождения тестирования.")
+            Text("В меню \"Анализа\", Вы можете внести результаты анализа крови на дефицит микроэлементов и витаминов, а также переключить меню \"Результаты\" на получение итогового заключения.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()
@@ -43,8 +51,8 @@ struct SecondManualView: View {
     }
 }
 
-struct SecondManualView_Previews: PreviewProvider {
+struct FifthManualView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondManualView()
+        FifthManualView()
     }
 }

@@ -19,12 +19,14 @@ struct FourthManualView: View {
             ZStack {
                 Image("symptomsList")
                     .resizable()
+                    .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
                     .frame(width: width*0.6, height: height*0.6)
                     .position(x: width/2.9, y: height/3.1)
                 Image("main")
                     .resizable()
+                    .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
                     .frame(width: width*0.6, height: height*0.6)
-                    .position(x: width/1.75, y: height/2.1)
+                    .position(x: width/1.75, y: height/2.3)
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.clear)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 3))
@@ -32,12 +34,10 @@ struct FourthManualView: View {
                     .scaleEffect(self.animate ? 1 : 1.1)
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
                     .frame(width: width*0.24, height: width*0.24)
-                    .position(x: width/1.38, y: height/1.95)
-                    
-                    
+                    .position(x: width/1.38, y: height/2.127)
             }
             .padding()
-            Text("В любой момент Вы сможете проверить выбранные симптомы в списке, а так")
+            Text("В любой момент Вы сможете проверить выбранные симптомы в списке, а также изменить выбор. Промежуточный результат автоматически изменится.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

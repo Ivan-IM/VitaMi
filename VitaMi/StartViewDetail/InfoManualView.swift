@@ -12,8 +12,13 @@ struct InfoManualView: View {
         TabView {
             InfoView()
             FirstManualView()
+            SecondManualView()
+            ThirdManualView()
+            FourthManualView()
+            FifthManualView()
+            SixthManualView()
         }
-        .tabViewStyle(PageTabViewStyle())
+        .tabViewStyle(.page(indexDisplayMode: .never))
     }
 }
 
