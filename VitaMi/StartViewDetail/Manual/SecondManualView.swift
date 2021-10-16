@@ -1,5 +1,5 @@
 //
-//  FirstManualView.swift
+//  SecondManualView.swift
 //  VitaMi
 //
 //  Created by Иван Маришин on 16.10.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FirstManualView: View {
+struct SecondManualView: View {
     
     private let width = UIScreen.main.bounds.size.width
     private let height = UIScreen.main.bounds.size.height
@@ -17,7 +17,7 @@ struct FirstManualView: View {
     var body: some View {
         VStack {
             ZStack {
-                Image("main")
+                Image("testing")
                     .resizable()
                     .frame(width: width*0.6, height: height*0.6)
                     .position(x: width/2.18, y: height/2.7)
@@ -25,15 +25,15 @@ struct FirstManualView: View {
                     .fill(.clear)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 3))
                     .opacity(self.animate ? 0.8 : 0.2)
-                    .scaleEffect(self.animate ? 1 : 1.1)
+                    .scaleEffect(self.animate ? 1 : 1.05)
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                    .frame(width: width*0.24, height: width*0.24)
-                    .position(x: width/3.3, y: height/2.45)
+                    .frame(width: width*0.53, height: height*0.09)
+                    .position(x: width/2.18, y: height/1.92)
                     
                     
             }
             .padding()
-            Text("Изначально рекомендуем пройти тестирование.")
+            Text("Во время тестирования выберете симптомы, которые как Вы считаете появились в последнее время и не связаны с каким-либо заболеванием на момент прохождения тестирования.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()
@@ -44,8 +44,8 @@ struct FirstManualView: View {
     }
 }
 
-struct FirstManualView_Previews: PreviewProvider {
+struct SecondManualView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstManualView()
+        SecondManualView()
     }
 }
