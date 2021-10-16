@@ -17,8 +17,8 @@ struct ContentView: View {
             Color("background")
                 .ignoresSafeArea()
             
-            if changer.infoViewDismiss {
-                InfoView()
+            if !changer.infoViewDismiss {
+                InfoManualView()
             } else {
                 StartView()
             }

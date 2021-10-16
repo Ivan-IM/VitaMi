@@ -60,6 +60,8 @@
 		CFB19FBE271982DE0051BB56 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FBA271982DE0051BB56 /* FBUser.swift */; };
 		CFB19FC1271AC81E0051BB56 /* SignInWithAppleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC0271AC81E0051BB56 /* SignInWithAppleButtonView.swift */; };
 		CFB19FC5271B11230051BB56 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC4271B11230051BB56 /* MainScreenView.swift */; };
+		CFB19FC7271B35FE0051BB56 /* InfoManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC6271B35FE0051BB56 /* InfoManualView.swift */; };
+		CFB19FCA271B36390051BB56 /* FirstManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB19FC9271B36390051BB56 /* FirstManualView.swift */; };
 		CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB34BFB270C59E000A527EF /* HealthyImageView.swift */; };
 		CFC93F6A26C268E400155191 /* ViewChangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6926C268E400155191 /* ViewChangeManager.swift */; };
 		CFC93F6C26C26AC000155191 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC93F6B26C26AC000155191 /* StartView.swift */; };
@@ -120,6 +122,8 @@
 		CFB19FBA271982DE0051BB56 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		CFB19FC0271AC81E0051BB56 /* SignInWithAppleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonView.swift; sourceTree = "<group>"; };
 		CFB19FC4271B11230051BB56 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		CFB19FC6271B35FE0051BB56 /* InfoManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManualView.swift; sourceTree = "<group>"; };
+		CFB19FC9271B36390051BB56 /* FirstManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstManualView.swift; sourceTree = "<group>"; };
 		CFB34BFB270C59E000A527EF /* HealthyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyImageView.swift; sourceTree = "<group>"; };
 		CFC93F6926C268E400155191 /* ViewChangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChangeManager.swift; sourceTree = "<group>"; };
 		CFC93F6B26C26AC000155191 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -244,8 +248,10 @@
 		CFA42A2A26C26E2600B855E8 /* StartViewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CFB19FC8271B360C0051BB56 /* Manual */,
 				CFB19FA52719669A0051BB56 /* Login */,
 				CFA364DD26C3C1FF00958920 /* InfoView.swift */,
+				CFB19FC6271B35FE0051BB56 /* InfoManualView.swift */,
 			);
 			path = StartViewDetail;
 			sourceTree = "<group>";
@@ -339,6 +345,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		CFB19FC8271B360C0051BB56 /* Manual */ = {
+			isa = PBXGroup;
+			children = (
+				CFB19FC9271B36390051BB56 /* FirstManualView.swift */,
+			);
+			path = Manual;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +439,7 @@
 				CF8710CC2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld in Sources */,
 				CFB19FAB271967610051BB56 /* SignInWithEmailView.swift in Sources */,
 				CF40966B271837040074F53D /* ScrollAnalysisResultView.swift in Sources */,
+				CFB19FC7271B35FE0051BB56 /* InfoManualView.swift in Sources */,
 				CF87F5842692067600ED6710 /* Elements.swift in Sources */,
 				CFB19FBB271982DE0051BB56 /* FBKeys.swift in Sources */,
 				CFC93F6E26C26C4200155191 /* LoginView.swift in Sources */,
@@ -432,6 +447,7 @@
 				CFA364ED26C66F8A00958920 /* CustomButtonView.swift in Sources */,
 				CFB34BFC270C59E000A527EF /* HealthyImageView.swift in Sources */,
 				CF0D6625271317CE006FBF8F /* AnalysisView.swift in Sources */,
+				CFB19FCA271B36390051BB56 /* FirstManualView.swift in Sources */,
 				CFB19FB6271982D50051BB56 /* FBAuthError.swift in Sources */,
 				CFA364F526C81E8900958920 /* CustomCircleButtonStyle.swift in Sources */,
 				CFA42A3426C27ABD00B855E8 /* ScrollViewSymptomsListView.swift in Sources */,

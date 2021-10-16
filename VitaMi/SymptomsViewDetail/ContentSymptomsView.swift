@@ -18,9 +18,9 @@ struct ContentSymptomsView: View {
     
     var body: some View {
         VStack {
-            Text("Выберете симптомы, которые беспокоят Вас регулярно в последнее время")
+            Text("Выберете симптомы, которые беспокоят Вас в последнее время и являются нетипичными для Вашего обычного состояния.")
                 .multilineTextAlignment(.center)
-                .font(.system(size: 25, weight: .semibold, design: .rounded))
+                .font(.system(size: 22, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
             
             ProgressView("Симптом \(index+1)/\(userManager.symptomsCD.count)", value: Float(index)+1, total: Float(userManager.symptomsCD.count))
