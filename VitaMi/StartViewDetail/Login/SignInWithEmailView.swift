@@ -15,46 +15,67 @@ struct SignInWithEmailView: View {
     @Binding var showSheet: Bool
     @Binding var action: LoginView.Action?
     
+    @State private var showAlert: Bool = false
+    @State private var authError: EmailAuthError?
+    
     var body: some View {
         VStack {
-            TextField("Email Address",
+            TextField("Email",
                       text: self.$user.email)
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
-            SecureField("Password", text: $user.password)
+            SecureField("Пароль", text: $user.password)
             HStack {
                 Spacer()
                 Button(action: {
                     self.action = .resetPW
                     self.showSheet = true
                 }) {
-                    Text("Forgot Password")
+                    Text("Забыли пароль")
                 }
             }.padding(.bottom)
             VStack(spacing: 10) {
                 Button(action: {
-                    // Sign In Action
+                    FBAuth.authenticate(withEmail: self.user.email,
+                                        password: self.user.password) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.authError = error
+                            self.showAlert = true
+                        case .success( _):
+                            print("Signed in")
+                        }
+                    }
                 }) {
-                    Text("Login")
+                    Text("Войти")
                         .padding(.vertical, 15)
                         .frame(width: 200)
-                        .background(Color.green)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
                         .opacity(user.isLogInComplete ? 1 : 0.75)
-                }.disabled(!user.isLogInComplete)
+                }
+                .buttonStyle(CustomMinButtonStyle())
+                .disabled(!user.isLogInComplete)
+                .padding(.bottom, 15)
                 Button(action: {
                     self.action = .signUp
                     self.showSheet = true
                 }) {
-                    Text("Sign Up")
+                    Text("Регистрация")
                         .padding(.vertical, 15)
                         .frame(width: 200)
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
                 }
+                .buttonStyle(CustomMinButtonStyle())
+                .padding(.bottom, 15)
             }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Ошибка входа"), message: Text(self.authError?.localizedDescription ?? "Неизвестная ошибка."), dismissButton: .default(Text("OK")) {
+                if self.authError == .incorrectPassword {
+                    self.user.password = ""
+                } else {
+                    self.user.password = ""
+                    self.user.email = ""
+                }
+            })
         }
         .padding(.top, 100)
         .frame(width: 300)

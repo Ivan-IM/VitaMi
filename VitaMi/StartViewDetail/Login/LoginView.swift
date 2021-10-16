@@ -19,12 +19,11 @@ struct LoginView: View {
     var body: some View {
         VStack {
             SignInWithEmailView(showSheet: $showSheet, action: $action)
-            SignInWithAppleView()
-                .frame(width: 200, height: 50)
+            SignInWithAppleButtonView()
             Spacer()
         }
-        .sheet(isPresented: $showSheet) {
-            if self.action == .signUp {
+        .sheet(isPresented: $showSheet) { [action] in
+            if action == .signUp {
                 SignUpView()
             } else {
                 ForgotPasswordView()

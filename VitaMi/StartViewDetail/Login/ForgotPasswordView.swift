@@ -11,30 +11,46 @@ import SwiftUI
 struct ForgotPasswordView: View {
     @State var user: UserViewModel = UserViewModel()
     @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showAlert: Bool = false
+    @State private var errorString: String?
+    
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                TextField("Введите email", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
                 Button(action: {
-                    // Reset Password action
+                    FBAuth.resetPassword(email: self.user.email) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.errorString = error.localizedDescription
+                        case .success( _):
+                            break
+                        }
+                        self.showAlert = true
+                    }
                 }) {
-                    Text("Reset")
+                    Text("Восстановить")
                         .frame(width: 200)
                         .padding(.vertical, 15)
-                        .background(Color.green)
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
                         .opacity(user.isEmailValid(_email: user.email) ? 1 : 0.75)
                 }
+                .buttonStyle(CustomMinButtonStyle())
                 .disabled(!user.isEmailValid(_email: user.email))
+                
                 Spacer()
             }.padding(.top)
                 .frame(width: 300)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            .navigationBarTitle("Request a password reset", displayMode: .inline)
-                .navigationBarItems(trailing: Button("Dismiss") {
+            .navigationBarTitle("Восстановление пароля", displayMode: .inline)
+                .navigationBarItems(trailing: Button("Отмена") {
                     self.presentationMode.wrappedValue.dismiss()
                 })
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Восстановление пароля"), message: Text(self.errorString ?? "Письмо с инструкцией направлено на email."), dismissButton: .default(Text("OK")) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    })
+                }
         }
     }
 }
