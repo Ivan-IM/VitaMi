@@ -38,7 +38,7 @@ struct MainScreenView: View {
                         changer.mainViewChanger = .analysisView
                     }, width: width*0.41, height: width*0.41)
                         .padding()
-                    CustomButtonMainView(buttonTitle: "Результаты", imageName: "heart.text.square", imageColor: .green, action: {
+                    CustomButtonMainView(buttonTitle: "Результаты", imageName: "heart.text.square", imageColor: userManager.showFinalResult ? .green : .blue, action: {
                         changer.mainViewChanger = .resultTestingView
                     }, width: width*0.41, height: width*0.41)
                         .padding()

@@ -33,7 +33,7 @@ struct FourthManualView: View {
                     .opacity(self.animate ? 0.8 : 0.2)
                     .scaleEffect(self.animate ? 1 : 1.1)
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                    .frame(width: width*0.24, height: width*0.24)
+                    .frame(width: width*0.24, height: height*0.11)
                     .position(x: width/1.38, y: height/2.127)
             }
             .padding()

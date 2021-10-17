@@ -28,7 +28,7 @@ struct FirstManualView: View {
                     .opacity(self.animate ? 1 : 0.2)
                     .scaleEffect(self.animate ? 1 : 1.1)
                     .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
-                    .frame(width: width*0.24, height: width*0.24)
+                    .frame(width: width*0.24, height: height*0.115)
                     .position(x: width/3.3, y: height/2.45)   
             }
             .padding()

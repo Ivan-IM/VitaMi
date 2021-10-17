@@ -46,9 +46,16 @@ struct SixthManualView: View {
                     Image(systemName: "chevron.right.circle.fill")
                         .font(.system(size: 30, weight: .regular))
                         .imageScale(.large)
+                        .shadow(color: .black.opacity(0.5), radius: 8, x: 5, y: 5)
+                        .opacity(self.animate ? 1 : 0.6)
+                        .scaleEffect(self.animate ? 1 : 1.2)
+                        .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true))
                 }
                 .padding(.trailing, 16)
             }
+        }
+        .onAppear {
+            self.animate.toggle()
         }
     }
 }
