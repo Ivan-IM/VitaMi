@@ -17,7 +17,7 @@ final class ViewChanger: ObservableObject {
     @Published var mainViewChanger: MainViewChanger = .mainView
     
     init() {
-        self.infoViewDismiss = UserDefaults.standard.object(forKey: "InfoViewDismiss-") as? Bool ?? false
+        self.infoViewDismiss = UserDefaults.standard.object(forKey: "InfoViewDismiss") as? Bool ?? false
     }
 }
 

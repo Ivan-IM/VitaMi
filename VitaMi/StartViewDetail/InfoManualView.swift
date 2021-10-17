@@ -18,9 +18,11 @@ struct InfoManualView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             InfoView()
-                .tag(0)
-                .offset(x: self.animate ? -16 : 0, y: 0)
-                .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true).delay(15))
+                .offset(x: animate ? -16 : 0, y: 0)
+                .animation(Animation.easeInOut(duration: 1.5).repeatForever().delay(15))
+                .onAppear {
+                    animate.toggle()
+                }
             FirstManualView()
                 .tag(1)
             SecondManualView()
@@ -35,9 +37,6 @@ struct InfoManualView: View {
                 .tag(6)
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
-        .onAppear {
-            self.animate.toggle()
-        }
     }
 }
 

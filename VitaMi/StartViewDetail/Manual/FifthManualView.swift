@@ -35,7 +35,7 @@ struct FifthManualView: View {
                     .overlay(Circle().stroke(Color.blue, lineWidth: 3))
                     .opacity(self.animate ? 0.8 : 0.2)
                     .scaleEffect(self.animate ? 1 : 1.2)
-                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true))
                     .frame(width: width*0.11)
                     .position(x: width/3.57, y: height/1.83)
             }
