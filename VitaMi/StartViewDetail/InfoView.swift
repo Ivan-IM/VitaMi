@@ -24,7 +24,6 @@ struct InfoView: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()
-            Spacer()
         }
     }
 }

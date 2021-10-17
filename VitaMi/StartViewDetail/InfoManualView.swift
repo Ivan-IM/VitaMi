@@ -8,22 +8,42 @@
 import SwiftUI
 
 struct InfoManualView: View {
+    
+    private let width = UIScreen.main.bounds.size.width
+    private let height = UIScreen.main.bounds.size.height
+    
+    @State private var selectedTab = 0
+    @State private var animate: Bool = false
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             InfoView()
+                .tag(0)
+                .offset(x: self.animate ? -16 : 0, y: 0)
+                .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true).delay(15))
             FirstManualView()
+                .tag(1)
             SecondManualView()
+                .tag(2)
             ThirdManualView()
+                .tag(3)
             FourthManualView()
+                .tag(4)
             FifthManualView()
+                .tag(5)
             SixthManualView()
+                .tag(6)
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
+        .onAppear {
+            self.animate.toggle()
+        }
     }
 }
 
 struct InfoManualView_Previews: PreviewProvider {
     static var previews: some View {
         InfoManualView()
+            .environmentObject(ViewChanger())
     }
 }
