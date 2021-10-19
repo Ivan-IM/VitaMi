@@ -32,7 +32,7 @@ struct SecondManualView: View {
                     .position(x: width/2.18, y: height/1.92)
             }
             .padding()
-            Text("Во время тестирования выберете симптомы, которые как Вы считаете появились в последнее время и не связаны с каким-либо заболеванием на момент прохождения тестирования.")
+            Text("During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

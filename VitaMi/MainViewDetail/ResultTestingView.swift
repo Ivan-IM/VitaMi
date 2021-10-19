@@ -27,7 +27,7 @@ struct ResultTestingView: View {
                 ScrollViewResultView()
                     .padding()
             }
-            CustomButtonView(buttonTitle: "Назад", action: {
+            CustomButtonView(buttonTitle: "Back", action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }
@@ -43,7 +43,7 @@ struct ResultTestingView: View {
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Внимание!"), message: Text("Большое число симптомов! Перепроверьте выбор симптомов. В противном случае рекомендуем обратиться к врачу для исключения заболевания."), dismissButton: .cancel())
+            Alert(title: Text("Attention!"), message: Text("Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease."), dismissButton: .cancel())
         }
     }
 }

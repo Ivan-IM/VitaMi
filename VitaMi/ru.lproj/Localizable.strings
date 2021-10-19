@@ -1,0 +1,136 @@
+/* No comment provided by engineer. */
+"Account creation error" = "Ошибка создания аккаунта";
+
+/* No comment provided by engineer. */
+"After the end of testing, you will receive an intermediate result." = "После окончания тестирования Вы получите промежуточный результат.";
+
+/* No comment provided by engineer. */
+"Are you sure you want to clear the symptoms list?" = "Вы действительно хотите очистить список симптомов?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to reset the last test results? This will result in the loss of lab data." = "Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных лабораторного анализа";
+
+/* No comment provided by engineer. */
+"Attention!" = "Внимание!";
+
+/* No comment provided by engineer. */
+"Clear" = "Очистить";
+
+/* No comment provided by engineer. */
+"Confirm Password" = "Повторите пароль";
+
+/* No comment provided by engineer. */
+"Could not create user at this time." = "Невозможно зарегистророваться сейчас.";
+
+/* No comment provided by engineer. */
+"Could not save user's full name." = "Не удалось сохранить полное имя пользователя.";
+
+/* No comment provided by engineer. */
+"Dismiss" = "Отмена";
+
+/* No comment provided by engineer. */
+"During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing." = "Во время тестирования выберете симптомы, которые как Вы считаете появились в последнее время и не связаны с каким-либо заболеванием на момент прохождения тестирования.";
+
+/* No comment provided by engineer. */
+"First, we recommend to get tested." = "Изначально рекомендуем пройти тестирование.";
+
+/* No comment provided by engineer. */
+"Foods high in %@:" = "Продукты с высоким содержанием %@:";
+
+/* No comment provided by engineer. */
+"Forgot Password" = "Забыли пароль";
+
+/* No comment provided by engineer. */
+"Getting the result" = "Получение результата";
+
+/* No comment provided by engineer. */
+"Hello %@!" = "Привет %@!";
+
+/* No comment provided by engineer. */
+"In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion." = "В меню Анализ, Вы можете внести результаты анализа крови на дефицит микроэлементов и витаминов, а также переключить меню Результаты на получение итогового заключения.";
+
+/* No comment provided by engineer. */
+"Incorrect Password for this account." = "Неверный пароль.";
+
+/* No comment provided by engineer. */
+"Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease." = "Большое число симптомов! Перепроверьте выбор симптомов. В противном случае рекомендуем обратиться к врачу для исключения заболевания.";
+
+/* No comment provided by engineer. */
+"Login" = "Войти";
+
+/* No comment provided by engineer. */
+"Login failed" = "Ошибка входа";
+
+/* No comment provided by engineer. */
+"No Auth Data Result" = "Нет результата аутентификации";
+
+/* No comment provided by engineer. */
+"No Current User" = "Нет текущего пользователя";
+
+/* No comment provided by engineer. */
+"No Document Snapshot" = "Нет документа";
+
+/* No comment provided by engineer. */
+"No Snapshot Data" = "Нет данных";
+
+/* No comment provided by engineer. */
+"No User" = "Нет пользователя";
+
+/* No comment provided by engineer. */
+"Not a valid email address." = "Неверный email.";
+
+/* No comment provided by engineer. */
+"Not a valid email address. This account does not exist." = "Неверный email. Аккаунт не зарегистрирован.";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Password" = "Пароль";
+
+/* No comment provided by engineer. */
+"Register" = "Регистрация";
+
+/* No comment provided by engineer. */
+"Sign Up" = "Регистрация";
+
+/* No comment provided by engineer. */
+"Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?" = "Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?";
+
+/* No comment provided by engineer. */
+"Symptoms List" = "Список симптомов";
+
+/* No comment provided by engineer. */
+"The application is not a full-fledged diagnostic tool. The development of this system is aimed at drawing attention to the imbalance in the diet in the modern world, as well as to draw public attention to the indiscriminate intake of dietary supplements, trace elements and vitamins." = "Приложение не является полноценным диагностическим инструментом. Разработка данной системы направлена на привлечения внимания к дисбалансу рациона в современном мире, а также обратить внимание общества на беспорядочный прием биологически активных добавок, микроэлементов и витаминов.";
+
+/* No comment provided by engineer. */
+"The imbalance of micronutrients and vitamins in the body is a very common phenomenon, we often do not notice it or blame it on lack of sleep, energy resources and bad mood. However, this symptomatology is very often the result of a violation of a balanced diet, unbalanced diets and insufficient consumption of a number of foods." = "Нарушение баланса микроэлементов и витаминов в организме - очень распространенное явление, зачастую мы этого не замечаем или списываем на недостаток сна, энергетических ресурсов и плохое настроение. Однако данная симптоматика очень часто является следствием нарушения рационального питания, несбалансированных диет и недостаточного потребеления ряда продуктов.";
+
+/* No comment provided by engineer. */
+"The result of laboratory analysis" = "Результат лабораторного анализа";
+
+/* No comment provided by engineer. */
+"The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin." = "Система автоматически откорректирует результаты, выдаст краткую справку по выбранной позиции и покажет список продуктов питания с высоким содержанием данного микроэлемента или витамина.";
+
+/* No comment provided by engineer. */
+"The VitaMi laboratory is ready for diagnostics." = "Лаборатория VitaMi готова к диагностике.";
+
+/* No comment provided by engineer. */
+"Unable to create Apple ID Credential" = "Невозможно создать учетные данные Apple ID";
+
+/* No comment provided by engineer. */
+"Unable to fetch identity token" = "Невозможно получить токен";
+
+/* No comment provided by engineer. */
+"Unable to serialize token string from data" = "Невозможно получить токен из данных";
+
+/* No comment provided by engineer. */
+"Unknown error.  Cannot log in." = "Неизвестная ошибка. Вход невозможен.";
+
+/* No comment provided by engineer. */
+"Welcome to the VitaMi laboratory." = "Добро пожаловать в лабораторию VitaMi.";
+
+/* No comment provided by engineer. */
+"You have entered micronutrient and vitamin deficiency analysis data. Update test results?" = "Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?";
+
+"At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change." = "В любой момент Вы сможете проверить выбранные симптомы в списке, а также изменить выбор. Промежуточный результат автоматически изменится.";

@@ -10,12 +10,12 @@ import SwiftUI
 struct TitleResultView: View {
     
     @EnvironmentObject var user: UserManager
-    let titleResultElementsDeficit: String = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата необходимо сдать анализ крови в любой клининке."
-    let titleHealthy: String = "Ваше состояние не указывает на дефицит или сниженное потребление каких-либо микроэлементов и витаминов."
-    let titleAnalysisElementsDeficit0: String = "Результаты анализа характерны для"
-    let titleAnalysisElementsDeficit1: String = "дефицитного состояния"
-    let titleAnalysisElementsDeficit2: String = "сниженного потребления"
-    let titleAnalysisElementsDeficit3: String = "следующих микроэлементов и витаминов."
+    let titleResultElementsDeficit: String = "Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic."
+    let titleHealthy: String = "Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins."
+    let titleAnalysisElementsDeficit0: String = "The analysis results are specific to"
+    let titleAnalysisElementsDeficit1: String = "deficit state"
+    let titleAnalysisElementsDeficit2: String = "reduced consumption"
+    let titleAnalysisElementsDeficit3: String = "the following trace elements and vitamins."
     
     var body: some View {
         ZStack {

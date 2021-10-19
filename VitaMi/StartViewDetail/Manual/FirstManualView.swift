@@ -32,7 +32,7 @@ struct FirstManualView: View {
                     .position(x: width/3.3, y: height/2.45)   
             }
             .padding()
-            Text("Изначально рекомендуем пройти тестирование.")
+            Text("First, we recommend to get tested.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

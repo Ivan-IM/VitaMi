@@ -20,18 +20,18 @@ struct SignInWithEmailView: View {
     
     var body: some View {
         VStack {
-            TextField("Email",
+            TextField("Email Address",
                       text: self.$user.email)
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
-            SecureField("Пароль", text: $user.password)
+            SecureField("Password", text: $user.password)
             HStack {
                 Spacer()
                 Button(action: {
                     self.action = .resetPW
                     self.showSheet = true
                 }) {
-                    Text("Забыли пароль")
+                    Text("Forgot Password")
                 }
             }.padding(.bottom)
             VStack(spacing: 10) {
@@ -47,7 +47,7 @@ struct SignInWithEmailView: View {
                         }
                     }
                 }) {
-                    Text("Войти")
+                    Text("Login")
                         .padding(.vertical, 15)
                         .frame(width: 200)
                         .opacity(user.isLogInComplete ? 1 : 0.75)
@@ -59,7 +59,7 @@ struct SignInWithEmailView: View {
                     self.action = .signUp
                     self.showSheet = true
                 }) {
-                    Text("Регистрация")
+                    Text("Sign Up")
                         .padding(.vertical, 15)
                         .frame(width: 200)
                 }
@@ -68,7 +68,7 @@ struct SignInWithEmailView: View {
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Ошибка входа"), message: Text(self.authError?.localizedDescription ?? "Неизвестная ошибка."), dismissButton: .default(Text("OK")) {
+            Alert(title: Text("Login failed"), message: Text(self.authError?.localizedDescription ?? "Unknown error."), dismissButton: .default(Text("OK")) {
                 if self.authError == .incorrectPassword {
                     self.user.password = ""
                 } else {

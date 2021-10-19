@@ -12,15 +12,15 @@ struct InfoView: View {
     var body: some View {
         VStack(spacing: 15) {
             Spacer()
-            Text("Добро пожаловать в лабораторию VitaMi.")
+            Text("Welcome to the VitaMi laboratory.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 22, weight: .semibold, design: .rounded))
-            Text("Нарушение баланса микроэлементов и витаминов в организме - очень распространенное явление, зачастую мы этого не замечаем или списываем на недостаток сна, энергетических ресурсов и плохое настроение. Однако данная симптоматика очень часто является следствием нарушения рационального питания, несбалансированных диет и недостаточного потребеления ряда продуктов.")
+            Text("The imbalance of micronutrients and vitamins in the body is a very common phenomenon, we often do not notice it or blame it on lack of sleep, energy resources and bad mood. However, this symptomatology is very often the result of a violation of a balanced diet, unbalanced diets and insufficient consumption of a number of foods.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 18, weight: .semibold, design: .rounded))
                 .padding()
             Spacer()
-            Text("Приложение не является полноценным диагностическим инструментом. Разработка данной системы направлена на привлечения внимания к дисбалансу рациона в современном мире, а также обратить внимание общества на беспорядочный прием биологически активных добавок, микроэлементов и витаминов.")
+            Text("The application is not a full-fledged diagnostic tool. The development of this system is aimed at drawing attention to the imbalance in the diet in the modern world, as well as to draw public attention to the indiscriminate intake of dietary supplements, trace elements and vitamins.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

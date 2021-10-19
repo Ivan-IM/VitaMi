@@ -38,12 +38,12 @@ struct GreatingView: View {
                     }
                     .padding(.trailing, 8)
                 }
-                Text("Привет \(userInfo.user.name)!")
+                Text("Hello \(userInfo.user.name)!")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .bold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding(.bottom, 16)
-                Text("Лаборатория VitaMi готова к диагностике.")
+                Text("The VitaMi laboratory is ready for diagnostics.")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))

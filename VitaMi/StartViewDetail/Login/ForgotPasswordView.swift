@@ -18,7 +18,7 @@ struct ForgotPasswordView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Введите email", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
                 Button(action: {
                     FBAuth.resetPassword(email: self.user.email) { (result) in
                         switch result {
@@ -30,7 +30,7 @@ struct ForgotPasswordView: View {
                         self.showAlert = true
                     }
                 }) {
-                    Text("Восстановить")
+                    Text("Reset")
                         .frame(width: 200)
                         .padding(.vertical, 15)
                         .opacity(user.isEmailValid(_email: user.email) ? 1 : 0.75)
@@ -42,12 +42,12 @@ struct ForgotPasswordView: View {
             }.padding(.top)
                 .frame(width: 300)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            .navigationBarTitle("Восстановление пароля", displayMode: .inline)
-                .navigationBarItems(trailing: Button("Отмена") {
+            .navigationBarTitle("Request a password reset", displayMode: .inline)
+                .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 })
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Восстановление пароля"), message: Text(self.errorString ?? "Письмо с инструкцией направлено на email."), dismissButton: .default(Text("OK")) {
+                    Alert(title: Text("Request a password reset"), message: Text(self.errorString ?? "Success. Check your email."), dismissButton: .default(Text("OK")) {
                         self.presentationMode.wrappedValue.dismiss()
                     })
                 }

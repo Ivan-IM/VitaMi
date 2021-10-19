@@ -23,7 +23,7 @@ struct SymptomsView: View {
                 ContentSymptomsView()
                     .padding()
             }
-            CustomButtonView(buttonTitle: "Назад", action: {
+            CustomButtonView(buttonTitle: "Back", action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }

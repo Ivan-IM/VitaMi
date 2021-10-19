@@ -18,12 +18,12 @@ struct ContentSymptomsView: View {
     
     var body: some View {
         VStack {
-            Text("Выберете симптомы, которые беспокоят Вас в последнее время и являются нетипичными для Вашего обычного состояния.")
+            Text("Choose symptoms that have been bothering you lately and are atypical for your usual condition.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 22, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
             
-            ProgressView("Симптом \(index+1)/\(userManager.symptomsCD.count)", value: Float(index)+1, total: Float(userManager.symptomsCD.count))
+            ProgressView("Symptom \(index+1)/\(userManager.symptomsCD.count)", value: Float(index)+1, total: Float(userManager.symptomsCD.count))
                 .foregroundColor(Color("text"))
                 .padding()
             
@@ -37,7 +37,7 @@ struct ContentSymptomsView: View {
             Spacer()
             
             HStack {
-                CustomCircleButtonView(buttonTitle: "ДА") {
+                CustomCircleButtonView(buttonTitle: "YES") {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -53,7 +53,7 @@ struct ContentSymptomsView: View {
                     }
                 }
                 Spacer()
-                CustomCircleButtonView(buttonTitle: "НЕТ") {
+                CustomCircleButtonView(buttonTitle: "NO") {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -71,7 +71,7 @@ struct ContentSymptomsView: View {
         }
         .padding(32)
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Начать тестирование?"), message: Text("Если вы начнете тестирование список симптомов очистится"), primaryButton: .destructive(Text("Ok"), action: {
+            Alert(title: Text("Start testing?"), message: Text("If you start testing the symptom list is cleared."), primaryButton: .destructive(Text("OK"), action: {
                 userManager.symptomsList.removeAll()
                 userManager.lowElementsList.removeAll()
                 startTesting = true

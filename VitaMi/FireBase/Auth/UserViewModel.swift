@@ -62,7 +62,7 @@ struct UserViewModel {
         if !isEmpty(_field: fullname) {
             return ""
         } else {
-            return "Введите Ваше имя."
+            return "Enter your full name."
         }
     }
     
@@ -71,7 +71,7 @@ struct UserViewModel {
         if isEmailValid(_email: email) {
             return ""
         } else {
-            return "Введите действующий email."
+            return "Enter a valid email address."
         }
     }
     
@@ -79,7 +79,7 @@ struct UserViewModel {
         if isPasswordValid(_password: password) {
             return ""
         } else {
-            return "Должен состоять из 8 символов, содержащих хотя бы одну цифру и одну заглавную букву."
+            return "Must be 8 characters containing at least one number and one Capital letter."
         }
     }
     
@@ -87,7 +87,7 @@ struct UserViewModel {
         if passwordsMatch(_confirmPW: confirmPassword) {
             return ""
         } else {
-            return "Пароли не совпадают."
+            return "Password fields do not match."
         }
     }
 }

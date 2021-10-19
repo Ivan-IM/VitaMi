@@ -20,25 +20,25 @@ struct SignUpView: View {
             VStack {
                 Group {
                     VStack(alignment: .leading) {
-                        TextField("Имя", text: self.$user.fullname).autocapitalization(.words)
+                        TextField("Full name", text: self.$user.fullname).autocapitalization(.words)
                         if !user.validNameText.isEmpty {
                             Text(user.validNameText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        TextField("Email", text: self.$user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                        TextField("Email Address", text: self.$user.email).autocapitalization(.none).keyboardType(.emailAddress)
                         if !user.validEmailAddressText.isEmpty {
                             Text(user.validEmailAddressText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Введите пароль", text: self.$user.password)
+                        SecureField("Password", text: self.$user.password)
                         if !user.validPasswordText.isEmpty {
                             Text(user.validPasswordText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Повторите пароль", text: self.$user.confirmPassword)
+                        SecureField("Confirm Password", text: self.$user.confirmPassword)
                         if !user.passwordsMatch(_confirmPW: user.confirmPassword) {
                             Text(user.validConfirmPasswordText).font(.caption).foregroundColor(.red)
                         }
@@ -59,7 +59,7 @@ struct SignUpView: View {
                             }
                         }
                     }) {
-                        Text("Регистрация")
+                        Text("Register")
                             .frame(width: 200)
                             .padding(.vertical, 15)
                             .opacity(user.isSignInComplete ? 1 : 0.75)
@@ -70,10 +70,10 @@ struct SignUpView: View {
                 }.padding()
             }.padding(.top)
                 .alert(isPresented: $showError) {
-                    Alert(title: Text("Ошибка создания аккаунта"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Account creation error"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
                 }
-                .navigationBarTitle("Регистрация", displayMode: .inline)
-                .navigationBarItems(trailing: Button("Отмена") {
+                .navigationBarTitle("Register", displayMode: .inline)
+                .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 })
         }

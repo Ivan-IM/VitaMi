@@ -37,7 +37,8 @@
 		CF8710CC2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF8710CA2714965D00111B0B /* ElementCoreDataModel.xcdatamodeld */; };
 		CF8710CE27149C2000111B0B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8710CD27149C2000111B0B /* CoreDataManager.swift */; };
 		CF87F5842692067600ED6710 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87F5832692067600ED6710 /* Elements.swift */; };
-		CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DB26C3889400958920 /* DesignTestView.swift */; };
+		CF8F62C8271F273600173AC8 /* Localizeble.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = CF8F62CA271F273600173AC8 /* Localizeble.stringsdict */; };
+		CF8F62CE271F3A1D00173AC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF8F62CC271F3A1D00173AC8 /* Localizable.strings */; };
 		CFA364DE26C3C1FF00958920 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364DD26C3C1FF00958920 /* InfoView.swift */; };
 		CFA364E626C6623100958920 /* ContentSymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E526C6623100958920 /* ContentSymptomsView.swift */; };
 		CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA364E926C6657400958920 /* SymptomsListView.swift */; };
@@ -104,7 +105,9 @@
 		CF8710CB2714965D00111B0B /* ElementCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ElementCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CF8710CD27149C2000111B0B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CF87F5832692067600ED6710 /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
-		CFA364DB26C3889400958920 /* DesignTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTestView.swift; sourceTree = "<group>"; };
+		CF8F62C9271F273600173AC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizeble.stringsdict; sourceTree = "<group>"; };
+		CF8F62CB271F2FE700173AC8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizeble.stringsdict; sourceTree = "<group>"; };
+		CF8F62CD271F3A1D00173AC8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		CFA364E526C6623100958920 /* ContentSymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSymptomsView.swift; sourceTree = "<group>"; };
 		CFA364E926C6657400958920 /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
@@ -207,8 +210,10 @@
 				CFA364D826C376C200958920 /* Decorators */,
 				CF2BF98C269096FC00842794 /* Assets.xcassets */,
 				CF2BF991269096FC00842794 /* Info.plist */,
+				CF8F62CC271F3A1D00173AC8 /* Localizable.strings */,
 				CF0D6611270ED1F0006FBF8F /* GoogleService-Info.plist */,
 				CF2BF98E269096FC00842794 /* Preview Content */,
+				CF8F62CA271F273600173AC8 /* Localizeble.stringsdict */,
 			);
 			path = VitaMi;
 			sourceTree = "<group>";
@@ -234,7 +239,6 @@
 		CFA364D826C376C200958920 /* Decorators */ = {
 			isa = PBXGroup;
 			children = (
-				CFA364DB26C3889400958920 /* DesignTestView.swift */,
 				CFA364EC26C66F8A00958920 /* CustomButtonView.swift */,
 				CF0D6619271185B2006FBF8F /* CustomButtonMainView.swift */,
 				CFA364F426C81E8900958920 /* CustomCircleButtonStyle.swift */,
@@ -414,6 +418,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CF2BF97C269096FB00842794;
 			packageReferences = (
@@ -433,7 +438,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8F62CE271F3A1D00173AC8 /* Localizable.strings in Resources */,
 				CF2BF990269096FC00842794 /* Preview Assets.xcassets in Resources */,
+				CF8F62C8271F273600173AC8 /* Localizeble.stringsdict in Resources */,
 				CF2BF98D269096FC00842794 /* Assets.xcassets in Resources */,
 				CF0D6612270ED1F0006FBF8F /* GoogleService-Info.plist in Resources */,
 			);
@@ -488,7 +495,6 @@
 				CF40966D27183D360074F53D /* TitleResultView.swift in Sources */,
 				CFB19FB5271982D50051BB56 /* FBAuth.swift in Sources */,
 				CFA364F726C820E400958920 /* CustomCircleButtonView.swift in Sources */,
-				CFA364DC26C3889400958920 /* DesignTestView.swift in Sources */,
 				CFB19FBC271982DE0051BB56 /* FBFireStoreError.swift in Sources */,
 				CFB19FC1271AC81E0051BB56 /* SignInWithAppleButtonView.swift in Sources */,
 				CFA364EA26C6657400958920 /* SymptomsListView.swift in Sources */,
@@ -508,6 +514,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF8F62CA271F273600173AC8 /* Localizeble.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF8F62C9271F273600173AC8 /* en */,
+				CF8F62CB271F2FE700173AC8 /* ru */,
+			);
+			name = Localizeble.stringsdict;
+			sourceTree = "<group>";
+		};
+		CF8F62CC271F3A1D00173AC8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF8F62CD271F3A1D00173AC8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CF2BF992269096FC00842794 /* Debug */ = {
@@ -568,6 +594,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -623,6 +650,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -37,7 +37,7 @@ struct FourthManualView: View {
                     .position(x: width/1.38, y: height/2.127)
             }
             .padding()
-            Text("В любой момент Вы сможете проверить выбранные симптомы в списке, а также изменить выбор. Промежуточный результат автоматически изменится.")
+            Text("At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change.")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

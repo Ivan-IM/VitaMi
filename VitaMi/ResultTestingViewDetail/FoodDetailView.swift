@@ -14,7 +14,7 @@ struct FoodDetailView: View {
     
     var body: some View {
         List {
-            Text("Продукты с высоким содержанием \(element.symbol ?? ""):")
+            Text("Foods high in \(element.symbol ?? ""):")
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
                 .padding()

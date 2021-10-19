@@ -48,17 +48,17 @@ extension EmailAuthError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .incorrectPassword:
-            return NSLocalizedString("Неверный пароль.", comment: "")
+            return NSLocalizedString("Incorrect Password for this account.", comment: "")
         case .invalidEmail:
-             return NSLocalizedString("Неверный email.", comment: "")
+             return NSLocalizedString("Not a valid email address.", comment: "")
         case .accoundDoesNotExist:
-            return NSLocalizedString("Неверный email. Аккаунт не зарегистрирован.", comment: "")
+            return NSLocalizedString("Not a valid email address. This account does not exist.", comment: "")
         case .unknownError:
-            return NSLocalizedString("Неизвестная ошибка. Вход невозможен.", comment: "")
+            return NSLocalizedString("Unknown error.  Cannot log in.", comment: "")
         case .couldNotCreate:
-            return NSLocalizedString("Невозможно зарегистророваться сейчас.", comment: "")
+            return NSLocalizedString("Could not create user at this time.", comment: "")
         case .extraDataNotCreated:
-            return NSLocalizedString("Не удалось сохранить полное имя пользователя.", comment: "")
+            return NSLocalizedString("Could not save user's full name.", comment: "")
         }
     }
 }
