@@ -37,7 +37,7 @@ struct SixthManualView: View {
                         .position(x: width/1.6, y: height/2.1)
                 }
                 .padding()
-                    Text("The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin.")
+                    Text("The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin.") // => "The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin."
                         .multilineTextAlignment(.center)
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .padding()

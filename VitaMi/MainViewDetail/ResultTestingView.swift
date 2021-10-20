@@ -43,7 +43,9 @@ struct ResultTestingView: View {
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Attention!"), message: Text("Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease."), dismissButton: .cancel())
+            Alert(title: Text("Attention!") // => "Attention!"
+                  , message: Text("Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease.") // => "Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease."
+                  , dismissButton: .cancel(Text("OK")))
         }
     }
 }

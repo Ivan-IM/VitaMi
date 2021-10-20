@@ -18,7 +18,9 @@ struct ForgotPasswordView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter email address", text: $user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                TextField("Enter email address", text: $user.email) // => "Enter email address"
+                    .autocapitalization(.none)
+                    .keyboardType(.emailAddress)
                 Button(action: {
                     FBAuth.resetPassword(email: self.user.email) { (result) in
                         switch result {
@@ -30,7 +32,7 @@ struct ForgotPasswordView: View {
                         self.showAlert = true
                     }
                 }) {
-                    Text("Reset")
+                    Text("Reset") // => "Reset"
                         .frame(width: 200)
                         .padding(.vertical, 15)
                         .opacity(user.isEmailValid(_email: user.email) ? 1 : 0.75)
@@ -42,12 +44,14 @@ struct ForgotPasswordView: View {
             }.padding(.top)
                 .frame(width: 300)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            .navigationBarTitle("Request a password reset", displayMode: .inline)
+                .navigationBarTitle("Request a password reset", displayMode: .inline) // => "Request a password reset"
                 .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 })
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Request a password reset"), message: Text(self.errorString ?? "Success. Check your email."), dismissButton: .default(Text("OK")) {
+                    Alert(title: Text("Request a password reset") // => "Request a password reset"
+                          , message: Text(self.errorString ?? "Success. Check your email.") // => "Success. Check your email."
+                          , dismissButton: .default(Text("OK")) {
                         self.presentationMode.wrappedValue.dismiss()
                     })
                 }

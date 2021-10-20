@@ -20,25 +20,27 @@ struct SignUpView: View {
             VStack {
                 Group {
                     VStack(alignment: .leading) {
-                        TextField("Full name", text: self.$user.fullname).autocapitalization(.words)
+                        TextField("Full name", text: self.$user.fullname) // => "Full name"
+                            .autocapitalization(.words)
                         if !user.validNameText.isEmpty {
                             Text(user.validNameText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        TextField("Email Address", text: self.$user.email).autocapitalization(.none).keyboardType(.emailAddress)
+                        TextField("Email Address", text: self.$user.email) // => "Email Address"
+                            .autocapitalization(.none).keyboardType(.emailAddress)
                         if !user.validEmailAddressText.isEmpty {
                             Text(user.validEmailAddressText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Password", text: self.$user.password)
+                        SecureField("Password", text: self.$user.password) // => "Password"
                         if !user.validPasswordText.isEmpty {
                             Text(user.validPasswordText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Confirm Password", text: self.$user.confirmPassword)
+                        SecureField("Confirm Password", text: self.$user.confirmPassword) // => "Confirm Password"
                         if !user.passwordsMatch(_confirmPW: user.confirmPassword) {
                             Text(user.validConfirmPasswordText).font(.caption).foregroundColor(.red)
                         }
@@ -59,7 +61,7 @@ struct SignUpView: View {
                             }
                         }
                     }) {
-                        Text("Register")
+                        Text("Register") // => "Register"
                             .frame(width: 200)
                             .padding(.vertical, 15)
                             .opacity(user.isSignInComplete ? 1 : 0.75)
@@ -70,9 +72,10 @@ struct SignUpView: View {
                 }.padding()
             }.padding(.top)
                 .alert(isPresented: $showError) {
-                    Alert(title: Text("Account creation error"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Account creation error") // => "Account creation error"
+                          , message: Text(self.errorString), dismissButton: .default(Text("OK")))
                 }
-                .navigationBarTitle("Register", displayMode: .inline)
+                .navigationBarTitle("Register", displayMode: .inline) // => "Register"
                 .navigationBarItems(trailing: Button("Dismiss") {
                     self.presentationMode.wrappedValue.dismiss()
                 })

@@ -18,7 +18,7 @@ struct SymptomsListView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
-                Text("Symptoms List")
+                Text("Symptoms List") // => "Symptoms List"
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -48,7 +48,9 @@ struct SymptomsListView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Clear"), message: Text("Are you sure you want to clear the symptoms list?"), primaryButton: .destructive(Text("OK"), action: {
+                Alert(title: Text("Clear") // => "Clear"
+                      , message: Text("Are you sure you want to clear the symptoms list?") // => "Are you sure you want to clear the symptoms list?"
+                      , primaryButton: .destructive(Text("OK"), action: {
                     userManager.symptomsList.removeAll()
                     userManager.lowElementsList.removeAll()
                     userManager.showFinalResult = false

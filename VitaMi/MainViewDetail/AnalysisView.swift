@@ -23,7 +23,7 @@ struct AnalysisView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
-                Text("The result of laboratory analysis")
+                Text("The result of laboratory analysis") // => "The result of laboratory analysis"
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -54,7 +54,9 @@ struct AnalysisView: View {
                 .opacity(userManager.elementsAnalysis.isEmpty ? 0:0.8)
                 .position(x: width*0.2, y: height*0.65)
                 .alert(isPresented: $showingResultAlert) {
-                    Alert(title: Text("Getting the result"), message: Text("You have entered micronutrient and vitamin deficiency analysis data. Update test results?"), primaryButton: .destructive(Text("OK"), action: {
+                    Alert(title: Text("Getting the result") // => "Getting the result"
+                          , message: Text("You have entered micronutrient and vitamin deficiency analysis data. Update test results?") // => "You have entered micronutrient and vitamin deficiency analysis data. Update test results?"
+                          , primaryButton: .destructive(Text("OK"), action: {
                         userManager.showFinalResult = true
                         changer.mainViewChanger = .resultTestingView
                     }), secondaryButton: .cancel())
@@ -72,7 +74,9 @@ struct AnalysisView: View {
                 .opacity(userManager.elementsAnalysis == userManager.lowElementsList ? 0:0.8)
                 .position(x: width*0.8, y: height*0.65)
                 .alert(isPresented: $showingUpdateAlert) {
-                    Alert(title: Text("Attention!"), message: Text("Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?"), primaryButton: .destructive(Text("OK"), action: {
+                    Alert(title: Text("Attention!") // => "Attention!"
+                          , message: Text("Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?") // => "Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?"
+                          , primaryButton: .destructive(Text("OK"), action: {
                         userManager.elementsAnalysis.removeAll()
                         userManager.elementsAnalysis = userManager.lowElementsList
                     }), secondaryButton: .cancel())
@@ -89,7 +93,9 @@ struct AnalysisView: View {
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Clear"), message: Text("Are you sure you want to reset the last test results? This will result in the loss of lab data."), primaryButton: .destructive(Text("OK"), action: {
+                Alert(title: Text("Clear") // => "Clear"
+                      , message: Text("Are you sure you want to reset the last test results? This will result in the loss of lab data.") // => "Are you sure you want to reset the last test results? This will result in the loss of lab data."
+                      , primaryButton: .destructive(Text("OK"), action: {
                     userManager.elementsAnalysis.removeAll()
                     userManager.showFinalResult = false
                     userManager.clearCDElemantValue()

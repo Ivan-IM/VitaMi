@@ -32,7 +32,7 @@ struct ThirdManualView: View {
                     .position(x: width/2.18, y: height/3.45)
             }
             .padding()
-            Text("After the end of testing, you will receive an intermediate result.")
+            Text("After the end of testing, you will receive an intermediate result.") // => "After the end of testing, you will receive an intermediate result."
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

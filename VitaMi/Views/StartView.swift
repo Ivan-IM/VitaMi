@@ -24,8 +24,7 @@ struct StartView: View {
             else {
                 MainView()
                     .onAppear {
-                        userManager.getFBSymptoms()
-                        userManager.getFBElements()
+                        userManager.getVersionFB()
                     }
             }
         }

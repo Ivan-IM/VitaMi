@@ -1,23 +1,20 @@
 /* No comment provided by engineer. */
-"Account creation error" = "Ошибка создания аккаунта";
-
-/* No comment provided by engineer. */
 "After the end of testing, you will receive an intermediate result." = "После окончания тестирования Вы получите промежуточный результат.";
-
-/* No comment provided by engineer. */
-"Are you sure you want to clear the symptoms list?" = "Вы действительно хотите очистить список симптомов?";
 
 /* No comment provided by engineer. */
 "Are you sure you want to reset the last test results? This will result in the loss of lab data." = "Вы действительно хотите сбросить результаты последнего тестирования? Это приведет к потере данных лабораторного анализа";
 
 /* No comment provided by engineer. */
+"At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change." = "В любой момент Вы сможете проверить выбранные симптомы в списке, а также изменить выбор. Промежуточный результат автоматически изменится.";
+
+/* No comment provided by engineer. */
 "Attention!" = "Внимание!";
 
 /* No comment provided by engineer. */
-"Clear" = "Очистить";
+"Choose symptoms that have been bothering you lately and are atypical for your usual condition." = "Выберете симптомы, которые беспокоят Вас в последнее время и являются нетипичными для Вашего обычного состояния.";
 
 /* No comment provided by engineer. */
-"Confirm Password" = "Повторите пароль";
+"Clear" = "Очистить";
 
 /* No comment provided by engineer. */
 "Could not create user at this time." = "Невозможно зарегистророваться сейчас.";
@@ -44,7 +41,7 @@
 "Getting the result" = "Получение результата";
 
 /* No comment provided by engineer. */
-"Hello %@!" = "Привет %@!";
+"If you start testing the symptom list is cleared." = "Если вы начнете тестирование список симптомов очистится.";
 
 /* No comment provided by engineer. */
 "In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion." = "В меню Анализ, Вы можете внести результаты анализа крови на дефицит микроэлементов и витаминов, а также переключить меню Результаты на получение итогового заключения.";
@@ -89,16 +86,22 @@
 "Password" = "Пароль";
 
 /* No comment provided by engineer. */
-"Register" = "Регистрация";
+"Request a password reset" = "Восстановление пароля";
+
+/* No comment provided by engineer. */
+"Reset" = "Сбросить";
 
 /* No comment provided by engineer. */
 "Sign Up" = "Регистрация";
 
 /* No comment provided by engineer. */
-"Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?" = "Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?";
+"Start testing?" = "Начать тестирование?";
 
 /* No comment provided by engineer. */
-"Symptoms List" = "Список симптомов";
+"Symptom %lld/%lld" = "Симптом %lld/%lld";
+
+/* No comment provided by engineer. */
+"Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?" = "Выбор симптомов и результат тестирования изменен. Хотите обновить список микроэлементов и витаминов для анализа?";
 
 /* No comment provided by engineer. */
 "The application is not a full-fledged diagnostic tool. The development of this system is aimed at drawing attention to the imbalance in the diet in the modern world, as well as to draw public attention to the indiscriminate intake of dietary supplements, trace elements and vitamins." = "Приложение не является полноценным диагностическим инструментом. Разработка данной системы направлена на привлечения внимания к дисбалансу рациона в современном мире, а также обратить внимание общества на беспорядочный прием биологически активных добавок, микроэлементов и витаминов.";
@@ -111,9 +114,6 @@
 
 /* No comment provided by engineer. */
 "The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin." = "Система автоматически откорректирует результаты, выдаст краткую справку по выбранной позиции и покажет список продуктов питания с высоким содержанием данного микроэлемента или витамина.";
-
-/* No comment provided by engineer. */
-"The VitaMi laboratory is ready for diagnostics." = "Лаборатория VitaMi готова к диагностике.";
 
 /* No comment provided by engineer. */
 "Unable to create Apple ID Credential" = "Невозможно создать учетные данные Apple ID";
@@ -133,4 +133,14 @@
 /* No comment provided by engineer. */
 "You have entered micronutrient and vitamin deficiency analysis data. Update test results?" = "Вы внесли данные анализа на дефицит микроэлементов и витаминов. Обновить результаты тестирования?";
 
-"At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change." = "В любой момент Вы сможете проверить выбранные симптомы в списке, а также изменить выбор. Промежуточный результат автоматически изменится.";
+"Hello %@!" = "Привет %@!";
+
+"The VitaMi laboratory is ready for diagnostics." = "Лаборатория VitaMi  готова к диагностике.";
+
+"Confirm Password" = "Повторите пароль";
+
+"Register" = "Регистрация";
+
+"Symptoms List" = "Список симптомов";
+
+"Are you sure you want to clear the symptoms list?" = "Вы действительно хотите очистить список симптомов";

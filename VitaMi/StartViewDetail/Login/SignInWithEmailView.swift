@@ -20,18 +20,17 @@ struct SignInWithEmailView: View {
     
     var body: some View {
         VStack {
-            TextField("Email Address",
-                      text: self.$user.email)
+            TextField("Email Address", text: self.$user.email) // => "Email Address"
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
-            SecureField("Password", text: $user.password)
+            SecureField("Password", text: $user.password) // => "Password"
             HStack {
                 Spacer()
                 Button(action: {
                     self.action = .resetPW
                     self.showSheet = true
                 }) {
-                    Text("Forgot Password")
+                    Text("Forgot Password") // => "Forgot Password"
                 }
             }.padding(.bottom)
             VStack(spacing: 10) {
@@ -47,7 +46,7 @@ struct SignInWithEmailView: View {
                         }
                     }
                 }) {
-                    Text("Login")
+                    Text("Login") // => "Login"
                         .padding(.vertical, 15)
                         .frame(width: 200)
                         .opacity(user.isLogInComplete ? 1 : 0.75)
@@ -59,7 +58,7 @@ struct SignInWithEmailView: View {
                     self.action = .signUp
                     self.showSheet = true
                 }) {
-                    Text("Sign Up")
+                    Text("Sign Up") // => "Sign Up"
                         .padding(.vertical, 15)
                         .frame(width: 200)
                 }
@@ -68,7 +67,9 @@ struct SignInWithEmailView: View {
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Login failed"), message: Text(self.authError?.localizedDescription ?? "Unknown error."), dismissButton: .default(Text("OK")) {
+            Alert(title: Text("Login failed") // => "Login failed"
+                  , message: Text(self.authError?.localizedDescription ?? "Unknown error.") // => "Unknown error."
+                  , dismissButton: .default(Text("OK")) {
                 if self.authError == .incorrectPassword {
                     self.user.password = ""
                 } else {

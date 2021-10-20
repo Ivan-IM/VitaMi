@@ -18,7 +18,7 @@ struct ContentSymptomsView: View {
     
     var body: some View {
         VStack {
-            Text("Choose symptoms that have been bothering you lately and are atypical for your usual condition.")
+            Text("Choose symptoms that have been bothering you lately and are atypical for your usual condition.") // => "Choose symptoms that have been bothering you lately and are atypical for your usual condition."
                 .multilineTextAlignment(.center)
                 .font(.system(size: 22, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
@@ -71,7 +71,9 @@ struct ContentSymptomsView: View {
         }
         .padding(32)
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Start testing?"), message: Text("If you start testing the symptom list is cleared."), primaryButton: .destructive(Text("OK"), action: {
+            Alert(title: Text("Start testing?") // => "Start testing?"
+                  , message: Text("If you start testing the symptom list is cleared.") // => "If you start testing the symptom list is cleared."
+                  , primaryButton: .destructive(Text("OK"), action: {
                 userManager.symptomsList.removeAll()
                 userManager.lowElementsList.removeAll()
                 startTesting = true

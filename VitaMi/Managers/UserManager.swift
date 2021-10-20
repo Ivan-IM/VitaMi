@@ -38,10 +38,16 @@ final class UserManager: ObservableObject {
     }
     
     //MARK: FireBase system base
+    private let versionPath = "VersionFB"
     private let symptomsPath = "Symptoms"
     private let elementsPath = "Elements"
     private let store = Firestore.firestore()
     
+    @Published var versionFB: Double {
+        didSet {
+            UserDefaults.standard.set(versionFB, forKey: "VersionFB")
+        }
+    }
     @Published var symptoms = [Symptom]()
     @Published var elements = [Element]()
     
@@ -57,6 +63,7 @@ final class UserManager: ObservableObject {
         self.symptomsList = UserDefaults.standard.object(forKey: "SymptomsList") as? [String] ?? []
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsAnalysis = UserDefaults.standard.object(forKey: "ElementsAnalysis") as? [String] ?? []
+        self.versionFB = UserDefaults.standard.object(forKey: "VersionFB") as? Double ?? 0.0
     }
     
     
@@ -128,82 +135,98 @@ final class UserManager: ObservableObject {
     }
     
     //MARK: FireBase get base method
-    func getFBSymptoms() {
-        if self.symptomsCD.isEmpty {
-            store.collection(symptomsPath).addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print(error)
-                    return
+    func getVersionFB() {
+        //Load CD
+        self.symptomsCD = coreDM.getSymptoms()
+        self.elementsCD = coreDM.getElements()
+        
+        var version = [VersionFB]()
+        
+        store.collection(versionPath).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            version = snapshot?.documents.compactMap {
+                try? $0.data(as: VersionFB.self)
+            } ?? []
+            if version.isEmpty {
+                print("Connection error FireStore")
+            }
+            else {
+                if version.first?.version == self.versionFB {
+                    print("Version FBase is not change - \(self.versionFB).")
                 }
-                self.symptoms = snapshot?.documents.compactMap {
-                    try? $0.data(as: Symptom.self)
-                } ?? []
-                self.loadFireBaseSymptomsToCoreData()
+                else {
+                    self.clearCDBase()
+                    self.getFBSymptoms()
+                    self.getFBElements()
+                    self.versionFB = version.first?.version ?? 1.0
+                    print("FBase version update to \(self.versionFB)")
+                }
             }
         }
-        else {
-            print("FireBase not load symptoms")
+    }
+    
+    func getFBSymptoms() {
+        store.collection(symptomsPath).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.symptoms = snapshot?.documents.compactMap {
+                try? $0.data(as: Symptom.self)
+            } ?? []
+            print("FB load \(self.symptoms.count) symptoms")
             self.loadFireBaseSymptomsToCoreData()
-            return
         }
     }
     
     func getFBElements() {
-        if self.elementsCD.isEmpty {
-            store.collection(elementsPath).addSnapshotListener { snapshot, error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.elements = snapshot?.documents.compactMap {
-                    try? $0.data(as: Element.self)
-                } ?? []
-                self.loadFireBaseElementsToCoreData()
+        store.collection(elementsPath).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error)
+                return
             }
-        }
-        else {
-            print("FireBase not load elements")
+            self.elements = snapshot?.documents.compactMap {
+                try? $0.data(as: Element.self)
+            } ?? []
+            print("FB load \(self.elements.count) elements")
             self.loadFireBaseElementsToCoreData()
-            return
         }
     }
     
     //MARK: CoreData get base method
     func loadFireBaseSymptomsToCoreData() {
         self.symptomsCD = coreDM.getSymptoms()
-        
-        if self.symptomsCD.isEmpty {
+        if symptomsCD.isEmpty {
             for symptom in self.symptoms {
                 self.coreDM.saveSymptom(symptom: symptom)}
             self.symptomsCD = self.coreDM.getSymptoms()
-        }
-        if self.symptomsCD.count == 28 {
-            print("CoreData load symptoms \(self.symptomsCD.count)/28")
-        }
-        else {
-            for symptom in symptomsCD {
-                coreDM.deleteSymptoms(symptom: symptom)
-            }
-            return
+            print("CoreData load symptoms \(self.symptomsCD.count)")
+        } else {
+            print("CD error, symptoms list not empty")
         }
     }
     
     func loadFireBaseElementsToCoreData() {
         self.elementsCD = coreDM.getElements()
-        
-        if self.elementsCD.isEmpty {
+        if elementsCD.isEmpty {
             for element in self.elements {
                 self.coreDM.saveElement(element: element)}
             self.elementsCD = self.coreDM.getElements()
+            print("CoreData load elements \(self.elementsCD.count)")
+        } else {
+            print("CD error, elements list not empty")
         }
-        if self.elementsCD.count == 20 {
-            print("CoreData load elements \(self.elementsCD.count)/20")
+    }
+    
+    func clearCDBase() {
+        for symptom in symptomsCD {
+            coreDM.deleteSymptoms(symptom: symptom)
         }
-        else {
-            for element in elementsCD {
-                coreDM.deleteElements(element: element)
-            }
-            return
+        for element in elementsCD {
+            coreDM.deleteElements(element: element)
         }
     }
     
