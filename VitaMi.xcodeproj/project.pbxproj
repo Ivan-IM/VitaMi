@@ -108,6 +108,7 @@
 		CF8F62C9271F273600173AC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizeble.stringsdict; sourceTree = "<group>"; };
 		CF8F62CB271F2FE700173AC8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizeble.stringsdict; sourceTree = "<group>"; };
 		CF8F62CD271F3A1D00173AC8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF8F62D02721CB5F00173AC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFA364DD26C3C1FF00958920 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		CFA364E526C6623100958920 /* ContentSymptomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSymptomsView.swift; sourceTree = "<group>"; };
 		CFA364E926C6657400958920 /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
@@ -529,6 +530,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF8F62CD271F3A1D00173AC8 /* ru */,
+				CF8F62D02721CB5F00173AC8 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -29,7 +29,7 @@ struct ContentSymptomsView: View {
             
             Spacer()
             
-            Text(userManager.symptomsCD[index].ruName ?? "")
+            Text(userManager.ruLocalization ? userManager.symptomsCD[index].ruName ?? "" : userManager.symptomsCD[index].enName ?? "")
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color("text"))

@@ -14,6 +14,7 @@ import AVFoundation
 final class UserManager: ObservableObject {
     
     //MARK: User change system info
+    @Published var ruLocalization: Bool = false
     @Published var showHealthy: Bool = false
     @Published var showFinalResult: Bool {
         didSet {
@@ -64,6 +65,12 @@ final class UserManager: ObservableObject {
         self.lowElementsList = UserDefaults.standard.object(forKey: "LowElementsList") as? [String] ?? []
         self.elementsAnalysis = UserDefaults.standard.object(forKey: "ElementsAnalysis") as? [String] ?? []
         self.versionFB = UserDefaults.standard.object(forKey: "VersionFB") as? Double ?? 0.0
+        
+        if Locale.current.languageCode == "ru" {
+            self.ruLocalization = true
+        } else {
+            self.ruLocalization = false
+        }
     }
     
     

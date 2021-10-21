@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ElementDetailView: View {
     
+    @EnvironmentObject var userManager: UserManager
     @Environment(\.presentationMode) var presentationMode
     let element: ElementCD
     
@@ -17,7 +18,7 @@ struct ElementDetailView: View {
             Color("background")
                 .ignoresSafeArea()
             VStack {
-                Text("\(element.ruName ?? "")(\(element.symbol ?? ""))")
+                Text("\(userManager.ruLocalization ? element.ruName ?? "" : element.enName ?? "")(\(element.symbol ?? ""))")
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding()

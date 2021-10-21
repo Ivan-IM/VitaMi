@@ -1,0 +1,184 @@
+/* No comment provided by engineer. */
+"After the end of testing, you will receive an intermediate result." = "After the end of testing, you will receive an intermediate result.";
+
+/* No comment provided by engineer. */
+"Are you sure you want to reset the last test results? This will result in the loss of lab data." = "Are you sure you want to reset the last test results? This will result in the loss of lab data.";
+
+/* No comment provided by engineer. */
+"At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change." = "At any time you can check the selected symptoms in the list, as well as change the selection. The intermediate result will automatically change.";
+
+/* No comment provided by engineer. */
+"Attention!" = "Attention!";
+
+/* No comment provided by engineer. */
+"Choose symptoms that have been bothering you lately and are atypical for your usual condition." = "Choose symptoms that have been bothering you lately and are atypical for your usual condition.";
+
+/* No comment provided by engineer. */
+"Clear" = "Clear";
+
+/* No comment provided by engineer. */
+"Could not create user at this time." = "Could not create user at this time.";
+
+/* No comment provided by engineer. */
+"Could not save user's full name." = "Could not save user's full name.";
+
+/* No comment provided by engineer. */
+"Dismiss" = "Dismiss";
+
+/* No comment provided by engineer. */
+"During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing." = "During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing.";
+
+/* No comment provided by engineer. */
+"First, we recommend to get tested." = "First, we recommend to get tested.";
+
+/* No comment provided by engineer. */
+"Foods high in %@:" = "Foods high in %@:";
+
+/* No comment provided by engineer. */
+"Forgot Password" = "Forgot Password";
+
+/* No comment provided by engineer. */
+"Getting the result" = "Getting the result";
+
+/* No comment provided by engineer. */
+"If you start testing the symptom list is cleared." = "If you start testing the symptom list is cleared.";
+
+/* No comment provided by engineer. */
+"In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion." = "In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion.";
+
+/* No comment provided by engineer. */
+"Incorrect Password for this account." = "Incorrect Password for this account.";
+
+/* No comment provided by engineer. */
+"Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease." = "Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease.";
+
+/* No comment provided by engineer. */
+"Login" = "Login";
+
+/* No comment provided by engineer. */
+"Login failed" = "Login failed";
+
+/* No comment provided by engineer. */
+"No Auth Data Result" = "No Auth Data Result";
+
+/* No comment provided by engineer. */
+"No Current User" = "No Current User";
+
+/* No comment provided by engineer. */
+"No Document Snapshot" = "No Document Snapshot";
+
+/* No comment provided by engineer. */
+"No Snapshot Data" = "No Snapshot Data";
+
+/* No comment provided by engineer. */
+"No User" = "No User";
+
+/* No comment provided by engineer. */
+"Not a valid email address." = "Not a valid email address.";
+
+/* No comment provided by engineer. */
+"Not a valid email address. This account does not exist." = "Not a valid email address. This account does not exist.";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Password" = "Password";
+
+/* No comment provided by engineer. */
+"Request a password reset" = "Request a password reset";
+
+/* No comment provided by engineer. */
+"Reset" = "Reset";
+
+/* No comment provided by engineer. */
+"Sign Up" = "Sign Up";
+
+/* No comment provided by engineer. */
+"Start testing?" = "Start testing?";
+
+/* No comment provided by engineer. */
+"Symptom %lld/%lld" = "Symptom %lld/%lld";
+
+/* No comment provided by engineer. */
+"Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?" = "Symptom selection and test result changed. Would you like to update the list of trace elements and vitamins for analysis?";
+
+/* No comment provided by engineer. */
+"The application is not a full-fledged diagnostic tool. The development of this system is aimed at drawing attention to the imbalance in the diet in the modern world, as well as to draw public attention to the indiscriminate intake of dietary supplements, trace elements and vitamins." = "The application is not a full-fledged diagnostic tool. The development of this system is aimed at drawing attention to the imbalance in the diet in the modern world, as well as to draw public attention to the indiscriminate intake of dietary supplements, trace elements and vitamins.";
+
+/* No comment provided by engineer. */
+"The imbalance of micronutrients and vitamins in the body is a very common phenomenon, we often do not notice it or blame it on lack of sleep, energy resources and bad mood. However, this symptomatology is very often the result of a violation of a balanced diet, unbalanced diets and insufficient consumption of a number of foods." = "The imbalance of micronutrients and vitamins in the body is a very common phenomenon, we often do not notice it or blame it on lack of sleep, energy resources and bad mood. However, this symptomatology is very often the result of a violation of a balanced diet, unbalanced diets and insufficient consumption of a number of foods.";
+
+/* No comment provided by engineer. */
+"The result of laboratory analysis" = "The result of laboratory analysis";
+
+/* No comment provided by engineer. */
+"The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin." = "The system will automatically correct the results, give a brief information on the selected item and show a list of food products with a high content of this microelement or vitamin.";
+
+/* No comment provided by engineer. */
+"Unable to create Apple ID Credential" = "Unable to create Apple ID Credential";
+
+/* No comment provided by engineer. */
+"Unable to fetch identity token" = "Unable to fetch identity token";
+
+/* No comment provided by engineer. */
+"Unable to serialize token string from data" = "Unable to serialize token string from data";
+
+/* No comment provided by engineer. */
+"Unknown error.  Cannot log in." = "Unknown error.  Cannot log in.";
+
+/* No comment provided by engineer. */
+"Welcome to the VitaMi laboratory." = "Welcome to the VitaMi laboratory.";
+
+/* No comment provided by engineer. */
+"You have entered micronutrient and vitamin deficiency analysis data. Update test results?" = "You have entered micronutrient and vitamin deficiency analysis data. Update test results?";
+
+"Hello %@!" = "Hello %@!";
+
+"The VitaMi laboratory is ready for diagnostics." = "The VitaMi laboratory is ready for diagnostics.";
+
+"Confirm Password" = "Confirm Password";
+
+"Register" = "Register";
+
+"Start Testing" = "Start Testing";
+
+"Symptoms List" = "Symptoms List";
+
+"Analysis" = "Analysis";
+
+"Results" = "Results";
+
+"Are you sure you want to clear the symptoms list?" = "Are you sure you want to clear the symptoms list?";
+
+"Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic." = "Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic.";
+
+"Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins." = "Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins.";
+
+"The analysis results are specific to" = "The analysis results are specific to";
+
+"deficit state" = "deficit state";
+
+"reduced consumption" = "reduced consumption";
+
+"the following trace elements and vitamins." = "the following trace elements and vitamins.";
+
+"Email Address" = "Email Address";
+
+"Enter email address" = "Enter email address";
+
+"Full name" = "Full name";
+
+"Enter your full name." = "Enter your full name.";
+
+"Enter a valid email address." = "Enter a valid email address.";
+
+"Must be 8 characters containing at least one number and one Capital letter." = "Must be 8 characters containing at least one number and one Capital letter.";
+
+"Password fields do not match." = "Password fields do not match.";
+
+"YES" = "YES";
+
+"NO" = "NO";
+
+"Back" = "Back";

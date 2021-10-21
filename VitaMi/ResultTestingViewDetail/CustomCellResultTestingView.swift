@@ -9,14 +9,15 @@ import SwiftUI
 
 struct CustomCellResultTestingView: View {
     
-    let element: ElementCD
+    @EnvironmentObject var userManager: UserManager
     @State private var showInfo = false
     @State private var showList = false
+    let element: ElementCD
     let textColor: Color
     
     var body: some View {
         HStack {
-            Text(self.element.ruName ?? "")
+            Text(userManager.ruLocalization ? element.ruName ?? "" : element.enName ?? "")
                 .foregroundColor(textColor)
             Spacer()
             Button {

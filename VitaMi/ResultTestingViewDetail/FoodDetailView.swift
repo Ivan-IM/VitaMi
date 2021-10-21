@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FoodDetailView: View {
     
+    @EnvironmentObject var userManager: UserManager
     @Environment(\.presentationMode) var presentationMode
     let element: ElementCD
     

@@ -14,7 +14,7 @@ struct ScrollViewSymptomsListView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             ForEach(userManager.symptomsCD) { symptom in
-                CustomCellSymptomsListView(title: symptom.ruName ?? "", isSelected: userManager.symptomsList.contains(symptom.enName ?? "")) {
+                CustomCellSymptomsListView(title: userManager.ruLocalization ? symptom.ruName ?? "" : symptom.enName ?? "", isSelected: userManager.symptomsList.contains(symptom.enName ?? "")) {
                     if userManager.symptomsList.contains(symptom.enName ?? "") {
                         userManager.symptomsList.removeAll(where: { $0 == symptom.enName })
                     }
