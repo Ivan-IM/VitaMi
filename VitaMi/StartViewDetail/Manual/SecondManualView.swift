@@ -32,7 +32,7 @@ struct SecondManualView: View {
                     .position(x: width/2.18, y: height/1.92)
             }
             .padding()
-            Text("During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing.") // => "During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing."
+            Text(NSLocalizedString("During testing, select the symptoms that you think have appeared recently and are not associated with any disease at the time of testing.", comment: ""))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

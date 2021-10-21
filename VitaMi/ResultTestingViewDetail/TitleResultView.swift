@@ -10,12 +10,12 @@ import SwiftUI
 struct TitleResultView: View {
     
     @EnvironmentObject var user: UserManager
-    private let titleResultElementsDeficit: String = "Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic." // => "Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic."
-    private let titleHealthy: String = "Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins." // => "Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins."
-    private let titleAnalysisElementsDeficit0: String = "The analysis results are specific to" // => "The analysis results are specific to"
-    private let titleAnalysisElementsDeficit1: String = "deficit state" // => "deficit state"
-    private let titleAnalysisElementsDeficit2: String = "reduced consumption" // => reduced consumption"
-    private let titleAnalysisElementsDeficit3: String = "the following trace elements and vitamins." // => "the following trace elements and vitamins."
+    private let titleResultElementsDeficit = NSLocalizedString("Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic.", comment: "")
+    private let titleHealthy = NSLocalizedString("Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins.", comment: "")
+    private let titleAnalysisElementsDeficit0: String = NSLocalizedString("The analysis results are specific to", comment: "")
+    private let titleAnalysisElementsDeficit1: String = NSLocalizedString("deficit state", comment: "")
+    private let titleAnalysisElementsDeficit2: String = NSLocalizedString("reduced consumption", comment: "")
+    private let titleAnalysisElementsDeficit3: String = NSLocalizedString("the following trace elements and vitamins.", comment: "")
     
     var body: some View {
         ZStack {

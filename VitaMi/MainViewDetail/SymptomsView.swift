@@ -23,7 +23,7 @@ struct SymptomsView: View {
                 ContentSymptomsView()
                     .padding()
             }
-            CustomButtonView(buttonTitle: "Back", action: {
+            CustomButtonView(buttonTitle: NSLocalizedString("Back", comment: ""), action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }

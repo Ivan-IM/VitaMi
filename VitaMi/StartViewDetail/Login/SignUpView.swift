@@ -20,27 +20,27 @@ struct SignUpView: View {
             VStack {
                 Group {
                     VStack(alignment: .leading) {
-                        TextField("Full name", text: self.$user.fullname) // => "Full name"
+                        TextField(NSLocalizedString("Full name", comment: ""), text: self.$user.fullname)
                             .autocapitalization(.words)
                         if !user.validNameText.isEmpty {
                             Text(user.validNameText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        TextField("Email Address", text: self.$user.email) // => "Email Address"
+                        TextField(NSLocalizedString("Email Address", comment: ""), text: self.$user.email)
                             .autocapitalization(.none).keyboardType(.emailAddress)
                         if !user.validEmailAddressText.isEmpty {
                             Text(user.validEmailAddressText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Password", text: self.$user.password) // => "Password"
+                        SecureField(NSLocalizedString("Password", comment: ""), text: self.$user.password)
                         if !user.validPasswordText.isEmpty {
                             Text(user.validPasswordText).font(.caption).foregroundColor(.red)
                         }
                     }
                     VStack(alignment: .leading) {
-                        SecureField("Confirm Password", text: self.$user.confirmPassword) // => "Confirm Password"
+                        SecureField(NSLocalizedString("Confirm Password", comment: ""), text: self.$user.confirmPassword)
                         if !user.passwordsMatch(_confirmPW: user.confirmPassword) {
                             Text(user.validConfirmPasswordText).font(.caption).foregroundColor(.red)
                         }
@@ -61,7 +61,7 @@ struct SignUpView: View {
                             }
                         }
                     }) {
-                        Text("Register") // => "Register"
+                        Text(NSLocalizedString("Register", comment: ""))
                             .frame(width: 200)
                             .padding(.vertical, 15)
                             .opacity(user.isSignInComplete ? 1 : 0.75)
@@ -72,11 +72,10 @@ struct SignUpView: View {
                 }.padding()
             }.padding(.top)
                 .alert(isPresented: $showError) {
-                    Alert(title: Text("Account creation error") // => "Account creation error"
-                          , message: Text(self.errorString), dismissButton: .default(Text("OK")))
+                    Alert(title: Text(NSLocalizedString("Account creation error", comment: "")), message: Text(self.errorString), dismissButton: .default(Text("OK")))
                 }
-                .navigationBarTitle("Register", displayMode: .inline) // => "Register"
-                .navigationBarItems(trailing: Button("Dismiss") {
+                .navigationBarTitle(NSLocalizedString("Register", comment: ""), displayMode: .inline)
+                .navigationBarItems(trailing: Button(NSLocalizedString("Dismiss", comment: "")) {
                     self.presentationMode.wrappedValue.dismiss()
                 })
         }

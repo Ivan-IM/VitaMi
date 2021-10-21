@@ -18,7 +18,7 @@ struct ForgotPasswordView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Enter email address", text: $user.email) // => "Enter email address"
+                TextField(NSLocalizedString("Enter email address", comment: ""), text: $user.email)
                     .autocapitalization(.none)
                     .keyboardType(.emailAddress)
                 Button(action: {
@@ -32,7 +32,7 @@ struct ForgotPasswordView: View {
                         self.showAlert = true
                     }
                 }) {
-                    Text("Reset") // => "Reset"
+                    Text(NSLocalizedString("Reset", comment: ""))
                         .frame(width: 200)
                         .padding(.vertical, 15)
                         .opacity(user.isEmailValid(_email: user.email) ? 1 : 0.75)
@@ -44,14 +44,12 @@ struct ForgotPasswordView: View {
             }.padding(.top)
                 .frame(width: 300)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .navigationBarTitle("Request a password reset", displayMode: .inline) // => "Request a password reset"
-                .navigationBarItems(trailing: Button("Dismiss") {
+                .navigationBarTitle(NSLocalizedString("Request a password reset", comment: ""), displayMode: .inline)
+                .navigationBarItems(trailing: Button(NSLocalizedString("Dismiss", comment: "")) {
                     self.presentationMode.wrappedValue.dismiss()
                 })
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Request a password reset") // => "Request a password reset"
-                          , message: Text(self.errorString ?? "Success. Check your email.") // => "Success. Check your email."
-                          , dismissButton: .default(Text("OK")) {
+                    Alert(title: Text(NSLocalizedString("Request a password reset", comment: "")), message: Text(self.errorString ?? NSLocalizedString("Success. Check your email.", comment: "")), dismissButton: .default(Text("OK")) {
                         self.presentationMode.wrappedValue.dismiss()
                     })
                 }

@@ -18,7 +18,7 @@ struct ContentSymptomsView: View {
     
     var body: some View {
         VStack {
-            Text("Choose symptoms that have been bothering you lately and are atypical for your usual condition.") // => "Choose symptoms that have been bothering you lately and are atypical for your usual condition."
+            Text(NSLocalizedString("Choose symptoms that have been bothering you lately and are atypical for your usual condition.", comment: ""))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 22, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
@@ -37,7 +37,7 @@ struct ContentSymptomsView: View {
             Spacer()
             
             HStack {
-                CustomCircleButtonView(buttonTitle: "YES") {
+                CustomCircleButtonView(buttonTitle: NSLocalizedString("YES", comment: "")) {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -53,7 +53,7 @@ struct ContentSymptomsView: View {
                     }
                 }
                 Spacer()
-                CustomCircleButtonView(buttonTitle: "NO") {
+                CustomCircleButtonView(buttonTitle: NSLocalizedString("NO", comment: "")) {
                     if !startTesting {
                         showingAlert = true
                     }
@@ -71,9 +71,7 @@ struct ContentSymptomsView: View {
         }
         .padding(32)
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Start testing?") // => "Start testing?"
-                  , message: Text("If you start testing the symptom list is cleared.") // => "If you start testing the symptom list is cleared."
-                  , primaryButton: .destructive(Text("OK"), action: {
+            Alert(title: Text(NSLocalizedString("Start testing?", comment: "")), message: Text(NSLocalizedString("If you start testing the symptom list is cleared.", comment: "")), primaryButton: .destructive(Text("OK"), action: {
                 userManager.symptomsList.removeAll()
                 userManager.lowElementsList.removeAll()
                 startTesting = true

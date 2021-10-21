@@ -40,7 +40,7 @@ struct FifthManualView: View {
                     .position(x: width/3.57, y: height/1.83)
             }
             .padding()
-            Text("In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion.") // => "In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion."
+            Text(NSLocalizedString("In the Analysis menu, you can enter the results of a blood test for deficiencies of trace elements and vitamins, and also switch the Results menu to obtain a final conclusion.", comment: ""))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .padding()

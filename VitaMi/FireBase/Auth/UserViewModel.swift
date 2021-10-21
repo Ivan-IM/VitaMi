@@ -62,7 +62,7 @@ struct UserViewModel {
         if !isEmpty(_field: fullname) {
             return ""
         } else {
-            return "Enter your full name." // => "Enter your full name."
+            return NSLocalizedString("Enter your full name.", comment: "")
         }
     }
     
@@ -71,7 +71,7 @@ struct UserViewModel {
         if isEmailValid(_email: email) {
             return ""
         } else {
-            return "Enter a valid email address." // => "Enter a valid email address."
+            return NSLocalizedString("Enter a valid email address.", comment: "")
         }
     }
     
@@ -79,7 +79,7 @@ struct UserViewModel {
         if isPasswordValid(_password: password) {
             return ""
         } else {
-            return "Must be 8 characters containing at least one number and one Capital letter." // => "Must be 8 characters containing at least one number and one Capital letter."
+            return NSLocalizedString("Must be 8 characters containing at least one number and one Capital letter.", comment: "")
         }
     }
     
@@ -87,7 +87,7 @@ struct UserViewModel {
         if passwordsMatch(_confirmPW: confirmPassword) {
             return ""
         } else {
-            return "Password fields do not match." // => "Password fields do not match."
+            return NSLocalizedString("Password fields do not match.", comment: "")
         }
     }
 }

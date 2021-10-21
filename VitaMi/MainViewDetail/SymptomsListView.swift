@@ -18,7 +18,7 @@ struct SymptomsListView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16).stroke(Color.gray.opacity(0.5))
                     .frame(height: 50)
-                Text("Symptoms List") // => "Symptoms List"
+                Text(NSLocalizedString("Symptoms List", comment: ""))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))
@@ -38,19 +38,17 @@ struct SymptomsListView: View {
                     .opacity(userManager.symptomsCD.isEmpty ? 0:1)
             }
             HStack {
-                CustomButtonView(buttonTitle: "Back", action: {
+                CustomButtonView(buttonTitle: NSLocalizedString("Back", comment: ""), action: {
                     changer.mainViewChanger = .mainView
                 }, width: 160, height: 50)
                 Spacer()
-                CustomButtonView(buttonTitle: "Clear", action: {
+                CustomButtonView(buttonTitle: NSLocalizedString("Clear", comment: ""), action: {
                     showingClearAlert.toggle()
                 }, width: 160, height: 50)
             }
             .padding(.horizontal,16)
             .alert(isPresented: $showingClearAlert) {
-                Alert(title: Text("Clear") // => "Clear"
-                      , message: Text("Are you sure you want to clear the symptoms list?") // => "Are you sure you want to clear the symptoms list?"
-                      , primaryButton: .destructive(Text("OK"), action: {
+                Alert(title: Text(NSLocalizedString("Clear", comment: "")), message: Text(NSLocalizedString("Are you sure you want to clear the symptoms list?", comment: "")), primaryButton: .destructive(Text("OK"), action: {
                     userManager.symptomsList.removeAll()
                     userManager.lowElementsList.removeAll()
                     userManager.showFinalResult = false

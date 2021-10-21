@@ -27,7 +27,7 @@ struct ResultTestingView: View {
                 ScrollViewResultView()
                     .padding()
             }
-            CustomButtonView(buttonTitle: "Back", action: {
+            CustomButtonView(buttonTitle: NSLocalizedString("Back", comment: ""), action: {
                 changer.mainViewChanger = .mainView
             }, width: 260, height: 60)
         }
@@ -43,9 +43,7 @@ struct ResultTestingView: View {
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Attention!") // => "Attention!"
-                  , message: Text("Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease.") // => "Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease."
-                  , dismissButton: .cancel(Text("OK")))
+            Alert(title: Text(NSLocalizedString("Attention!", comment: "")), message: Text(NSLocalizedString("Large number of symptoms! Recheck the choice of symptoms. Otherwise, we recommend that you see your doctor to rule out the disease.", comment: "")), dismissButton: .cancel(Text("OK")))
         }
     }
 }

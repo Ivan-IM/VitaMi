@@ -43,7 +43,7 @@ struct GreatingView: View {
                     .font(.system(size: 20, weight: .bold, design: .rounded))
                     .foregroundColor(Color("text"))
                     .padding(.bottom, 16)
-                Text("The VitaMi laboratory is ready for diagnostics.") // => "The VitaMi laboratory is ready for diagnostics."
+                Text(NSLocalizedString("The VitaMi laboratory is ready for diagnostics.", comment: ""))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))

@@ -141,6 +141,44 @@
 
 "Register" = "Регистрация";
 
+"Start Testing" = "Начать тестирование";
+
 "Symptoms List" = "Список симптомов";
 
+"Analysis" = "Анализ";
+
+"Results" = "Результаты";
+
 "Are you sure you want to clear the symptoms list?" = "Вы действительно хотите очистить список симптомов";
+
+"Symptoms are characteristic of a deficiency or reduced intake of the following trace elements and vitamins. For a more accurate result, it is necessary to take a blood test in any clinic." = "Симптомы характерны для дефицита или сниженного потребления следующих микроэлементов и витаминов. Для более точного результата необходимо сдать анализ крови в любой клининке.";
+
+"Your condition does not indicate a deficiency or reduced intake of any micronutrients and vitamins." = "Ваше состояние не указывает на дефицит или сниженное потребление каких-либо микроэлементов и витаминов.";
+
+"The analysis results are specific to" = "Результаты анализа характерны для";
+
+"deficit state" = "дефицитного состояния";
+
+"reduced consumption" = "сниженного потребления";
+
+"the following trace elements and vitamins." = "следующих микроэлементов и витаминов.";
+
+"Email Address" = "Email";
+
+"Enter email address" = "Введите email";
+
+"Full name" = "Имя";
+
+"Enter your full name." = "Введите имя.";
+
+"Enter a valid email address." = "Введите действующий email";
+
+"Must be 8 characters containing at least one number and one Capital letter." = "Должен состоять из 8 символов, содержащих хотя бы одну цифру и одну заглавную букву.";
+
+"Password fields do not match." = "Пароли не совпадают";
+
+"YES" = "ДА";
+
+"NO" = "НЕТ";
+
+"Back" = "Назад";
