@@ -88,7 +88,9 @@ class CoreDataManager {
         elementCD.ruName = element.ruName
         elementCD.enName = element.enName
         elementCD.ruProductInfo = element.ruProductInfo
+        elementCD.enProductInfo = element.enProductInfo
         elementCD.elementInfo = element.elementInfo
+        elementCD.elementInfoEn = element.elementInfoEn
         elementCD.normalValue = element.normalValue
         elementCD.blocker = element.blocker
         elementCD.helper = element.helper

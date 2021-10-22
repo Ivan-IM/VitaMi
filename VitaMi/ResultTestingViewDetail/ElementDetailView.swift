@@ -23,7 +23,7 @@ struct ElementDetailView: View {
                     .foregroundColor(Color("text"))
                     .padding()
                 ScrollView {
-                    Text(element.elementInfo ?? "")
+                    Text(userManager.ruLocalization ? element.elementInfo ?? "" : element.elementInfoEn ?? "")
                         .font(.system(size: 16, weight: .semibold, design: .rounded))
                         .foregroundColor(Color("text"))
                 }

@@ -19,7 +19,7 @@ struct FoodDetailView: View {
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .foregroundColor(Color("text"))
                 .padding()
-            ForEach(element.ruProductInfo ?? [], id: \.self) { food in
+            ForEach(userManager.ruLocalization ? element.ruProductInfo ?? [] : element.enProductInfo ?? [], id: \.self) { food in
                 Text(food)
                     .font(.system(size: 16, weight: .semibold, design: .rounded))
                     .foregroundColor(Color("text"))

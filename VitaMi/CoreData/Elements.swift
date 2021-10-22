@@ -15,6 +15,8 @@ struct Element: Identifiable, Codable {
     let ruName: String
     let type: String
     let elementInfo: String
+    let elementInfoEn: String
+    let enProductInfo: Array<String>
     let ruProductInfo: Array<String>
     let normalValue: Array<Double>
     let value: Double
